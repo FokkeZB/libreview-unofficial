@@ -564,5 +564,4 @@ components:
     Token:
       type: http
       scheme: bearer
-security:
-  - Token: []
+      description: ''
