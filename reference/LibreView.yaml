@@ -565,3 +565,5 @@ components:
       type: http
       scheme: bearer
       description: ''
+security:
+  - Token: []
