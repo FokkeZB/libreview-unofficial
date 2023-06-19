@@ -2,7 +2,7 @@ openapi: 3.1.0
 x-stoplight:
   id: 5e6m44bnx0m4p
 info:
-  title: LibreView (Unofficial)
+  title: LibreView Unofficial
   version: '1.0'
   summary: LibreView Unofficial API Documentation.
   description: 'This is community-driven, unofficial documentation for the LibreView API. It is not affiliated with Abbott Diabetes Care, Inc. or any of its subsidiaries.'
