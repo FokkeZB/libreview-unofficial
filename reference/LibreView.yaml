@@ -71,200 +71,21 @@ paths:
       requestBody:
         content: {}
       parameters:
-        - $ref: '#/components/parameters/version'
-        - $ref: '#/components/parameters/product'
+        - $ref: '#/components/parameters/Version'
+        - $ref: '#/components/parameters/Product'
   /llu/auth/login:
     post:
       summary: Log in
       operationId: post-llu-auth-login
       responses:
         '200':
-          description: OK
+          description: Success or Redirect
           content:
             application/json:
               schema:
-                type: object
-                x-examples:
-                  Example 1:
-                    status: 0
-                    data:
-                      user:
-                        id: ':censored:'
-                        firstName: ':censored:'
-                        lastName: ':censored:'
-                        email: ':censored:'
-                        country: NL
-                        uiLanguage: nl-NL
-                        communicationLanguage: nl-NL
-                        accountType: pat
-                        uom: '0'
-                        dateFormat: '2'
-                        timeFormat: '2'
-                        emailDay:
-                          - 1
-                        system:
-                          messages:
-                            firstUsePhoenix: 1615561848
-                            firstUsePhoenixReportsDataMerged: 1615561848
-                            lluAnalyticsNewAccount: 1677666823
-                            lluGettingStartedBanner: 1615562010
-                            lluNewFeatureModal: 1677666823
-                            lluOnboarding: 1615562004
-                            lvWebPostRelease: 3.5.25
-                        details: {}
-                        twoFactor:
-                          primaryMethod: ''
-                          primaryValue: ''
-                          secondaryMethod: ''
-                          secondaryValue: ''
-                        created: 1615561848
-                        lastLogin: 1686814706
-                        programs: {}
-                        dateOfBirth: 396144000
-                        practices: {}
-                        devices: {}
-                        consents:
-                          llu:
-                            policyAccept: 1684414774
-                            touAccept: 1686814706
-                          realWorldEvidence:
-                            policyAccept: 1624365806
-                            touAccept: 0
-                            history:
-                              - policyAccept: 1624365806
-                      messages:
-                        unread: 0
-                      notifications:
-                        unresolved: 0
-                      authTicket:
-                        token: ':censored:'
-                        expires: 1702447789
-                        duration: 15552000000
-                      invitations:
-                        - ':censored:'
-                      trustedDeviceToken: ''
-                properties:
-                  status:
-                    type: integer
-                  data:
-                    type: object
-                    properties:
-                      user:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                          firstName:
-                            type: string
-                          lastName:
-                            type: string
-                          email:
-                            type: string
-                          country:
-                            type: string
-                          uiLanguage:
-                            type: string
-                          communicationLanguage:
-                            type: string
-                          accountType:
-                            type: string
-                          uom:
-                            type: string
-                          dateFormat:
-                            type: string
-                          timeFormat:
-                            type: string
-                          emailDay:
-                            type: array
-                            items:
-                              type: integer
-                          system:
-                            type: object
-                            properties:
-                              messages:
-                                type: object
-                                properties:
-                                  firstUsePhoenix:
-                                    type: integer
-                                  firstUsePhoenixReportsDataMerged:
-                                    type: integer
-                                  lluAnalyticsNewAccount:
-                                    type: integer
-                                  lluGettingStartedBanner:
-                                    type: integer
-                                  lluNewFeatureModal:
-                                    type: integer
-                                  lluOnboarding:
-                                    type: integer
-                                  lvWebPostRelease:
-                                    type: string
-                          details:
-                            type: object
-                          twoFactor:
-                            type: object
-                            properties:
-                              primaryMethod:
-                                type: string
-                              primaryValue:
-                                type: string
-                              secondaryMethod:
-                                type: string
-                              secondaryValue:
-                                type: string
-                          created:
-                            type: integer
-                          lastLogin:
-                            type: integer
-                          programs:
-                            type: object
-                          dateOfBirth:
-                            type: integer
-                          practices:
-                            type: object
-                          devices:
-                            type: object
-                          consents:
-                            type: object
-                            properties:
-                              llu:
-                                type: object
-                                properties:
-                                  policyAccept:
-                                    type: integer
-                                  touAccept:
-                                    type: integer
-                              realWorldEvidence:
-                                type: object
-                                properties:
-                                  policyAccept:
-                                    type: integer
-                                  touAccept:
-                                    type: integer
-                                  history:
-                                    type: array
-                                    items:
-                                      type: object
-                                      properties:
-                                        policyAccept:
-                                          type: integer
-                      messages:
-                        type: object
-                        properties:
-                          unread:
-                            type: integer
-                      notifications:
-                        type: object
-                        properties:
-                          unresolved:
-                            type: integer
-                      authTicket:
-                        $ref: '#/components/schemas/Ticket'
-                      invitations:
-                        type: array
-                        items:
-                          type: string
-                      trustedDeviceToken:
-                        type: string
+                oneOf:
+                  - $ref: '#/components/responses/Login'
+                  - $ref: '#/components/responses/LoginRedirect'
       requestBody:
         content:
           application/json:
@@ -282,11 +103,11 @@ paths:
       security: []
       description: Log in to retrieve an Bearer token to use for the other endpoints.
       parameters:
-        - $ref: '#/components/parameters/version'
-        - $ref: '#/components/parameters/product'
+        - $ref: '#/components/parameters/Version'
+        - $ref: '#/components/parameters/Product'
 components:
   parameters:
-    version:
+    Version:
       name: version
       in: header
       required: true
@@ -294,7 +115,7 @@ components:
         type: string
         example: '4.7'
       description: The LibreLinkUp version number to match.
-    product:
+    Product:
       name: product
       in: header
       required: true
@@ -600,5 +421,48 @@ components:
       type: http
       scheme: bearer
       description: ''
+  responses:
+    LoginRedirect:
+      description: Response to login may be a request to use a different region.
+      content:
+        application/json:
+          schema:
+            type: object
+            x-examples:
+              Example 1:
+                status: 0
+                data:
+                  redirect: true
+                  region: eu
+            properties:
+              status:
+                type: integer
+                default: 0
+                readOnly: true
+              data:
+                type: object
+                properties:
+                  redirect:
+                    type: boolean
+                    default: true
+                    readOnly: true
+                  region:
+                    type: string
+        application/xml:
+          schema:
+            type: object
+            properties: {}
+    Login:
+      description: Example response
+      content:
+        application/json:
+          schema:
+            properties:
+              id:
+                type: string
+        application/xml:
+          schema:
+            type: object
+            properties: {}
 security:
   - token: []
