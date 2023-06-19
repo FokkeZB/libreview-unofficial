@@ -32,6 +32,24 @@ servers:
       region:
         default: us
         description: Regional API to use.
+  - url: 'https://api-ae.libreview.io'
+    description: Live (ae)
+  - url: 'https://api-ap.libreview.io'
+    description: Live (ap)
+  - url: 'https://api-ca.libreview.io'
+    description: Live (ca)
+  - url: 'https://api-de.libreview.io'
+    description: Live (de)
+  - url: 'https://api-eu.libreview.io'
+    description: Live (eu)
+  - url: 'https://api-eu2.libreview.io'
+    description: Live (eu2)
+  - url: 'https://api-fr.libreview.io'
+    description: Live (fr)
+  - url: 'https://api-jp.libreview.io'
+    description: Live (jp)
+  - url: 'https://api-us.libreview.io'
+    description: Live (us)
 paths:
   /llu/connections:
     get:
