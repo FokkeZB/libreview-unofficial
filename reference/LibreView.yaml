@@ -66,8 +66,12 @@ servers:
     description: Live Server (jp)
   - url: 'https://api-us.libreview.io'
     description: Live Server (us)
-  - url: 'http://localhost:3000'
+  - url: 'http://localhost:3000/{region}'
     description: Local Server
+    variables:
+      region:
+        default: us
+        description: Regional API to use.
 paths:
   /llu/connections:
     get:
