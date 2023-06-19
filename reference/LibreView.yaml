@@ -19,53 +19,53 @@ externalDocs:
   description: Stoplight documentation
 servers:
   - url: 'https://api-{region}.libreview.io'
-    description: Live
+    description: Live Server
     variables:
       region:
         default: us
         description: Regional API to use.
   - url: 'https://libreview-proxy.onrender.com/{region}'
-    description: Proxy
+    description: Proxy Server
     variables:
       region:
         default: us
         description: Regional API to use.
   - url: 'https://libreview-proxy.onrender.com/ae'
-    description: Proxy (ae)
+    description: Proxy Server (ae)
   - url: 'https://libreview-proxy.onrender.com/ap'
-    description: Proxy (ap)
+    description: Proxy Server (ap)
   - url: 'https://libreview-proxy.onrender.com/ca'
-    description: Proxy (ca)
+    description: Proxy Server (ca)
   - url: 'https://libreview-proxy.onrender.com/de'
-    description: Proxy (de)
+    description: Proxy Server (de)
   - url: 'https://libreview-proxy.onrender.com/eu'
-    description: Proxy (eu)
+    description: Proxy Server (eu)
   - url: 'https://libreview-proxy.onrender.com/eu2'
-    description: Proxy (eu2)
+    description: Proxy Server (eu2)
   - url: 'https://libreview-proxy.onrender.com/fr'
-    description: Proxy (fr)
+    description: Proxy Server (fr)
   - url: 'https://libreview-proxy.onrender.com/jp'
-    description: Proxy (jp)
+    description: Proxy Server (jp)
   - url: 'https://libreview-proxy.onrender.com/us'
-    description: Proxy (us)
+    description: Proxy Server (us)
   - url: 'https://api-ae.libreview.io'
-    description: Live (ae)
+    description: Live Server (ae)
   - url: 'https://api-ap.libreview.io'
-    description: Live (ap)
+    description: Live Server (ap)
   - url: 'https://api-ca.libreview.io'
-    description: Live (ca)
+    description: Live Server (ca)
   - url: 'https://api-de.libreview.io'
-    description: Live (de)
+    description: Live Server Serverive (de)
   - url: 'https://api-eu.libreview.io'
-    description: Live (eu)
+    description: Live Server (eu)
   - url: 'https://api-eu2.libreview.io'
-    description: Live (eu2)
+    description: Live Server (eu2)
   - url: 'https://api-fr.libreview.io'
-    description: Live (fr)
+    description: Live Server (fr)
   - url: 'https://api-jp.libreview.io'
-    description: Live (jp)
+    description: Live Server (jp)
   - url: 'https://api-us.libreview.io'
-    description: Live (us)
+    description: Live Server (us)
 paths:
   /llu/connections:
     get:
