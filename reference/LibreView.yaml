@@ -15,17 +15,29 @@ info:
     url: 'https://spdx.org/licenses/MIT.html'
 servers:
   - url: 'https://libreview-proxy.onrender.com/{region}'
-    description: Hosted Proxy
+    description: Proxy
     variables:
       region:
         default: us
         description: Regional API to use.
-  - url: 'http://localhost:3000/{region}'
-    description: Local Proxy
-    variables:
-      region:
-        default: us
-        description: Regional API to use.
+  - url: 'https://libreview-proxy.onrender.com/ae'
+    description: Proxy (ae)
+  - url: 'https://libreview-proxy.onrender.com/ap'
+    description: Proxy (ap)
+  - url: 'https://libreview-proxy.onrender.com/ca'
+    description: Proxy (ca)
+  - url: 'https://libreview-proxy.onrender.com/de'
+    description: Proxy (de)
+  - url: 'https://libreview-proxy.onrender.com/eu'
+    description: Proxy (eu)
+  - url: 'https://libreview-proxy.onrender.com/eu2'
+    description: Proxy (eu2)
+  - url: 'https://libreview-proxy.onrender.com/fr'
+    description: Proxy (fr)
+  - url: 'https://libreview-proxy.onrender.com/jp'
+    description: Proxy (jp)
+  - url: 'https://libreview-proxy.onrender.com/us'
+    description: Proxy (us)
   - url: 'https://api-{region}.libreview.io'
     description: Live
     variables:
