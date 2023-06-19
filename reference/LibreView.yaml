@@ -18,8 +18,12 @@ servers:
     description: Hosted Proxy
   - description: Local Proxy
     url: 'http://localhost:3000'
-  - url: 'https://api-us.libreview.io'
-    description: US
+  - url: 'https://api-{region}.libreview.io'
+    description: Live
+    variables:
+      region:
+        default: us
+        description: Regional API to use.
 paths:
   /llu/connections:
     get:
