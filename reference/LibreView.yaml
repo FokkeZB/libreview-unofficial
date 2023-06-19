@@ -145,6 +145,14 @@ paths:
       parameters:
         - $ref: '#/components/parameters/Version'
         - $ref: '#/components/parameters/Product'
+  /auth/continue/tou:
+    post:
+      summary: Accept Terms
+      operationId: post-auth-continue-tou
+      responses:
+        '200':
+          $ref: '#/components/responses/LoginSuccess'
+      description: Accept the Terms Of Use (TOU).
 components:
   parameters:
     Version:
