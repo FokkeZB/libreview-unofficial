@@ -12,7 +12,7 @@ You can also use the [OpenAPI specification](https://github.com/FokkeZB/librevie
 
 ## Contribute
 
-You can contribute by making a pull request against this repository.
+You can contribute by making a pull request against [this repository](https://github.com/FokkeZB/libreview-unofficial/tree/master).
 
 ## Disclaimer
 
