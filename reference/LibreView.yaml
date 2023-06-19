@@ -122,6 +122,7 @@ components:
       schema:
         type: string
         example: llu.android
+        default: llu.android
       description: The LibreLinkUp product identifier to match.
   schemas:
     Connection:
