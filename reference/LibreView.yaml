@@ -11,8 +11,8 @@ info:
     name: LibreView Unofficial API Documentation
   termsOfService: 'https://github.com/FokkeZB/libreview-unofficial#disclaimer'
   license:
-    identifier: MIT
     name: MIT
+    url: 'https://spdx.org/licenses/MIT.html'
 servers:
   - url: 'https://libreview-proxy.onrender.com'
     description: Hosted Proxy
@@ -24,7 +24,6 @@ paths:
   /llu/connections:
     get:
       summary: Get Connections
-      tags: []
       responses:
         '200':
           description: Connections Found
@@ -71,6 +70,8 @@ paths:
       description: Retrieve the connections of the user.
       requestBody:
         content: {}
+      parameters:
+        - $ref: '#/components/parameters/version'
   /llu/auth/login:
     post:
       summary: Log in
@@ -278,17 +279,19 @@ paths:
                   x-stoplight:
                     id: p1h5svm2ql6wj
       security: []
-      description: ''
+      description: Log in to retrieve an Bearer token to use for the other endpoints.
+      parameters:
+        - $ref: '#/components/parameters/version'
 components:
   parameters:
-    versionParam:
-      - in: header
-        name: version
-        required: true
-        schema:
-          type: string
-        default: '4.7'
-        description: The LibreLinkUp version number to match.
+    version:
+      name: version
+      in: header
+      required: true
+      schema:
+        type: string
+        example: '4.7'
+      description: The LibreLinkUp version number to match.
   schemas:
     Connection:
       type: object
@@ -583,9 +586,9 @@ components:
           expires: 1702366706
           duration: 15552000000
   securitySchemes:
-    Token:
+    token:
       type: http
       scheme: bearer
       description: ''
 security:
-  - Token: []
+  - token: []
