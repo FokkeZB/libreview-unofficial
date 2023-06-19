@@ -5,7 +5,7 @@ info:
   title: LibreView (Unofficial)
   version: '1.0'
   summary: LibreView Unofficial API Documentation.
-  description: ''
+  description: 'This is community-driven, unofficial documentation for the LibreView API. It is not affiliated with Abbott Diabetes Care, Inc. or any of its subsidiaries.'
   contact:
     url: 'https://github.com/FokkeZB/libreview-unofficial'
     name: LibreView Unofficial API Documentation
