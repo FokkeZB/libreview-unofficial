@@ -125,11 +125,7 @@ paths:
       operationId: post-llu-auth-login
       responses:
         '200':
-          description: 'Success, Redirect or Terms'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/responses/Login'
+          $ref: '#/components/responses/Login'
       requestBody:
         content:
           application/json:
@@ -469,7 +465,7 @@ components:
       description: ''
   responses:
     LoginRedirect:
-      description: Response to login may be a request to use a different region.
+      description: The response is a request to use a different regio to retry login.
       content:
         application/json:
           schema:
@@ -499,7 +495,7 @@ components:
             type: object
             properties: {}
     LoginSuccess:
-      description: Example response
+      description: Log in is (just) successful. The body contains the user object and token to use for subsequent requests.
       content:
         application/json:
           schema:
@@ -701,7 +697,7 @@ components:
             type: object
             properties: {}
     LoginTerms:
-      description: Example response
+      description: 'Log in is successful, but terms need to be accepted first. The body does contains the token to use for accepting terms and subsequent requests. The endpoint for accepting terms will return the user data.'
       content:
         application/json:
           schema:
@@ -786,7 +782,7 @@ components:
             type: object
             properties: {}
     Login:
-      description: Example response
+      description: 'Response to login can either be a request to use a different regional host, just successful, or a request to first accept terms. In the last case, a token does get provided, and the endpoint to accept terms will return the same body as when login was just successful.'
       content:
         application/json:
           schema:
