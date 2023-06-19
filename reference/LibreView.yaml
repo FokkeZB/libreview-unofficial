@@ -9,10 +9,14 @@ info:
   contact:
     url: 'https://github.com/FokkeZB/libreview-unofficial'
     name: LibreView Unofficial API Documentation
+    email: libreview.unofficial@icloud.com
   termsOfService: 'https://github.com/FokkeZB/libreview-unofficial#disclaimer'
   license:
     name: MIT
     url: 'https://spdx.org/licenses/MIT.html'
+externalDocs:
+  url: https://libreview-unofficial.stoplight.io/
+  description: Stoplight documentation
 servers:
   - url: 'https://libreview-proxy.onrender.com/{region}'
     description: Proxy
