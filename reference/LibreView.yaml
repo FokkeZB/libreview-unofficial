@@ -72,6 +72,7 @@ paths:
         content: {}
       parameters:
         - $ref: '#/components/parameters/version'
+        - $ref: '#/components/parameters/product'
   /llu/auth/login:
     post:
       summary: Log in
@@ -282,6 +283,7 @@ paths:
       description: Log in to retrieve an Bearer token to use for the other endpoints.
       parameters:
         - $ref: '#/components/parameters/version'
+        - $ref: '#/components/parameters/product'
 components:
   parameters:
     version:
@@ -292,6 +294,14 @@ components:
         type: string
         example: '4.7'
       description: The LibreLinkUp version number to match.
+    product:
+      name: product
+      in: header
+      required: true
+      schema:
+        type: string
+        example: llu.android
+      description: The LibreLinkUp product identifier to match.
   schemas:
     Connection:
       type: object
