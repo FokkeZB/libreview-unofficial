@@ -281,6 +281,15 @@ paths:
       security: []
       description: ''
 components:
+  parameters:
+    offsetParam:
+      - in: header
+        name: version
+        required: true
+        schema:
+          type: string
+        default: '4.7'
+        description: The LibreLinkUp version number to match.
   schemas:
     Connection:
       type: object
