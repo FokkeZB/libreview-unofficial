@@ -151,7 +151,7 @@ paths:
       operationId: post-auth-continue-tou
       responses:
         '200':
-          $ref: '#/components/responses/LoginSuccess'
+          $ref: '#/components/responses/LoginOrTermsSuccess'
       description: Accept the Terms Of Use (TOU).
 components:
   parameters:
@@ -502,8 +502,8 @@ components:
           schema:
             type: object
             properties: {}
-    LoginSuccess:
-      description: Log in is (just) successful. The body contains the user object and token to use for subsequent requests.
+    LoginOrTermsSuccess:
+      description: Log in is successful and terms have been accepted. The body contains the user object and token to use for subsequent requests.
       content:
         application/json:
           schema:
@@ -795,7 +795,7 @@ components:
         application/json:
           schema:
             oneOf:
-              - $ref: '#/components/responses/LoginSuccess'
+              - $ref: '#/components/responses/LoginOrTermsSuccess'
               - $ref: '#/components/responses/LoginRedirect'
               - $ref: '#/components/responses/LoginTerms'
 security:
