@@ -5,10 +5,12 @@ info:
   title: LibreView (Unofficial)
   version: '1.0'
 servers:
-  - description: proxy
+  - url: 'https://libreview-proxy.onrender.com'
+    description: Hosted Proxy
+  - description: Local Proxy
     url: 'http://localhost:3000'
   - url: 'https://api-us.libreview.io'
-    description: us
+    description: US
 paths:
   /llu/connections:
     parameters: []
