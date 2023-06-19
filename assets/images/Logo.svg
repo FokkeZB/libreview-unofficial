@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="236px" height="74px" viewBox="0 0 236 74" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Slice</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <text id="LibreView" font-family="HelveticaNeue-BoldItalic, Helvetica Neue" font-size="50" font-style="italic" font-weight="bold" fill="#1295D3">
+            <tspan x="1.775" y="49">LibreView</tspan>
+        </text>
+        <text id="Unofficial-API-docum" font-family="HelveticaNeue-Thin, Helvetica Neue" font-size="20" font-weight="300" fill="#1295D3">
+            <tspan x="0.04" y="70">Unofficial API documentation</tspan>
+        </text>
+    </g>
+</svg>
