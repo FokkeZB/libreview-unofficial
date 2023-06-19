@@ -22,7 +22,6 @@ servers:
     description: US
 paths:
   /llu/connections:
-    parameters: []
     get:
       summary: Get Connections
       tags: []
@@ -282,7 +281,7 @@ paths:
       description: ''
 components:
   parameters:
-    offsetParam:
+    versionParam:
       - in: header
         name: version
         required: true
