@@ -14,10 +14,18 @@ info:
     name: MIT
     url: 'https://spdx.org/licenses/MIT.html'
 servers:
-  - url: 'https://libreview-proxy.onrender.com'
+  - url: 'https://libreview-proxy.onrender.com/{region}'
     description: Hosted Proxy
-  - description: Local Proxy
-    url: 'http://localhost:3000'
+    variables:
+      region:
+        default: us
+        description: Regional API to use.
+  - url: 'http://localhost:3000/{region}'
+    description: Local Proxy
+    variables:
+      region:
+        default: us
+        description: Regional API to use.
   - url: 'https://api-{region}.libreview.io'
     description: Live
     variables:
