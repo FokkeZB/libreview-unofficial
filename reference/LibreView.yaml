@@ -4,6 +4,15 @@ x-stoplight:
 info:
   title: LibreView (Unofficial)
   version: '1.0'
+  summary: LibreView Unofficial API Documentation.
+  description: ''
+  contact:
+    url: 'https://github.com/FokkeZB/libreview-unofficial'
+    name: LibreView Unofficial API Documentation
+  termsOfService: 'https://github.com/FokkeZB/libreview-unofficial#disclaimer'
+  license:
+    identifier: MIT
+    name: MIT
 servers:
   - url: 'https://libreview-proxy.onrender.com'
     description: Hosted Proxy
