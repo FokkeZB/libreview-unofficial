@@ -15,7 +15,7 @@ info:
     name: MIT
     url: 'https://spdx.org/licenses/MIT.html'
 externalDocs:
-  url: https://libreview-unofficial.stoplight.io/
+  url: 'https://libreview-unofficial.stoplight.io/'
   description: Stoplight documentation
 servers:
   - url: 'https://api-{region}.libreview.io'
@@ -125,13 +125,14 @@ paths:
       operationId: post-llu-auth-login
       responses:
         '200':
-          description: Success or Redirect
+          description: Success, Redirect or Terms
           content:
             application/json:
               schema:
                 oneOf:
                   - $ref: '#/components/responses/Login'
                   - $ref: '#/components/responses/LoginRedirect'
+                  - $ref: '#/components/responses/LoginTerms'
       requestBody:
         content:
           application/json:
@@ -508,6 +509,91 @@ components:
             properties:
               id:
                 type: string
+        application/xml:
+          schema:
+            type: object
+            properties: {}
+    LoginTerms:
+      description: Example response
+      content:
+        application/json:
+          schema:
+            type: object
+            x-examples:
+              Example 1:
+                status: 4
+                data:
+                  step:
+                    type: tou
+                    componentName: AcceptDocument
+                    props:
+                      reaccept: true
+                      titleKey: Common.termsOfUse
+                      type: tou
+                  user:
+                    accountType: pat
+                    country: NL
+                    uiLanguage: nl-NL
+                  authTicket:
+                    token: ':censored:'
+                    expires: 1686818182
+                    duration: 3600000
+            properties:
+              status:
+                type: integer
+                default: 4
+                example: 4
+                enum:
+                  - 4
+                readOnly: true
+              data:
+                type: object
+                properties:
+                  step:
+                    type: object
+                    properties:
+                      type:
+                        type: string
+                        enum:
+                          - tou
+                        default: tou
+                        example: tou
+                        readOnly: true
+                      componentName:
+                        type: string
+                        default: AcceptDocument
+                        example: AcceptDocument
+                        readOnly: true
+                      props:
+                        type: object
+                        properties:
+                          reaccept:
+                            type: boolean
+                            default: true
+                            readOnly: true
+                          titleKey:
+                            type: string
+                            default: Common.termsOfUse
+                            example: Common.termsOfUse
+                            readOnly: true
+                          type:
+                            type: string
+                            enum:
+                              - tou
+                            default: tou
+                            example: tou
+                            readOnly: true
+                  user:
+                    type: object
+                    properties:
+                      accountType:
+                        type: string
+                      country:
+                        type: string
+                      uiLanguage:
+                        type: string
+                  authTicket:
+                    $ref: '#/components/schemas/Ticket'
         application/xml:
           schema:
             type: object
