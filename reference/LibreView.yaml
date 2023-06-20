@@ -48,24 +48,6 @@ servers:
     description: Proxy Server (jp)
   - url: 'https://libreview-proxy.onrender.com/us'
     description: Proxy Server (us)
-  - url: 'https://api-ae.libreview.io'
-    description: Live Server (ae)
-  - url: 'https://api-ap.libreview.io'
-    description: Live Server (ap)
-  - url: 'https://api-ca.libreview.io'
-    description: Live Server (ca)
-  - url: 'https://api-de.libreview.io'
-    description: Live Server Serverive (de)
-  - url: 'https://api-eu.libreview.io'
-    description: Live Server (eu)
-  - url: 'https://api-eu2.libreview.io'
-    description: Live Server (eu2)
-  - url: 'https://api-fr.libreview.io'
-    description: Live Server (fr)
-  - url: 'https://api-jp.libreview.io'
-    description: Live Server (jp)
-  - url: 'https://api-us.libreview.io'
-    description: Live Server (us)
 paths:
   /llu/auth/login:
     post:
