@@ -1664,97 +1664,6 @@ paths:
         in: path
         required: true
         description: Patient ID
-  '/llu/notifications/settings/{connectionId}':
-    get:
-      summary: Get Notificiation Settings for Connection
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-                x-examples:
-                  Example 1:
-                    status: 0
-                    data:
-                      connectionId: ':censored:'
-                      alarmRules:
-                        c: true
-                        h:
-                          'on': true
-                          th: 250
-                          thmm: 13.9
-                          d: 1440
-                          f: 0.1
-                        f:
-                          th: 55
-                          thmm: 3
-                          d: 30
-                          tl: 10
-                          tlmm: 0.6
-                        l:
-                          'on': true
-                          th: 70
-                          thmm: 3.9
-                          d: 1440
-                          tl: 10
-                          tlmm: 0.6
-                        nd:
-                          'on': true
-                          i: 20
-                          r: 5
-                          l: 6
-                        p: 5
-                        r: 5
-                        std: {}
-                      std: {}
-                      patientDevice:
-                        did: ':censored:'
-                        dtid: 40068
-                        v: 3.4.0.7368
-                        l: true
-                        ll: 70
-                        h: true
-                        hl: 250
-                        u: 1685217954
-                        fixedLowAlarmValues:
-                          mgdl: 60
-                          mmoll: 3.3
-                        alarms: false
-                        fixedLowThreshold: 0
-                    ticket:
-                      token: ':censored:'
-                      expires: 1702366476
-                      duration: 15552000000
-                properties:
-                  status:
-                    type: integer
-                  data:
-                    type: object
-                    properties:
-                      connectionId:
-                        type: string
-                      alarmRules:
-                        $ref: '#/components/schemas/AlarmRules'
-                      std:
-                        type: object
-                      patientDevice:
-                        $ref: '#/components/schemas/PatientDevice'
-                  ticket:
-                    $ref: '#/components/schemas/Ticket'
-      operationId: 'get-llu-connections-settings-:connectionId'
-      description: Get Logbook.
-      parameters:
-        - $ref: '#/components/parameters/Product'
-        - $ref: '#/components/parameters/Version'
-    parameters:
-      - schema:
-          type: string
-        name: connectionId
-        in: path
-        required: true
-        description: Connection ID
   '/llu/connections/{patientId}/logbook':
     get:
       summary: Get Logbook
@@ -2619,34 +2528,7 @@ paths:
                   data:
                     type: array
                     items:
-                      type: object
-                      properties:
-                        FactoryTimestamp:
-                          type: string
-                        Timestamp:
-                          type: string
-                        type:
-                          type: integer
-                        ValueInMgPerDl:
-                          type: integer
-                        TrendArrow:
-                          type: integer
-                        TrendMessage:
-                          type: 'null'
-                        MeasurementColor:
-                          type: integer
-                        GlucoseUnits:
-                          type: integer
-                        Value:
-                          type:
-                            - integer
-                            - number
-                        isHigh:
-                          type: boolean
-                        isLow:
-                          type: boolean
-                        alarmType:
-                          type: integer
+                      $ref: '#/components/schemas/LogbookData'
                   ticket:
                     $ref: '#/components/schemas/Ticket'
       operationId: 'get-llu-connections-:id-logbook'
@@ -2661,6 +2543,97 @@ paths:
         in: path
         required: true
         description: Patient ID
+  '/llu/notifications/settings/{connectionId}':
+    get:
+      summary: Get Notificiation Settings for Connection
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  Example 1:
+                    status: 0
+                    data:
+                      connectionId: ':censored:'
+                      alarmRules:
+                        c: true
+                        h:
+                          'on': true
+                          th: 250
+                          thmm: 13.9
+                          d: 1440
+                          f: 0.1
+                        f:
+                          th: 55
+                          thmm: 3
+                          d: 30
+                          tl: 10
+                          tlmm: 0.6
+                        l:
+                          'on': true
+                          th: 70
+                          thmm: 3.9
+                          d: 1440
+                          tl: 10
+                          tlmm: 0.6
+                        nd:
+                          'on': true
+                          i: 20
+                          r: 5
+                          l: 6
+                        p: 5
+                        r: 5
+                        std: {}
+                      std: {}
+                      patientDevice:
+                        did: ':censored:'
+                        dtid: 40068
+                        v: 3.4.0.7368
+                        l: true
+                        ll: 70
+                        h: true
+                        hl: 250
+                        u: 1685217954
+                        fixedLowAlarmValues:
+                          mgdl: 60
+                          mmoll: 3.3
+                        alarms: false
+                        fixedLowThreshold: 0
+                    ticket:
+                      token: ':censored:'
+                      expires: 1702366476
+                      duration: 15552000000
+                properties:
+                  status:
+                    type: integer
+                  data:
+                    type: object
+                    properties:
+                      connectionId:
+                        type: string
+                      alarmRules:
+                        $ref: '#/components/schemas/AlarmRules'
+                      std:
+                        type: object
+                      patientDevice:
+                        $ref: '#/components/schemas/PatientDevice'
+                  ticket:
+                    $ref: '#/components/schemas/Ticket'
+      operationId: 'get-llu-connections-settings-:connectionId'
+      description: Get Logbook.
+      parameters:
+        - $ref: '#/components/parameters/Product'
+        - $ref: '#/components/parameters/Version'
+    parameters:
+      - schema:
+          type: string
+        name: connectionId
+        in: path
+        required: true
+        description: Connection ID
   /llu/config/country:
     get:
       summary: Get Config
@@ -4165,6 +4138,20 @@ components:
               x-stoplight:
                 id: e2eqjvq9paevf
               type: string
+    LogbookData:
+      title: LogbookData
+      x-stoplight:
+        id: dat5xcfxi65y2
+      allOf:
+        - $ref: '#/components/schemas/Glucose'
+        - type: object
+          x-stoplight:
+            id: 5opdptjzwdbb1
+          properties:
+            alarmType:
+              type: integer
+              x-stoplight:
+                id: o9uhswf2cnbdq
   securitySchemes:
     token:
       type: http
