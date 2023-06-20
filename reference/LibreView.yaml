@@ -5101,6 +5101,13 @@ components:
       x-stoplight:
         id: 7w4jtjt1g4zz3
       description: User data.
+      allOf:
+        - $ref: '#/components/schemas/AccountUserData'
+          x-stoplight:
+            id: wv7g0em57lgnw
+        - $ref: '#/components/schemas/UserAdditionalData'
+          x-stoplight:
+            id: yd2qqi6e9d4lc
     UserAdditionalData:
       type: object
       properties:
@@ -5262,7 +5269,7 @@ components:
                 type: object
                 properties:
                   user:
-                    $ref: '#/components/schemas/User'
+                    $ref: '#/components/schemas/UserData'
                     x-stoplight:
                       id: mzvt7kv64ker9
                   messages:
