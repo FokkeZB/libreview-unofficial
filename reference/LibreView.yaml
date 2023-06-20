@@ -18,14 +18,16 @@ externalDocs:
   url: 'https://libreview-unofficial.stoplight.io/'
   description: Stoplight documentation
 servers:
-  - url: 'https://api-{region}.libreview.io'
+  - url: 'https://api.libreview.io'
     description: Live Server
+  - url: 'https://api-{region}.libreview.io'
+    description: Live Regional Server
     variables:
       region:
         default: us
         description: Regional API to use.
   - url: 'https://libreview-proxy.onrender.com/{region}'
-    description: Proxy Server
+    description: Proxy Regional Server
     variables:
       region:
         default: us
