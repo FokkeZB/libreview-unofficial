@@ -1636,265 +1636,20 @@ paths:
                     type: object
                     properties:
                       connection:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                          patientId:
-                            type: string
-                          country:
-                            type: string
-                          status:
-                            type: integer
-                          firstName:
-                            type: string
-                          lastName:
-                            type: string
-                          targetLow:
-                            type: integer
-                          targetHigh:
-                            type: integer
-                          uom:
-                            type: integer
-                          sensor:
-                            type: object
-                            properties:
-                              deviceId:
-                                type: string
-                              sn:
-                                type: string
-                              a:
-                                type: integer
-                              w:
-                                type: integer
-                              pt:
-                                type: integer
-                              s:
-                                type: boolean
-                              lj:
-                                type: boolean
-                          alarmRules:
-                            type: object
-                            properties:
-                              c:
-                                type: boolean
-                              h:
-                                type: object
-                                properties:
-                                  'on':
-                                    type: boolean
-                                  th:
-                                    type: integer
-                                  thmm:
-                                    type: number
-                                  d:
-                                    type: integer
-                                  f:
-                                    type: number
-                              f:
-                                type: object
-                                properties:
-                                  th:
-                                    type: integer
-                                  thmm:
-                                    type: integer
-                                  d:
-                                    type: integer
-                                  tl:
-                                    type: integer
-                                  tlmm:
-                                    type: number
-                              l:
-                                type: object
-                                properties:
-                                  'on':
-                                    type: boolean
-                                  th:
-                                    type: integer
-                                  thmm:
-                                    type: number
-                                  d:
-                                    type: integer
-                                  tl:
-                                    type: integer
-                                  tlmm:
-                                    type: number
-                              nd:
-                                type: object
-                                properties:
-                                  'on':
-                                    type: boolean
-                                  i:
-                                    type: integer
-                                  r:
-                                    type: integer
-                                  l:
-                                    type: integer
-                              p:
-                                type: integer
-                              r:
-                                type: integer
-                              std:
-                                type: object
-                          glucoseMeasurement:
-                            type: object
-                            properties:
-                              FactoryTimestamp:
-                                type: string
-                              Timestamp:
-                                type: string
-                              type:
-                                type: integer
-                              ValueInMgPerDl:
-                                type: integer
-                              TrendArrow:
-                                type: integer
-                              TrendMessage:
-                                type: 'null'
-                              MeasurementColor:
-                                type: integer
-                              GlucoseUnits:
-                                type: integer
-                              Value:
-                                type: number
-                              isHigh:
-                                type: boolean
-                              isLow:
-                                type: boolean
-                          glucoseItem:
-                            type: object
-                            properties:
-                              FactoryTimestamp:
-                                type: string
-                              Timestamp:
-                                type: string
-                              type:
-                                type: integer
-                              ValueInMgPerDl:
-                                type: integer
-                              TrendArrow:
-                                type: integer
-                              TrendMessage:
-                                type: 'null'
-                              MeasurementColor:
-                                type: integer
-                              GlucoseUnits:
-                                type: integer
-                              Value:
-                                type: number
-                              isHigh:
-                                type: boolean
-                              isLow:
-                                type: boolean
-                          glucoseAlarm:
-                            type: 'null'
-                          patientDevice:
-                            type: object
-                            properties:
-                              did:
-                                type: string
-                              dtid:
-                                type: integer
-                              v:
-                                type: string
-                              l:
-                                type: boolean
-                              ll:
-                                type: integer
-                              h:
-                                type: boolean
-                              hl:
-                                type: integer
-                              u:
-                                type: integer
-                              fixedLowAlarmValues:
-                                type: object
-                                properties:
-                                  mgdl:
-                                    type: integer
-                                  mmoll:
-                                    type: number
-                              alarms:
-                                type: boolean
-                              fixedLowThreshold:
-                                type: integer
-                          created:
-                            type: integer
+                        $ref: '#/components/schemas/Connection'
                       activeSensors:
                         type: array
                         items:
                           type: object
                           properties:
                             sensor:
-                              type: object
-                              properties:
-                                deviceId:
-                                  type: string
-                                sn:
-                                  type: string
-                                a:
-                                  type: integer
-                                w:
-                                  type: integer
-                                pt:
-                                  type: integer
-                                s:
-                                  type: boolean
-                                lj:
-                                  type: boolean
+                              $ref: '#/components/schemas/Sensor'
                             device:
-                              type: object
-                              properties:
-                                did:
-                                  type: string
-                                dtid:
-                                  type: integer
-                                v:
-                                  type: string
-                                l:
-                                  type: boolean
-                                ll:
-                                  type: integer
-                                h:
-                                  type: boolean
-                                hl:
-                                  type: integer
-                                u:
-                                  type: integer
-                                fixedLowAlarmValues:
-                                  type: object
-                                  properties:
-                                    mgdl:
-                                      type: integer
-                                    mmoll:
-                                      type: number
-                                alarms:
-                                  type: boolean
-                                fixedLowThreshold:
-                                  type: integer
+                              $ref: '#/components/schemas/PatientDevice'
                       graphData:
                         type: array
                         items:
-                          type: object
-                          properties:
-                            FactoryTimestamp:
-                              type: string
-                            Timestamp:
-                              type: string
-                            type:
-                              type: integer
-                            ValueInMgPerDl:
-                              type: integer
-                            MeasurementColor:
-                              type: integer
-                            GlucoseUnits:
-                              type: integer
-                            Value:
-                              type: number
-                            isHigh:
-                              type: boolean
-                            isLow:
-                              type: boolean
+                          $ref: '#/components/schemas/GraphData'
                   ticket:
                     $ref: '#/components/schemas/Ticket'
       operationId: 'get-llu-connections-:id-graph'
@@ -1923,884 +1678,69 @@ paths:
                   Example 1:
                     status: 0
                     data:
-                      - FactoryTimestamp: '6/19/2023 10:49:13 PM'
-                        Timestamp: '6/20/2023 12:49:13 AM'
-                        type: 3
-                        ValueInMgPerDl: 252
-                        TrendArrow: 5
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 14
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/19/2023 8:40:12 PM'
-                        Timestamp: '6/19/2023 10:40:12 PM'
-                        type: 3
-                        ValueInMgPerDl: 53
-                        TrendArrow: 1
-                        TrendMessage: null
-                        MeasurementColor: 4
-                        GlucoseUnits: 0
-                        Value: 2.9
-                        isHigh: false
-                        isLow: false
-                        alarmType: 1
-                      - FactoryTimestamp: '6/19/2023 8:35:13 PM'
-                        Timestamp: '6/19/2023 10:35:13 PM'
-                        type: 3
-                        ValueInMgPerDl: 55
-                        TrendArrow: 1
-                        TrendMessage: null
-                        MeasurementColor: 4
-                        GlucoseUnits: 0
-                        Value: 3.1
-                        isHigh: false
-                        isLow: false
-                        alarmType: 1
-                      - FactoryTimestamp: '6/19/2023 8:30:12 PM'
-                        Timestamp: '6/19/2023 10:30:12 PM'
-                        type: 3
-                        ValueInMgPerDl: 67
-                        TrendArrow: 1
-                        TrendMessage: null
-                        MeasurementColor: 4
-                        GlucoseUnits: 0
-                        Value: 3.7
-                        isHigh: false
-                        isLow: false
-                        alarmType: 1
-                      - FactoryTimestamp: '6/19/2023 8:29:14 PM'
-                        Timestamp: '6/19/2023 10:29:14 PM'
-                        type: 3
-                        ValueInMgPerDl: 69
-                        TrendArrow: 1
-                        TrendMessage: null
-                        MeasurementColor: 4
-                        GlucoseUnits: 0
-                        Value: 3.8
-                        isHigh: false
-                        isLow: false
-                        alarmType: 1
-                      - FactoryTimestamp: '6/19/2023 7:19:12 PM'
-                        Timestamp: '6/19/2023 9:19:12 PM'
-                        type: 3
-                        ValueInMgPerDl: 253
-                        TrendArrow: 4
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 14.1
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/19/2023 3:22:14 PM'
-                        Timestamp: '6/19/2023 5:22:14 PM'
-                        type: 3
-                        ValueInMgPerDl: 69
-                        TrendArrow: 2
-                        TrendMessage: null
-                        MeasurementColor: 4
-                        GlucoseUnits: 0
-                        Value: 3.8
-                        isHigh: false
-                        isLow: false
-                        alarmType: 1
-                      - FactoryTimestamp: '6/19/2023 12:25:14 PM'
-                        Timestamp: '6/19/2023 2:25:14 PM'
-                        type: 3
-                        ValueInMgPerDl: 258
-                        TrendArrow: 5
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 14.3
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/19/2023 12:24:25 PM'
-                        Timestamp: '6/19/2023 2:24:25 PM'
-                        type: 3
-                        ValueInMgPerDl: 258
-                        TrendArrow: 5
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 14.3
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/19/2023 9:52:13 AM'
-                        Timestamp: '6/19/2023 11:52:13 AM'
-                        type: 3
-                        ValueInMgPerDl: 252
-                        TrendArrow: 3
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 14
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/19/2023 7:05:13 AM'
-                        Timestamp: '6/19/2023 9:05:13 AM'
-                        type: 3
-                        ValueInMgPerDl: 254
-                        TrendArrow: 5
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 14.1
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/19/2023 7:03:14 AM'
-                        Timestamp: '6/19/2023 9:03:14 AM'
-                        type: 3
-                        ValueInMgPerDl: 259
-                        TrendArrow: 5
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 14.4
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/18/2023 8:30:13 PM'
-                        Timestamp: '6/18/2023 10:30:13 PM'
-                        type: 3
-                        ValueInMgPerDl: 257
-                        TrendArrow: 4
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 14.3
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/18/2023 8:26:14 PM'
-                        Timestamp: '6/18/2023 10:26:14 PM'
-                        type: 3
-                        ValueInMgPerDl: 254
-                        TrendArrow: 5
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 14.1
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/18/2023 4:08:16 PM'
-                        Timestamp: '6/18/2023 6:08:16 PM'
-                        type: 3
-                        ValueInMgPerDl: 271
-                        TrendArrow: 3
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 15.1
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/18/2023 7:30:16 AM'
-                        Timestamp: '6/18/2023 9:30:16 AM'
-                        type: 3
-                        ValueInMgPerDl: 271
-                        TrendArrow: 5
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 15.1
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/18/2023 7:25:16 AM'
-                        Timestamp: '6/18/2023 9:25:16 AM'
-                        type: 3
-                        ValueInMgPerDl: 260
-                        TrendArrow: 5
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 14.4
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/18/2023 7:22:14 AM'
-                        Timestamp: '6/18/2023 9:22:14 AM'
-                        type: 3
-                        ValueInMgPerDl: 254
-                        TrendArrow: 5
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 14.1
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/17/2023 10:20:16 PM'
-                        Timestamp: '6/18/2023 12:20:16 AM'
-                        type: 3
-                        ValueInMgPerDl: 253
-                        TrendArrow: 3
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 14.1
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/17/2023 7:40:15 PM'
-                        Timestamp: '6/17/2023 9:40:15 PM'
-                        type: 3
-                        ValueInMgPerDl: 256
-                        TrendArrow: 4
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 14.2
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/17/2023 11:46:16 AM'
-                        Timestamp: '6/17/2023 1:46:16 PM'
-                        type: 3
-                        ValueInMgPerDl: 252
-                        TrendArrow: 4
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 14
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/16/2023 6:55:18 PM'
-                        Timestamp: '6/16/2023 8:55:18 PM'
-                        type: 3
-                        ValueInMgPerDl: 253
-                        TrendArrow: 4
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 14.1
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/16/2023 6:53:18 PM'
-                        Timestamp: '6/16/2023 8:53:18 PM'
-                        type: 3
-                        ValueInMgPerDl: 252
-                        TrendArrow: 4
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 14
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/16/2023 2:25:19 PM'
-                        Timestamp: '6/16/2023 4:25:19 PM'
-                        type: 3
-                        ValueInMgPerDl: 264
-                        TrendArrow: 4
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 14.7
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/16/2023 2:22:28 PM'
-                        Timestamp: '6/16/2023 4:22:28 PM'
-                        type: 3
-                        ValueInMgPerDl: 270
-                        TrendArrow: 5
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 15
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/16/2023 7:30:34 AM'
-                        Timestamp: '6/16/2023 9:30:34 AM'
-                        type: 3
-                        ValueInMgPerDl: 256
-                        TrendArrow: 4
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 14.2
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/15/2023 6:25:20 PM'
-                        Timestamp: '6/15/2023 8:25:20 PM'
-                        type: 3
-                        ValueInMgPerDl: 261
-                        TrendArrow: 4
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 14.5
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/15/2023 6:20:20 PM'
-                        Timestamp: '6/15/2023 8:20:20 PM'
-                        type: 3
-                        ValueInMgPerDl: 255
-                        TrendArrow: 4
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 14.2
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/15/2023 4:50:20 PM'
-                        Timestamp: '6/15/2023 6:50:20 PM'
-                        type: 3
-                        ValueInMgPerDl: 310
-                        TrendArrow: 3
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 17.2
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/15/2023 3:51:31 PM'
-                        Timestamp: '6/15/2023 5:51:31 PM'
-                        type: 3
-                        ValueInMgPerDl: 68
-                        TrendArrow: 3
-                        TrendMessage: null
-                        MeasurementColor: 4
-                        GlucoseUnits: 0
-                        Value: 3.8
-                        isHigh: false
-                        isLow: false
-                        alarmType: 1
-                      - FactoryTimestamp: '6/15/2023 3:49:29 PM'
-                        Timestamp: '6/15/2023 5:49:29 PM'
-                        type: 3
-                        ValueInMgPerDl: 67
-                        TrendArrow: 3
-                        TrendMessage: null
-                        MeasurementColor: 4
-                        GlucoseUnits: 0
-                        Value: 3.7
-                        isHigh: false
-                        isLow: false
-                        alarmType: 1
-                      - FactoryTimestamp: '6/15/2023 3:48:20 PM'
-                        Timestamp: '6/15/2023 5:48:20 PM'
-                        type: 3
-                        ValueInMgPerDl: 68
-                        TrendArrow: 3
-                        TrendMessage: null
-                        MeasurementColor: 4
-                        GlucoseUnits: 0
-                        Value: 3.8
-                        isHigh: false
-                        isLow: false
-                        alarmType: 1
-                      - FactoryTimestamp: '6/15/2023 11:01:32 AM'
-                        Timestamp: '6/15/2023 1:01:32 PM'
-                        type: 3
-                        ValueInMgPerDl: 254
-                        TrendArrow: 4
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 14.1
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/15/2023 10:57:31 AM'
-                        Timestamp: '6/15/2023 12:57:31 PM'
-                        type: 3
-                        ValueInMgPerDl: 256
-                        TrendArrow: 4
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 14.2
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/15/2023 7:19:22 AM'
-                        Timestamp: '6/15/2023 9:19:22 AM'
-                        type: 3
-                        ValueInMgPerDl: 256
-                        TrendArrow: 4
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 14.2
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/14/2023 8:40:24 AM'
-                        Timestamp: '6/14/2023 10:40:24 AM'
-                        type: 3
-                        ValueInMgPerDl: 265
-                        TrendArrow: 5
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 14.7
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/14/2023 8:35:24 AM'
-                        Timestamp: '6/14/2023 10:35:24 AM'
-                        type: 3
-                        ValueInMgPerDl: 254
-                        TrendArrow: 4
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 14.1
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/13/2023 5:59:25 PM'
-                        Timestamp: '6/13/2023 7:59:25 PM'
-                        type: 3
-                        ValueInMgPerDl: 252
-                        TrendArrow: 4
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 14
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/13/2023 4:03:25 PM'
-                        Timestamp: '6/13/2023 6:03:25 PM'
-                        type: 3
-                        ValueInMgPerDl: 291
-                        TrendArrow: 5
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 16.2
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/13/2023 12:24:28 PM'
-                        Timestamp: '6/13/2023 2:24:28 PM'
-                        type: 3
-                        ValueInMgPerDl: 252
-                        TrendArrow: 5
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 14
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/13/2023 9:59:28 AM'
-                        Timestamp: '6/13/2023 11:59:28 AM'
-                        type: 3
-                        ValueInMgPerDl: 69
-                        TrendArrow: 3
-                        TrendMessage: null
-                        MeasurementColor: 4
-                        GlucoseUnits: 0
-                        Value: 3.8
-                        isHigh: false
-                        isLow: false
-                        alarmType: 1
-                      - FactoryTimestamp: '6/13/2023 2:38:29 AM'
-                        Timestamp: '6/13/2023 4:38:29 AM'
-                        type: 3
-                        ValueInMgPerDl: 68
-                        TrendArrow: 3
-                        TrendMessage: null
-                        MeasurementColor: 4
-                        GlucoseUnits: 0
-                        Value: 3.8
-                        isHigh: false
-                        isLow: false
-                        alarmType: 1
-                      - FactoryTimestamp: '6/12/2023 4:48:29 PM'
-                        Timestamp: '6/12/2023 6:48:29 PM'
-                        type: 3
-                        ValueInMgPerDl: 255
-                        TrendArrow: 5
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 14.2
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/12/2023 2:53:39 PM'
-                        Timestamp: '6/12/2023 4:53:39 PM'
-                        type: 3
-                        ValueInMgPerDl: 67
-                        TrendArrow: 2
-                        TrendMessage: null
-                        MeasurementColor: 4
-                        GlucoseUnits: 0
-                        Value: 3.7
-                        isHigh: false
-                        isLow: false
-                        alarmType: 1
-                      - FactoryTimestamp: '6/12/2023 6:46:32 AM'
-                        Timestamp: '6/12/2023 8:46:32 AM'
-                        type: 3
-                        ValueInMgPerDl: 252
-                        TrendArrow: 5
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 14
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/11/2023 7:37:34 PM'
-                        Timestamp: '6/11/2023 9:37:34 PM'
-                        type: 3
-                        ValueInMgPerDl: 68
-                        TrendArrow: 1
-                        TrendMessage: null
-                        MeasurementColor: 4
-                        GlucoseUnits: 0
-                        Value: 3.8
-                        isHigh: false
-                        isLow: false
-                        alarmType: 1
-                      - FactoryTimestamp: '6/11/2023 6:20:58 PM'
-                        Timestamp: '6/11/2023 8:20:58 PM'
-                        type: 3
-                        ValueInMgPerDl: 57
-                        TrendArrow: 2
-                        TrendMessage: null
-                        MeasurementColor: 4
-                        GlucoseUnits: 0
-                        Value: 3.2
-                        isHigh: false
-                        isLow: false
-                        alarmType: 1
-                      - FactoryTimestamp: '6/11/2023 3:54:45 PM'
-                        Timestamp: '6/11/2023 5:54:45 PM'
-                        type: 3
-                        ValueInMgPerDl: 260
-                        TrendArrow: 3
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 14.4
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/11/2023 8:33:35 AM'
-                        Timestamp: '6/11/2023 10:33:35 AM'
-                        type: 3
-                        ValueInMgPerDl: 65
-                        TrendArrow: 3
-                        TrendMessage: null
-                        MeasurementColor: 4
-                        GlucoseUnits: 0
-                        Value: 3.6
-                        isHigh: false
-                        isLow: false
-                        alarmType: 1
-                      - FactoryTimestamp: '6/10/2023 10:08:35 PM'
-                        Timestamp: '6/11/2023 12:08:35 AM'
-                        type: 3
-                        ValueInMgPerDl: 252
-                        TrendArrow: 3
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 14
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/10/2023 11:59:48 AM'
-                        Timestamp: '6/10/2023 1:59:48 PM'
-                        type: 3
-                        ValueInMgPerDl: 61
-                        TrendArrow: 2
-                        TrendMessage: null
-                        MeasurementColor: 4
-                        GlucoseUnits: 0
-                        Value: 3.4
-                        isHigh: false
-                        isLow: false
-                        alarmType: 1
-                      - FactoryTimestamp: '6/9/2023 8:08:38 PM'
-                        Timestamp: '6/9/2023 10:08:38 PM'
-                        type: 3
-                        ValueInMgPerDl: 69
-                        TrendArrow: 2
-                        TrendMessage: null
-                        MeasurementColor: 4
-                        GlucoseUnits: 0
-                        Value: 3.8
-                        isHigh: false
-                        isLow: false
-                        alarmType: 1
-                      - FactoryTimestamp: '6/9/2023 2:28:47 PM'
-                        Timestamp: '6/9/2023 4:28:47 PM'
-                        type: 3
-                        ValueInMgPerDl: 65
-                        TrendArrow: 1
-                        TrendMessage: null
-                        MeasurementColor: 4
-                        GlucoseUnits: 0
-                        Value: 3.6
-                        isHigh: false
-                        isLow: false
-                        alarmType: 1
-                      - FactoryTimestamp: '6/9/2023 10:35:37 AM'
-                        Timestamp: '6/9/2023 12:35:37 PM'
-                        type: 3
-                        ValueInMgPerDl: 254
-                        TrendArrow: 5
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 14.1
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/9/2023 7:18:38 AM'
-                        Timestamp: '6/9/2023 9:18:38 AM'
-                        type: 3
-                        ValueInMgPerDl: 252
-                        TrendArrow: 5
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 14
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/9/2023 3:10:37 AM'
-                        Timestamp: '6/9/2023 5:10:37 AM'
-                        type: 3
-                        ValueInMgPerDl: 68
-                        TrendArrow: 3
-                        TrendMessage: null
-                        MeasurementColor: 4
-                        GlucoseUnits: 0
-                        Value: 3.8
-                        isHigh: false
-                        isLow: false
-                        alarmType: 1
-                      - FactoryTimestamp: '6/8/2023 8:33:38 PM'
-                        Timestamp: '6/8/2023 10:33:38 PM'
-                        type: 3
-                        ValueInMgPerDl: 69
-                        TrendArrow: 1
-                        TrendMessage: null
-                        MeasurementColor: 4
-                        GlucoseUnits: 0
-                        Value: 3.8
-                        isHigh: false
-                        isLow: false
-                        alarmType: 1
-                      - FactoryTimestamp: '6/8/2023 6:21:38 PM'
-                        Timestamp: '6/8/2023 8:21:38 PM'
-                        type: 3
-                        ValueInMgPerDl: 254
-                        TrendArrow: 5
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 14.1
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/8/2023 6:47:39 AM'
-                        Timestamp: '6/8/2023 8:47:39 AM'
-                        type: 3
-                        ValueInMgPerDl: 252
-                        TrendArrow: 5
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 14
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/8/2023 12:27:41 AM'
-                        Timestamp: '6/8/2023 2:27:41 AM'
-                        type: 3
-                        ValueInMgPerDl: 69
-                        TrendArrow: 2
-                        TrendMessage: null
-                        MeasurementColor: 4
-                        GlucoseUnits: 0
-                        Value: 3.8
-                        isHigh: false
-                        isLow: false
-                        alarmType: 1
-                      - FactoryTimestamp: '6/7/2023 4:18:17 PM'
-                        Timestamp: '6/7/2023 6:18:17 PM'
-                        type: 3
-                        ValueInMgPerDl: 69
-                        TrendArrow: 1
-                        TrendMessage: null
-                        MeasurementColor: 4
-                        GlucoseUnits: 0
-                        Value: 3.8
-                        isHigh: false
-                        isLow: false
-                        alarmType: 1
-                      - FactoryTimestamp: '6/7/2023 1:04:17 PM'
-                        Timestamp: '6/7/2023 3:04:17 PM'
-                        type: 3
-                        ValueInMgPerDl: 57
-                        TrendArrow: 1
-                        TrendMessage: null
-                        MeasurementColor: 4
-                        GlucoseUnits: 0
-                        Value: 3.2
-                        isHigh: false
-                        isLow: false
-                        alarmType: 1
-                      - FactoryTimestamp: '6/7/2023 11:29:26 AM'
-                        Timestamp: '6/7/2023 1:29:26 PM'
-                        type: 3
-                        ValueInMgPerDl: 303
-                        TrendArrow: 1
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 16.8
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/7/2023 4:19:18 AM'
-                        Timestamp: '6/7/2023 6:19:18 AM'
-                        type: 3
-                        ValueInMgPerDl: 67
-                        TrendArrow: 3
-                        TrendMessage: null
-                        MeasurementColor: 4
-                        GlucoseUnits: 0
-                        Value: 3.7
-                        isHigh: false
-                        isLow: false
-                        alarmType: 1
-                      - FactoryTimestamp: '6/6/2023 10:44:17 PM'
-                        Timestamp: '6/7/2023 12:44:17 AM'
-                        type: 3
-                        ValueInMgPerDl: 254
-                        TrendArrow: 3
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 14.1
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/6/2023 6:20:18 PM'
-                        Timestamp: '6/6/2023 8:20:18 PM'
-                        type: 3
-                        ValueInMgPerDl: 256
-                        TrendArrow: 5
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 14.2
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/6/2023 1:32:18 PM'
-                        Timestamp: '6/6/2023 3:32:18 PM'
-                        type: 3
-                        ValueInMgPerDl: 254
-                        TrendArrow: 5
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 14.1
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/6/2023 12:02:17 PM'
-                        Timestamp: '6/6/2023 2:02:17 PM'
-                        type: 3
-                        ValueInMgPerDl: 69
-                        TrendArrow: 3
-                        TrendMessage: null
-                        MeasurementColor: 4
-                        GlucoseUnits: 0
-                        Value: 3.8
-                        isHigh: false
-                        isLow: false
-                        alarmType: 1
-                      - FactoryTimestamp: '6/6/2023 10:11:28 AM'
-                        Timestamp: '6/6/2023 12:11:28 PM'
-                        type: 3
-                        ValueInMgPerDl: 254
-                        TrendArrow: 4
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 14.1
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
-                      - FactoryTimestamp: '6/6/2023 8:20:18 AM'
-                        Timestamp: '6/6/2023 10:20:18 AM'
-                        type: 3
-                        ValueInMgPerDl: 253
-                        TrendArrow: 4
-                        TrendMessage: null
-                        MeasurementColor: 3
-                        GlucoseUnits: 0
-                        Value: 14.1
-                        isHigh: false
-                        isLow: false
-                        alarmType: 2
+                      connectionId: ':censored:'
+                      alarmRules:
+                        c: true
+                        h:
+                          'on': true
+                          th: 250
+                          thmm: 13.9
+                          d: 1440
+                          f: 0.1
+                        f:
+                          th: 55
+                          thmm: 3
+                          d: 30
+                          tl: 10
+                          tlmm: 0.6
+                        l:
+                          'on': true
+                          th: 70
+                          thmm: 3.9
+                          d: 1440
+                          tl: 10
+                          tlmm: 0.6
+                        nd:
+                          'on': true
+                          i: 20
+                          r: 5
+                          l: 6
+                        p: 5
+                        r: 5
+                        std: {}
+                      std: {}
+                      patientDevice:
+                        did: ':censored:'
+                        dtid: 40068
+                        v: 3.4.0.7368
+                        l: true
+                        ll: 70
+                        h: true
+                        hl: 250
+                        u: 1685217954
+                        fixedLowAlarmValues:
+                          mgdl: 60
+                          mmoll: 3.3
+                        alarms: false
+                        fixedLowThreshold: 0
                     ticket:
-                      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFmZDU1MTRjLTgzNDUtMTFlYi05ZmJjLTAyNDJhYzExMDAwMyIsImZpcnN0TmFtZSI6IkZva2tlIiwibGFzdE5hbWUiOiJaYW5kYmVyZ2VuIiwiY291bnRyeSI6Ik5MIiwicmVnaW9uIjoiZXUiLCJyb2xlIjoicGF0aWVudCIsInVuaXRzIjowLCJwcmFjdGljZXMiOltdLCJjIjoxLCJzIjoibGx1LmFuZHJvaWQiLCJleHAiOjE3MDI3ODg1MjF9.nis36NR9XlZBwNgpm-7ZTxCEE5s53xZ0oCIy2olEKPA
-                      expires: 1702788521
+                      token: ':censored:'
+                      expires: 1702366476
                       duration: 15552000000
                 properties:
                   status:
                     type: integer
                   data:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        FactoryTimestamp:
-                          type: string
-                        Timestamp:
-                          type: string
-                        type:
-                          type: integer
-                        ValueInMgPerDl:
-                          type: integer
-                        TrendArrow:
-                          type: integer
-                        TrendMessage:
-                          type: 'null'
-                        MeasurementColor:
-                          type: integer
-                        GlucoseUnits:
-                          type: integer
-                        Value:
-                          type:
-                            - integer
-                            - number
-                        isHigh:
-                          type: boolean
-                        isLow:
-                          type: boolean
-                        alarmType:
-                          type: integer
+                    type: object
+                    properties:
+                      connectionId:
+                        type: string
+                      alarmRules:
+                        $ref: '#/components/schemas/AlarmRules'
+                      std:
+                        type: object
+                      patientDevice:
+                        $ref: '#/components/schemas/PatientDevice'
                   ticket:
                     $ref: '#/components/schemas/Ticket'
       operationId: 'get-llu-connections-settings-:connectionId'
@@ -4700,190 +3640,6 @@ components:
   schemas:
     Connection:
       type: object
-      properties:
-        id:
-          type: string
-        patientId:
-          type: string
-        country:
-          type: string
-        status:
-          type: integer
-        firstName:
-          type: string
-        lastName:
-          type: string
-        targetLow:
-          type: integer
-        targetHigh:
-          type: integer
-        uom:
-          type: integer
-        sensor:
-          type: object
-          properties:
-            deviceId:
-              type: string
-            sn:
-              type: string
-            a:
-              type: integer
-            w:
-              type: integer
-            pt:
-              type: integer
-            s:
-              type: boolean
-            lj:
-              type: boolean
-        alarmRules:
-          type: object
-          properties:
-            c:
-              type: boolean
-            h:
-              type: object
-              properties:
-                'on':
-                  type: boolean
-                th:
-                  type: integer
-                thmm:
-                  type: number
-                d:
-                  type: integer
-                f:
-                  type: number
-            f:
-              type: object
-              properties:
-                th:
-                  type: integer
-                thmm:
-                  type: integer
-                d:
-                  type: integer
-                tl:
-                  type: integer
-                tlmm:
-                  type: number
-            l:
-              type: object
-              properties:
-                'on':
-                  type: boolean
-                th:
-                  type: integer
-                thmm:
-                  type: number
-                d:
-                  type: integer
-                tl:
-                  type: integer
-                tlmm:
-                  type: number
-            nd:
-              type: object
-              properties:
-                'on':
-                  type: boolean
-                i:
-                  type: integer
-                r:
-                  type: integer
-                l:
-                  type: integer
-            p:
-              type: integer
-            r:
-              type: integer
-            std:
-              type: object
-              properties: {}
-        glucoseMeasurement:
-          type: object
-          properties:
-            FactoryTimestamp:
-              type: string
-            Timestamp:
-              type: string
-            type:
-              type: integer
-            ValueInMgPerDl:
-              type: integer
-            TrendArrow:
-              type: integer
-            TrendMessage:
-              type: 'null'
-            MeasurementColor:
-              type: integer
-            GlucoseUnits:
-              type: integer
-            Value:
-              type: number
-            isHigh:
-              type: boolean
-            isLow:
-              type: boolean
-        glucoseItem:
-          type: object
-          properties:
-            FactoryTimestamp:
-              type: string
-            Timestamp:
-              type: string
-            type:
-              type: integer
-            ValueInMgPerDl:
-              type: integer
-            TrendArrow:
-              type: integer
-            TrendMessage:
-              type: 'null'
-            MeasurementColor:
-              type: integer
-            GlucoseUnits:
-              type: integer
-            Value:
-              type: number
-            isHigh:
-              type: boolean
-            isLow:
-              type: boolean
-        glucoseAlarm:
-          type: 'null'
-        patientDevice:
-          type: object
-          properties:
-            did:
-              type: string
-            dtid:
-              type: integer
-            v:
-              type: string
-            l:
-              type: boolean
-            ll:
-              type: integer
-            h:
-              type: boolean
-            hl:
-              type: integer
-            u:
-              type: integer
-            fixedLowAlarmValues:
-              type: object
-              properties:
-                mgdl:
-                  type: integer
-                mmoll:
-                  type: number
-            alarms:
-              type: boolean
-            fixedLowThreshold:
-              type: integer
-        created:
-          type: integer
       x-examples:
         Example 1:
           id: ':censored:'
@@ -4972,6 +3728,39 @@ components:
             alarms: false
             fixedLowThreshold: 0
           created: 1615562007
+      properties:
+        id:
+          type: string
+        patientId:
+          type: string
+        country:
+          type: string
+        status:
+          type: integer
+        firstName:
+          type: string
+        lastName:
+          type: string
+        targetLow:
+          type: integer
+        targetHigh:
+          type: integer
+        uom:
+          type: integer
+        sensor:
+          $ref: '#/components/schemas/Sensor'
+        alarmRules:
+          $ref: '#/components/schemas/AlarmRules'
+        glucoseMeasurement:
+          $ref: '#/components/schemas/Glucose'
+        glucoseItem:
+          $ref: '#/components/schemas/Glucose'
+        glucoseAlarm:
+          type: 'null'
+        patientDevice:
+          $ref: '#/components/schemas/PatientDevice'
+        created:
+          type: integer
     Ticket:
       type: object
       properties:
@@ -5161,6 +3950,221 @@ components:
               touAccept: 0
               history:
                 - policyAccept: 1624365806
+    AlarmRules:
+      type: object
+      properties:
+        c:
+          type: boolean
+        h:
+          type: object
+          properties:
+            'on':
+              type: boolean
+            th:
+              type: integer
+            thmm:
+              type: number
+            d:
+              type: integer
+            f:
+              type: number
+        f:
+          type: object
+          properties:
+            th:
+              type: integer
+            thmm:
+              type: integer
+            d:
+              type: integer
+            tl:
+              type: integer
+            tlmm:
+              type: number
+        l:
+          type: object
+          properties:
+            'on':
+              type: boolean
+            th:
+              type: integer
+            thmm:
+              type: number
+            d:
+              type: integer
+            tl:
+              type: integer
+            tlmm:
+              type: number
+        nd:
+          type: object
+          properties:
+            'on':
+              type: boolean
+            i:
+              type: integer
+            r:
+              type: integer
+            l:
+              type: integer
+        p:
+          type: integer
+        r:
+          type: integer
+        std:
+          type: object
+          properties: {}
+      x-examples:
+        Example 1:
+          c: true
+          h:
+            'on': true
+            th: 250
+            thmm: 13.9
+            d: 1440
+            f: 0.1
+          f:
+            th: 55
+            thmm: 3
+            d: 30
+            tl: 10
+            tlmm: 0.6
+          l:
+            'on': true
+            th: 70
+            thmm: 3.9
+            d: 1440
+            tl: 10
+            tlmm: 0.6
+          nd:
+            'on': true
+            i: 20
+            r: 5
+            l: 6
+          p: 5
+          r: 5
+          std: {}
+    PatientDevice:
+      type: object
+      properties:
+        did:
+          type: string
+        dtid:
+          type: integer
+        v:
+          type: string
+        l:
+          type: boolean
+        ll:
+          type: integer
+        h:
+          type: boolean
+        hl:
+          type: integer
+        u:
+          type: integer
+        fixedLowAlarmValues:
+          type: object
+          properties:
+            mgdl:
+              type: integer
+            mmoll:
+              type: number
+        alarms:
+          type: boolean
+        fixedLowThreshold:
+          type: integer
+      x-examples:
+        Example 1:
+          did: ':censored:'
+          dtid: 40068
+          v: 3.4.0.7368
+          l: true
+          ll: 70
+          h: true
+          hl: 250
+          u: 1685217954
+          fixedLowAlarmValues:
+            mgdl: 60
+            mmoll: 3.3
+          alarms: false
+          fixedLowThreshold: 0
+    Sensor:
+      type: object
+      properties:
+        deviceId:
+          type: string
+        sn:
+          type: string
+        a:
+          type: integer
+        w:
+          type: integer
+        pt:
+          type: integer
+        s:
+          type: boolean
+        lj:
+          type: boolean
+      x-examples:
+        Example 1:
+          deviceId: ':censored:'
+          sn: ':censored:'
+          a: 1686161859
+          w: 60
+          pt: 4
+          s: false
+          lj: false
+    GraphData:
+      type: object
+      properties:
+        FactoryTimestamp:
+          type: string
+        Timestamp:
+          type: string
+        type:
+          type: integer
+        ValueInMgPerDl:
+          type: integer
+        MeasurementColor:
+          type: integer
+        GlucoseUnits:
+          type: integer
+        Value:
+          type: number
+        isHigh:
+          type: boolean
+        isLow:
+          type: boolean
+      x-examples:
+        Example 1:
+          FactoryTimestamp: '6/15/2023 5:43:19 PM'
+          Timestamp: '6/15/2023 7:43:19 PM'
+          type: 0
+          ValueInMgPerDl: 200
+          MeasurementColor: 2
+          GlucoseUnits: 0
+          Value: 11.1
+          isHigh: false
+          isLow: false
+    Glucose:
+      title: Glucose
+      x-stoplight:
+        id: j8l1po4xy9wue
+      allOf:
+        - $ref: '#/components/schemas/GraphData'
+        - type: object
+          x-stoplight:
+            id: axi6s2jn0gb3g
+          properties:
+            TrendArrow:
+              type: integer
+              x-stoplight:
+                id: ex7r8h6r4qrvd
+            TrendMessage:
+              x-stoplight:
+                id: e2eqjvq9paevf
+              type: string
   securitySchemes:
     token:
       type: http
