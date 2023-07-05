@@ -1,0 +1,18 @@
+title: Glucose
+x-stoplight:
+  id: apwetp2q9ryxb
+type: object
+allOf:
+  - $ref: GraphData.yaml
+  - type: object
+    x-stoplight:
+      id: axi6s2jn0gb3g
+    properties:
+      TrendArrow:
+        type: integer
+        x-stoplight:
+          id: ex7r8h6r4qrvd
+      TrendMessage:
+        x-stoplight:
+          id: e2eqjvq9paevf
+        type: string

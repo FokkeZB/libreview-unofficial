@@ -3709,9 +3709,9 @@ components:
         alarmRules:
           $ref: ../models/AlarmRules.yaml
         glucoseMeasurement:
-          $ref: '#/components/schemas/Glucose'
+          $ref: ../models/Glucose.yaml
         glucoseItem:
-          $ref: '#/components/schemas/Glucose'
+          $ref: ../models/Glucose.yaml
         glucoseAlarm:
           type: 'null'
         patientDevice:
@@ -3952,30 +3952,12 @@ components:
             mmoll: 3.3
           alarms: false
           fixedLowThreshold: 0
-    Glucose:
-      title: Glucose
-      x-stoplight:
-        id: j8l1po4xy9wue
-      allOf:
-        - $ref: ../models/GraphData.yaml
-        - type: object
-          x-stoplight:
-            id: axi6s2jn0gb3g
-          properties:
-            TrendArrow:
-              type: integer
-              x-stoplight:
-                id: ex7r8h6r4qrvd
-            TrendMessage:
-              x-stoplight:
-                id: e2eqjvq9paevf
-              type: string
     LogbookData:
       title: LogbookData
       x-stoplight:
         id: dat5xcfxi65y2
       allOf:
-        - $ref: '#/components/schemas/Glucose'
+        - $ref: ../models/Glucose.yaml
         - type: object
           x-stoplight:
             id: 5opdptjzwdbb1
