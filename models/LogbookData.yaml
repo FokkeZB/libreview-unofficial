@@ -1,0 +1,10 @@
+title: LogbookData
+x-stoplight:
+  id: 1mnu9vnmpbmb6
+type: object
+allOf:
+  - $ref: Glucose.yaml
+  - type: object
+    properties:
+      alarmType:
+        type: integer

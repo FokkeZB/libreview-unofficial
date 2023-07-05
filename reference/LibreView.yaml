@@ -2512,7 +2512,7 @@ paths:
                   data:
                     type: array
                     items:
-                      $ref: '#/components/schemas/LogbookData'
+                      $ref: ../models/LogbookData.yaml
                   ticket:
                     $ref: '#/components/schemas/Ticket'
       operationId: 'get-llu-connections-:id-logbook'
@@ -3952,20 +3952,6 @@ components:
             mmoll: 3.3
           alarms: false
           fixedLowThreshold: 0
-    LogbookData:
-      title: LogbookData
-      x-stoplight:
-        id: dat5xcfxi65y2
-      allOf:
-        - $ref: ../models/Glucose.yaml
-        - type: object
-          x-stoplight:
-            id: 5opdptjzwdbb1
-          properties:
-            alarmType:
-              type: integer
-              x-stoplight:
-                id: o9uhswf2cnbdq
   securitySchemes:
     token:
       type: http
