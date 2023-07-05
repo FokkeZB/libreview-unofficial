@@ -1,0 +1,28 @@
+title: Sensor
+x-stoplight:
+  id: 1m177cj8kerb0
+type: object
+properties:
+  deviceId:
+    type: string
+  sn:
+    type: string
+  a:
+    type: integer
+  w:
+    type: integer
+  pt:
+    type: integer
+  s:
+    type: boolean
+  lj:
+    type: boolean
+x-examples:
+  Example 1:
+    deviceId: ':censored:'
+    sn: ':censored:'
+    a: 1686161859
+    w: 60
+    pt: 4
+    s: false
+    lj: false

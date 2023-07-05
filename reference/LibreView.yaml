@@ -1627,7 +1627,7 @@ paths:
                           type: object
                           properties:
                             sensor:
-                              $ref: '#/components/schemas/Sensor'
+                              $ref: ../models/Sensor.yaml
                             device:
                               $ref: '#/components/schemas/PatientDevice'
                       graphData:
@@ -3705,7 +3705,7 @@ components:
         uom:
           type: integer
         sensor:
-          $ref: '#/components/schemas/Sensor'
+          $ref: ../models/Sensor.yaml
         alarmRules:
           $ref: '#/components/schemas/AlarmRules'
         glucoseMeasurement:
@@ -4046,32 +4046,6 @@ components:
             mmoll: 3.3
           alarms: false
           fixedLowThreshold: 0
-    Sensor:
-      type: object
-      properties:
-        deviceId:
-          type: string
-        sn:
-          type: string
-        a:
-          type: integer
-        w:
-          type: integer
-        pt:
-          type: integer
-        s:
-          type: boolean
-        lj:
-          type: boolean
-      x-examples:
-        Example 1:
-          deviceId: ':censored:'
-          sn: ':censored:'
-          a: 1686161859
-          w: 60
-          pt: 4
-          s: false
-          lj: false
     GraphData:
       type: object
       properties:
