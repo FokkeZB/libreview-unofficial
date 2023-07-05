@@ -1,0 +1,47 @@
+title: PatientDevice
+x-stoplight:
+  id: bc1578d6pnoqp
+type: object
+properties:
+  did:
+    type: string
+  dtid:
+    type: integer
+  v:
+    type: string
+  l:
+    type: boolean
+  ll:
+    type: integer
+  h:
+    type: boolean
+  hl:
+    type: integer
+  u:
+    type: integer
+  fixedLowAlarmValues:
+    type: object
+    properties:
+      mgdl:
+        type: integer
+      mmoll:
+        type: number
+  alarms:
+    type: boolean
+  fixedLowThreshold:
+    type: integer
+x-examples:
+  Example 1:
+    did: ':censored:'
+    dtid: 40068
+    v: 3.4.0.7368
+    l: true
+    ll: 70
+    h: true
+    hl: 250
+    u: 1685217954
+    fixedLowAlarmValues:
+      mgdl: 60
+      mmoll: 3.3
+    alarms: false
+    fixedLowThreshold: 0

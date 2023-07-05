@@ -1,0 +1,8 @@
+title: UserData
+x-stoplight:
+  id: n7k5paczc1woz
+type: object
+description: User data.
+allOf:
+  - $ref: AccountUserData.yaml
+  - $ref: UserAdditionalData.yaml

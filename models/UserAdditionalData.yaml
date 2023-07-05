@@ -1,0 +1,55 @@
+title: UserAdditionalData
+x-stoplight:
+  id: lccakkqkie7gw
+type: object
+properties:
+  programs:
+    type: object
+    properties: {}
+  dateOfBirth:
+    type: integer
+  practices:
+    type: object
+    properties: {}
+  devices:
+    type: object
+    properties: {}
+  consents:
+    type: object
+    properties:
+      llu:
+        type: object
+        properties:
+          policyAccept:
+            type: integer
+          touAccept:
+            type: integer
+      realWorldEvidence:
+        type: object
+        properties:
+          policyAccept:
+            type: integer
+          touAccept:
+            type: integer
+          history:
+            type: array
+            items:
+              type: object
+              properties:
+                policyAccept:
+                  type: integer
+x-examples:
+  Example 1:
+    programs: {}
+    dateOfBirth: 396144000
+    practices: {}
+    devices: {}
+    consents:
+      llu:
+        policyAccept: 1684414774
+        touAccept: 1686814706
+      realWorldEvidence:
+        policyAccept: 1624365806
+        touAccept: 0
+        history:
+          - policyAccept: 1624365806

@@ -158,11 +158,9 @@ paths:
                     type: object
                     properties:
                       user:
-                        $ref: '#/components/schemas/AccountUserData'
-                        x-stoplight:
-                          id: gnd6z5hcdet69
+                        $ref: ../models/AccountUserData.yaml
                   ticket:
-                    $ref: '#/components/schemas/Ticket'
+                    $ref: ../models/Ticket.yaml
           description: OK
       operationId: get-account
       description: Get the account of the logged in user.
@@ -196,9 +194,7 @@ paths:
                       x-stoplight:
                         id: jdp6awxie53d7
                   ticket:
-                    $ref: '#/components/schemas/Ticket'
-                    x-stoplight:
-                      id: xrfmattlko2uj
+                    $ref: ../models/Ticket.yaml
               examples:
                 Get User Alice Smith:
                   value:
@@ -1629,13 +1625,13 @@ paths:
                             sensor:
                               $ref: ../models/Sensor.yaml
                             device:
-                              $ref: '#/components/schemas/PatientDevice'
+                              $ref: ../models/PatientDevice.yaml
                       graphData:
                         type: array
                         items:
                           $ref: ../models/GraphData.yaml
                   ticket:
-                    $ref: '#/components/schemas/Ticket'
+                    $ref: ../models/Ticket.yaml
       operationId: 'get-llu-connections-:id-graph'
       description: Get Graph data.
       parameters:
@@ -2514,7 +2510,7 @@ paths:
                     items:
                       $ref: ../models/LogbookData.yaml
                   ticket:
-                    $ref: '#/components/schemas/Ticket'
+                    $ref: ../models/Ticket.yaml
       operationId: 'get-llu-connections-:id-logbook'
       description: Get Logbook.
       parameters:
@@ -2603,9 +2599,9 @@ paths:
                       std:
                         type: object
                       patientDevice:
-                        $ref: '#/components/schemas/PatientDevice'
+                        $ref: ../models/PatientDevice.yaml
                   ticket:
-                    $ref: '#/components/schemas/Ticket'
+                    $ref: ../models/Ticket.yaml
       operationId: 'get-llu-connections-settings-:connectionId'
       description: Get Logbook.
       parameters:
@@ -3715,243 +3711,9 @@ components:
         glucoseAlarm:
           type: 'null'
         patientDevice:
-          $ref: '#/components/schemas/PatientDevice'
+          $ref: ../models/PatientDevice.yaml
         created:
           type: integer
-    Ticket:
-      type: object
-      properties:
-        token:
-          type: string
-        expires:
-          type: integer
-        duration:
-          type: integer
-      x-examples:
-        Example 1:
-          token: ':censored:'
-          expires: 1702366706
-          duration: 15552000000
-      examples:
-        - token: 37e1b710-23ef-4aa2-b965-86fefab3e467
-          expires: 1702366706
-          duration: 15552000000
-    AccountUserData:
-      type: object
-      x-stoplight:
-        id: dcb3xid3db7tt
-      properties:
-        id:
-          type: string
-        firstName:
-          type: string
-        lastName:
-          type: string
-        dateOfBirth:
-          type: integer
-        email:
-          type: string
-        country:
-          type: string
-        uiLanguage:
-          type: string
-        communicationLanguage:
-          type: string
-        accountType:
-          type: string
-        uom:
-          type: string
-        dateFormat:
-          type: string
-        timeFormat:
-          type: string
-        emailDay:
-          type: array
-          items:
-            type: integer
-        system:
-          type: object
-          properties:
-            messages:
-              type: object
-              properties:
-                firstUsePhoenix:
-                  type: integer
-                firstUsePhoenixReportsDataMerged:
-                  type: integer
-                lluAnalyticsNewAccount:
-                  type: integer
-                lluGettingStartedBanner:
-                  type: integer
-                lluNewFeatureModal:
-                  type: integer
-                lluOnboarding:
-                  type: integer
-                lvWebPostRelease:
-                  type: string
-        details:
-          type: object
-          properties: {}
-        twoFactor:
-          type: object
-          properties:
-            primaryMethod:
-              type: string
-            primaryValue:
-              type: string
-            secondaryMethod:
-              type: string
-            secondaryValue:
-              type: string
-        created:
-          type: integer
-        lastLogin:
-          type: integer
-      x-examples:
-        Example 1:
-          id: ':censored:'
-          firstName: ':censored:'
-          lastName: ':censored:'
-          dateOfBirth: 396144000
-          email: ':censored:'
-          country: NL
-          uiLanguage: nl-NL
-          communicationLanguage: nl-NL
-          accountType: pat
-          uom: '0'
-          dateFormat: '2'
-          timeFormat: '2'
-          emailDay:
-            - 1
-          system:
-            messages:
-              firstUsePhoenix: 1615561848
-              firstUsePhoenixReportsDataMerged: 1615561848
-              lluAnalyticsNewAccount: 1677666823
-              lluGettingStartedBanner: 1615562010
-              lluNewFeatureModal: 1677666823
-              lluOnboarding: 1615562004
-              lvWebPostRelease: 3.5.25
-          details: {}
-          twoFactor:
-            primaryMethod: ''
-            primaryValue: ''
-            secondaryMethod: ''
-            secondaryValue: ''
-          created: 1615561848
-          lastLogin: 1684956782
-      title: Account User Data
-      description: Account (partial User) data.
-    UserData:
-      title: User Data
-      x-stoplight:
-        id: 7w4jtjt1g4zz3
-      description: User data.
-      allOf:
-        - $ref: '#/components/schemas/AccountUserData'
-          x-stoplight:
-            id: wv7g0em57lgnw
-        - $ref: '#/components/schemas/UserAdditionalData'
-          x-stoplight:
-            id: yd2qqi6e9d4lc
-    UserAdditionalData:
-      type: object
-      properties:
-        programs:
-          type: object
-          properties: {}
-        dateOfBirth:
-          type: integer
-        practices:
-          type: object
-          properties: {}
-        devices:
-          type: object
-          properties: {}
-        consents:
-          type: object
-          properties:
-            llu:
-              type: object
-              properties:
-                policyAccept:
-                  type: integer
-                touAccept:
-                  type: integer
-            realWorldEvidence:
-              type: object
-              properties:
-                policyAccept:
-                  type: integer
-                touAccept:
-                  type: integer
-                history:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      policyAccept:
-                        type: integer
-      x-examples:
-        Example 1:
-          programs: {}
-          dateOfBirth: 396144000
-          practices: {}
-          devices: {}
-          consents:
-            llu:
-              policyAccept: 1684414774
-              touAccept: 1686814706
-            realWorldEvidence:
-              policyAccept: 1624365806
-              touAccept: 0
-              history:
-                - policyAccept: 1624365806
-    PatientDevice:
-      type: object
-      properties:
-        did:
-          type: string
-        dtid:
-          type: integer
-        v:
-          type: string
-        l:
-          type: boolean
-        ll:
-          type: integer
-        h:
-          type: boolean
-        hl:
-          type: integer
-        u:
-          type: integer
-        fixedLowAlarmValues:
-          type: object
-          properties:
-            mgdl:
-              type: integer
-            mmoll:
-              type: number
-        alarms:
-          type: boolean
-        fixedLowThreshold:
-          type: integer
-      x-examples:
-        Example 1:
-          did: ':censored:'
-          dtid: 40068
-          v: 3.4.0.7368
-          l: true
-          ll: 70
-          h: true
-          hl: 250
-          u: 1685217954
-          fixedLowAlarmValues:
-            mgdl: 60
-            mmoll: 3.3
-          alarms: false
-          fixedLowThreshold: 0
   securitySchemes:
     token:
       type: http
@@ -4060,9 +3822,7 @@ components:
                 type: object
                 properties:
                   user:
-                    $ref: '#/components/schemas/UserData'
-                    x-stoplight:
-                      id: mzvt7kv64ker9
+                    $ref: ../models/UserData.yaml
                   messages:
                     type: object
                     properties:
@@ -4172,7 +3932,7 @@ components:
                       uiLanguage:
                         type: string
                   authTicket:
-                    $ref: '#/components/schemas/Ticket'
+                    $ref: ../models/Ticket.yaml
         application/xml:
           schema:
             type: object

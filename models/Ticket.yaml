@@ -1,0 +1,20 @@
+title: Ticket
+x-stoplight:
+  id: d8tyka93ef4lg
+type: object
+properties:
+  token:
+    type: string
+  expires:
+    type: integer
+  duration:
+    type: integer
+x-examples:
+  Example 1:
+    token: ':censored:'
+    expires: 1702366706
+    duration: 15552000000
+examples:
+  - token: 37e1b710-23ef-4aa2-b965-86fefab3e467
+    expires: 1702366706
+    duration: 15552000000
