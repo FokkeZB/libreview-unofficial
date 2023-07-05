@@ -1633,7 +1633,7 @@ paths:
                       graphData:
                         type: array
                         items:
-                          $ref: '#/components/schemas/GraphData'
+                          $ref: ../models/GraphData.yaml
                   ticket:
                     $ref: '#/components/schemas/Ticket'
       operationId: 'get-llu-connections-:id-graph'
@@ -3952,44 +3952,12 @@ components:
             mmoll: 3.3
           alarms: false
           fixedLowThreshold: 0
-    GraphData:
-      type: object
-      properties:
-        FactoryTimestamp:
-          type: string
-        Timestamp:
-          type: string
-        type:
-          type: integer
-        ValueInMgPerDl:
-          type: integer
-        MeasurementColor:
-          type: integer
-        GlucoseUnits:
-          type: integer
-        Value:
-          type: number
-        isHigh:
-          type: boolean
-        isLow:
-          type: boolean
-      x-examples:
-        Example 1:
-          FactoryTimestamp: '6/15/2023 5:43:19 PM'
-          Timestamp: '6/15/2023 7:43:19 PM'
-          type: 0
-          ValueInMgPerDl: 200
-          MeasurementColor: 2
-          GlucoseUnits: 0
-          Value: 11.1
-          isHigh: false
-          isLow: false
     Glucose:
       title: Glucose
       x-stoplight:
         id: j8l1po4xy9wue
       allOf:
-        - $ref: '#/components/schemas/GraphData'
+        - $ref: ../models/GraphData.yaml
         - type: object
           x-stoplight:
             id: axi6s2jn0gb3g
