@@ -190,7 +190,7 @@ paths:
                     x-stoplight:
                       id: 99pukhh9vrof1
                     items:
-                      $ref: '#/components/schemas/Connection'
+                      $ref: ../models/Connection.yaml
                       x-stoplight:
                         id: jdp6awxie53d7
                   ticket:
@@ -1616,7 +1616,7 @@ paths:
                     type: object
                     properties:
                       connection:
-                        $ref: '#/components/schemas/Connection'
+                        $ref: ../models/Connection.yaml
                       activeSensors:
                         type: array
                         items:
@@ -3590,130 +3590,6 @@ components:
         example: llu.android
         default: llu.android
       description: The LibreLinkUp product identifier to match.
-  schemas:
-    Connection:
-      type: object
-      x-examples:
-        Example 1:
-          id: ':censored:'
-          patientId: ':censored:'
-          country: NL
-          status: 2
-          firstName: ':censored:'
-          lastName: ':censored:'
-          targetLow: 70
-          targetHigh: 180
-          uom: 0
-          sensor:
-            deviceId: ''
-            sn: ':censored:'
-            a: 1686161859
-            w: 60
-            pt: 4
-            s: false
-            lj: false
-          alarmRules:
-            c: true
-            h:
-              'on': true
-              th: 250
-              thmm: 13.9
-              d: 1440
-              f: 0.1
-            f:
-              th: 55
-              thmm: 3
-              d: 30
-              tl: 10
-              tlmm: 0.6
-            l:
-              'on': true
-              th: 70
-              thmm: 3.9
-              d: 1440
-              tl: 10
-              tlmm: 0.6
-            nd:
-              'on': true
-              i: 20
-              r: 5
-              l: 6
-            p: 5
-            r: 5
-            std: {}
-          glucoseMeasurement:
-            FactoryTimestamp: '6/15/2023 7:37:22 AM'
-            Timestamp: '6/15/2023 9:37:22 AM'
-            type: 1
-            ValueInMgPerDl: 278
-            TrendArrow: 4
-            TrendMessage: null
-            MeasurementColor: 3
-            GlucoseUnits: 0
-            Value: 15.4
-            isHigh: false
-            isLow: false
-          glucoseItem:
-            FactoryTimestamp: '6/15/2023 7:37:22 AM'
-            Timestamp: '6/15/2023 9:37:22 AM'
-            type: 1
-            ValueInMgPerDl: 278
-            TrendArrow: 4
-            TrendMessage: null
-            MeasurementColor: 3
-            GlucoseUnits: 0
-            Value: 15.4
-            isHigh: false
-            isLow: false
-          glucoseAlarm: null
-          patientDevice:
-            did: ':censored:'
-            dtid: 40068
-            v: 3.4.0.7368
-            l: true
-            ll: 70
-            h: true
-            hl: 250
-            u: 1685217954
-            fixedLowAlarmValues:
-              mgdl: 60
-              mmoll: 3.3
-            alarms: false
-            fixedLowThreshold: 0
-          created: 1615562007
-      properties:
-        id:
-          type: string
-        patientId:
-          type: string
-        country:
-          type: string
-        status:
-          type: integer
-        firstName:
-          type: string
-        lastName:
-          type: string
-        targetLow:
-          type: integer
-        targetHigh:
-          type: integer
-        uom:
-          type: integer
-        sensor:
-          $ref: ../models/Sensor.yaml
-        alarmRules:
-          $ref: ../models/AlarmRules.yaml
-        glucoseMeasurement:
-          $ref: ../models/Glucose.yaml
-        glucoseItem:
-          $ref: ../models/Glucose.yaml
-        glucoseAlarm:
-          type: 'null'
-        patientDevice:
-          $ref: ../models/PatientDevice.yaml
-        created:
-          type: integer
   securitySchemes:
     token:
       type: http
