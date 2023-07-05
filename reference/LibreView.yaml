@@ -2599,7 +2599,7 @@ paths:
                       connectionId:
                         type: string
                       alarmRules:
-                        $ref: '#/components/schemas/AlarmRules'
+                        $ref: ../models/AlarmRules.yaml
                       std:
                         type: object
                       patientDevice:
@@ -3707,7 +3707,7 @@ components:
         sensor:
           $ref: ../models/Sensor.yaml
         alarmRules:
-          $ref: '#/components/schemas/AlarmRules'
+          $ref: ../models/AlarmRules.yaml
         glucoseMeasurement:
           $ref: '#/components/schemas/Glucose'
         glucoseItem:
@@ -3907,100 +3907,6 @@ components:
               touAccept: 0
               history:
                 - policyAccept: 1624365806
-    AlarmRules:
-      type: object
-      properties:
-        c:
-          type: boolean
-        h:
-          type: object
-          properties:
-            'on':
-              type: boolean
-            th:
-              type: integer
-            thmm:
-              type: number
-            d:
-              type: integer
-            f:
-              type: number
-        f:
-          type: object
-          properties:
-            th:
-              type: integer
-            thmm:
-              type: integer
-            d:
-              type: integer
-            tl:
-              type: integer
-            tlmm:
-              type: number
-        l:
-          type: object
-          properties:
-            'on':
-              type: boolean
-            th:
-              type: integer
-            thmm:
-              type: number
-            d:
-              type: integer
-            tl:
-              type: integer
-            tlmm:
-              type: number
-        nd:
-          type: object
-          properties:
-            'on':
-              type: boolean
-            i:
-              type: integer
-            r:
-              type: integer
-            l:
-              type: integer
-        p:
-          type: integer
-        r:
-          type: integer
-        std:
-          type: object
-          properties: {}
-      x-examples:
-        Example 1:
-          c: true
-          h:
-            'on': true
-            th: 250
-            thmm: 13.9
-            d: 1440
-            f: 0.1
-          f:
-            th: 55
-            thmm: 3
-            d: 30
-            tl: 10
-            tlmm: 0.6
-          l:
-            'on': true
-            th: 70
-            thmm: 3.9
-            d: 1440
-            tl: 10
-            tlmm: 0.6
-          nd:
-            'on': true
-            i: 20
-            r: 5
-            l: 6
-          p: 5
-          r: 5
-          std: {}
     PatientDevice:
       type: object
       properties:
