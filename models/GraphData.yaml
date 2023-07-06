@@ -15,8 +15,14 @@ properties:
     type: integer
   GlucoseUnits:
     type: integer
+    oneOf:
+    - const: 0
+      title: 0 (mmol/l)
+    - const: 1
+      title: 1 (mg/dl)
   Value:
     type: number
+    description: Measurement in units specified by `GlucoseUnits`.
   isHigh:
     type: boolean
   isLow:

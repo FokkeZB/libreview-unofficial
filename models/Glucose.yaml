@@ -1,12 +1,22 @@
 title: Glucose
 x-stoplight:
   id: apwetp2q9ryxb
-type: object
 allOf:
   - $ref: GraphData.yaml
-  - type: object
-    properties:
+  - properties:
       TrendArrow:
         type: integer
+        oneOf:
+        - const: 1
+          title: 1 (↓)
+        - const: 2
+          title: 2 (↘)
+        - const: 3
+          title: 3 (→)
+        - const: 4
+          title: 4 (↗)
+        - const: 5
+          title: 5 (↑)
       TrendMessage:
         type: string
+type: object
