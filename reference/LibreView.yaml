@@ -50,6 +50,8 @@ servers:
     description: Proxy Server (jp)
   - url: 'https://libreview-proxy.onrender.com/us'
     description: Proxy Server (us)
+  - url: 'https://libreview-proxy.onrender.com/au'
+    description: Proxy Server (au)
 paths:
   /llu/auth/login:
     post:
