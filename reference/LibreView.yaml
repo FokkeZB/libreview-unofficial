@@ -1,56 +1,55 @@
-openapi: 3.1.0
+openapi: 3.0.3
 x-stoplight:
   id: 5e6m44bnx0m4p
 info:
-  title: LibreView Unofficial
+  title: LibreView Unofficial API Documentation
   version: '1.0'
-  summary: LibreView Unofficial API Documentation.
-  description: 'This is community-driven, unofficial documentation for the LibreView API. It is not affiliated with Abbott Diabetes Care, Inc. or any of its subsidiaries.'
+  description: This is community-driven, unofficial documentation for the LibreView API. It is not affiliated with Abbott Diabetes Care, Inc. or any of its subsidiaries.
   contact:
-    url: 'https://github.com/FokkeZB/libreview-unofficial'
+    url: https://github.com/FokkeZB/libreview-unofficial
     name: LibreView Unofficial API Documentation
     email: libreview.unofficial@icloud.com
-  termsOfService: 'https://github.com/FokkeZB/libreview-unofficial#disclaimer'
+  termsOfService: https://github.com/FokkeZB/libreview-unofficial#disclaimer
   license:
     name: MIT
-    url: 'https://spdx.org/licenses/MIT.html'
+    url: https://spdx.org/licenses/MIT.html
 externalDocs:
-  url: 'https://libreview-unofficial.stoplight.io/'
+  url: https://libreview-unofficial.stoplight.io/
   description: Stoplight documentation
 servers:
-  - url: 'https://api.libreview.io'
+  - url: https://api.libreview.io
     description: Live Server
-  - url: 'https://api-{region}.libreview.io'
+  - url: https://api-{region}.libreview.io
     description: Live Regional Server
     variables:
       region:
         default: us
         description: Regional API to use.
-  - url: 'https://libreview-proxy.onrender.com/{region}'
+  - url: https://libreview-proxy.onrender.com/{region}
     description: Proxy Regional Server
     variables:
       region:
         default: us
         description: Regional API to use.
-  - url: 'https://libreview-proxy.onrender.com/ae'
+  - url: https://libreview-proxy.onrender.com/ae
     description: Proxy Server (ae)
-  - url: 'https://libreview-proxy.onrender.com/ap'
+  - url: https://libreview-proxy.onrender.com/ap
     description: Proxy Server (ap)
-  - url: 'https://libreview-proxy.onrender.com/ca'
+  - url: https://libreview-proxy.onrender.com/ca
     description: Proxy Server (ca)
-  - url: 'https://libreview-proxy.onrender.com/de'
+  - url: https://libreview-proxy.onrender.com/de
     description: Proxy Server (de)
-  - url: 'https://libreview-proxy.onrender.com/eu'
+  - url: https://libreview-proxy.onrender.com/eu
     description: Proxy Server (eu)
-  - url: 'https://libreview-proxy.onrender.com/eu2'
+  - url: https://libreview-proxy.onrender.com/eu2
     description: Proxy Server (eu2)
-  - url: 'https://libreview-proxy.onrender.com/fr'
+  - url: https://libreview-proxy.onrender.com/fr
     description: Proxy Server (fr)
-  - url: 'https://libreview-proxy.onrender.com/jp'
+  - url: https://libreview-proxy.onrender.com/jp
     description: Proxy Server (jp)
-  - url: 'https://libreview-proxy.onrender.com/us'
+  - url: https://libreview-proxy.onrender.com/us
     description: Proxy Server (us)
-  - url: 'https://libreview-proxy.onrender.com/au'
+  - url: https://libreview-proxy.onrender.com/au
     description: Proxy Server (au)
 paths:
   /llu/auth/login:
@@ -98,8 +97,6 @@ paths:
           $ref: '#/components/responses/User'
       operationId: get-user
       description: 'Get the logged in user data.  '
-      requestBody:
-        content: {}
       parameters:
         - $ref: '#/components/parameters/Version'
         - $ref: '#/components/parameters/Product'
@@ -166,8 +163,6 @@ paths:
           description: OK
       operationId: get-account
       description: Get the account of the logged in user.
-      requestBody:
-        content: {}
       parameters:
         - $ref: '#/components/parameters/Version'
         - $ref: '#/components/parameters/Product'
@@ -217,12 +212,10 @@ paths:
                 properties: {}
       operationId: get-connections
       description: Retrieve the connections of the user.
-      requestBody:
-        content: {}
       parameters:
         - $ref: '#/components/parameters/Version'
         - $ref: '#/components/parameters/Product'
-  '/llu/connections/{patientId}/graph':
+  /llu/connections/{patientId}/graph:
     get:
       summary: Get Graph
       responses:
@@ -284,8 +277,8 @@ paths:
                           r: 5
                           std: {}
                         glucoseMeasurement:
-                          FactoryTimestamp: '6/20/2023 4:44:13 AM'
-                          Timestamp: '6/20/2023 6:44:13 AM'
+                          FactoryTimestamp: 6/20/2023 4:44:13 AM
+                          Timestamp: 6/20/2023 6:44:13 AM
                           type: 1
                           ValueInMgPerDl: 125
                           TrendArrow: 3
@@ -296,8 +289,8 @@ paths:
                           isHigh: false
                           isLow: false
                         glucoseItem:
-                          FactoryTimestamp: '6/20/2023 4:44:13 AM'
-                          Timestamp: '6/20/2023 6:44:13 AM'
+                          FactoryTimestamp: 6/20/2023 4:44:13 AM
+                          Timestamp: 6/20/2023 6:44:13 AM
                           type: 1
                           ValueInMgPerDl: 125
                           TrendArrow: 3
@@ -347,8 +340,8 @@ paths:
                             alarms: false
                             fixedLowThreshold: 70
                       graphData:
-                        - FactoryTimestamp: '6/19/2023 4:48:28 PM'
-                          Timestamp: '6/19/2023 6:48:28 PM'
+                        - FactoryTimestamp: 6/19/2023 4:48:28 PM
+                          Timestamp: 6/19/2023 6:48:28 PM
                           type: 0
                           ValueInMgPerDl: 174
                           MeasurementColor: 1
@@ -356,8 +349,8 @@ paths:
                           Value: 9.7
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 4:53:26 PM'
-                          Timestamp: '6/19/2023 6:53:26 PM'
+                        - FactoryTimestamp: 6/19/2023 4:53:26 PM
+                          Timestamp: 6/19/2023 6:53:26 PM
                           type: 0
                           ValueInMgPerDl: 191
                           MeasurementColor: 2
@@ -365,8 +358,8 @@ paths:
                           Value: 10.6
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 4:58:14 PM'
-                          Timestamp: '6/19/2023 6:58:14 PM'
+                        - FactoryTimestamp: 6/19/2023 4:58:14 PM
+                          Timestamp: 6/19/2023 6:58:14 PM
                           type: 0
                           ValueInMgPerDl: 201
                           MeasurementColor: 2
@@ -374,8 +367,8 @@ paths:
                           Value: 11.2
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 5:03:13 PM'
-                          Timestamp: '6/19/2023 7:03:13 PM'
+                        - FactoryTimestamp: 6/19/2023 5:03:13 PM
+                          Timestamp: 6/19/2023 7:03:13 PM
                           type: 0
                           ValueInMgPerDl: 211
                           MeasurementColor: 2
@@ -383,8 +376,8 @@ paths:
                           Value: 11.7
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 5:08:14 PM'
-                          Timestamp: '6/19/2023 7:08:14 PM'
+                        - FactoryTimestamp: 6/19/2023 5:08:14 PM
+                          Timestamp: 6/19/2023 7:08:14 PM
                           type: 0
                           ValueInMgPerDl: 214
                           MeasurementColor: 2
@@ -392,8 +385,8 @@ paths:
                           Value: 11.9
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 5:13:14 PM'
-                          Timestamp: '6/19/2023 7:13:14 PM'
+                        - FactoryTimestamp: 6/19/2023 5:13:14 PM
+                          Timestamp: 6/19/2023 7:13:14 PM
                           type: 0
                           ValueInMgPerDl: 205
                           MeasurementColor: 2
@@ -401,8 +394,8 @@ paths:
                           Value: 11.4
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 5:18:25 PM'
-                          Timestamp: '6/19/2023 7:18:25 PM'
+                        - FactoryTimestamp: 6/19/2023 5:18:25 PM
+                          Timestamp: 6/19/2023 7:18:25 PM
                           type: 0
                           ValueInMgPerDl: 203
                           MeasurementColor: 2
@@ -410,8 +403,8 @@ paths:
                           Value: 11.3
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 5:23:30 PM'
-                          Timestamp: '6/19/2023 7:23:30 PM'
+                        - FactoryTimestamp: 6/19/2023 5:23:30 PM
+                          Timestamp: 6/19/2023 7:23:30 PM
                           type: 0
                           ValueInMgPerDl: 185
                           MeasurementColor: 2
@@ -419,8 +412,8 @@ paths:
                           Value: 10.3
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 5:28:30 PM'
-                          Timestamp: '6/19/2023 7:28:30 PM'
+                        - FactoryTimestamp: 6/19/2023 5:28:30 PM
+                          Timestamp: 6/19/2023 7:28:30 PM
                           type: 0
                           ValueInMgPerDl: 180
                           MeasurementColor: 1
@@ -428,8 +421,8 @@ paths:
                           Value: 10
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 5:33:23 PM'
-                          Timestamp: '6/19/2023 7:33:23 PM'
+                        - FactoryTimestamp: 6/19/2023 5:33:23 PM
+                          Timestamp: 6/19/2023 7:33:23 PM
                           type: 0
                           ValueInMgPerDl: 170
                           MeasurementColor: 1
@@ -437,8 +430,8 @@ paths:
                           Value: 9.4
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 5:38:13 PM'
-                          Timestamp: '6/19/2023 7:38:13 PM'
+                        - FactoryTimestamp: 6/19/2023 5:38:13 PM
+                          Timestamp: 6/19/2023 7:38:13 PM
                           type: 0
                           ValueInMgPerDl: 157
                           MeasurementColor: 1
@@ -446,8 +439,8 @@ paths:
                           Value: 8.7
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 5:43:12 PM'
-                          Timestamp: '6/19/2023 7:43:12 PM'
+                        - FactoryTimestamp: 6/19/2023 5:43:12 PM
+                          Timestamp: 6/19/2023 7:43:12 PM
                           type: 0
                           ValueInMgPerDl: 150
                           MeasurementColor: 1
@@ -455,8 +448,8 @@ paths:
                           Value: 8.3
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 5:48:13 PM'
-                          Timestamp: '6/19/2023 7:48:13 PM'
+                        - FactoryTimestamp: 6/19/2023 5:48:13 PM
+                          Timestamp: 6/19/2023 7:48:13 PM
                           type: 0
                           ValueInMgPerDl: 140
                           MeasurementColor: 1
@@ -464,8 +457,8 @@ paths:
                           Value: 7.8
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 5:53:13 PM'
-                          Timestamp: '6/19/2023 7:53:13 PM'
+                        - FactoryTimestamp: 6/19/2023 5:53:13 PM
+                          Timestamp: 6/19/2023 7:53:13 PM
                           type: 0
                           ValueInMgPerDl: 135
                           MeasurementColor: 1
@@ -473,8 +466,8 @@ paths:
                           Value: 7.5
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 5:58:13 PM'
-                          Timestamp: '6/19/2023 7:58:13 PM'
+                        - FactoryTimestamp: 6/19/2023 5:58:13 PM
+                          Timestamp: 6/19/2023 7:58:13 PM
                           type: 0
                           ValueInMgPerDl: 128
                           MeasurementColor: 1
@@ -482,8 +475,8 @@ paths:
                           Value: 7.1
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 6:03:12 PM'
-                          Timestamp: '6/19/2023 8:03:12 PM'
+                        - FactoryTimestamp: 6/19/2023 6:03:12 PM
+                          Timestamp: 6/19/2023 8:03:12 PM
                           type: 0
                           ValueInMgPerDl: 135
                           MeasurementColor: 1
@@ -491,8 +484,8 @@ paths:
                           Value: 7.5
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 6:08:13 PM'
-                          Timestamp: '6/19/2023 8:08:13 PM'
+                        - FactoryTimestamp: 6/19/2023 6:08:13 PM
+                          Timestamp: 6/19/2023 8:08:13 PM
                           type: 0
                           ValueInMgPerDl: 134
                           MeasurementColor: 1
@@ -500,8 +493,8 @@ paths:
                           Value: 7.4
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 6:13:12 PM'
-                          Timestamp: '6/19/2023 8:13:12 PM'
+                        - FactoryTimestamp: 6/19/2023 6:13:12 PM
+                          Timestamp: 6/19/2023 8:13:12 PM
                           type: 0
                           ValueInMgPerDl: 141
                           MeasurementColor: 1
@@ -509,8 +502,8 @@ paths:
                           Value: 7.8
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 6:18:12 PM'
-                          Timestamp: '6/19/2023 8:18:12 PM'
+                        - FactoryTimestamp: 6/19/2023 6:18:12 PM
+                          Timestamp: 6/19/2023 8:18:12 PM
                           type: 0
                           ValueInMgPerDl: 156
                           MeasurementColor: 1
@@ -518,8 +511,8 @@ paths:
                           Value: 8.7
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 6:23:13 PM'
-                          Timestamp: '6/19/2023 8:23:13 PM'
+                        - FactoryTimestamp: 6/19/2023 6:23:13 PM
+                          Timestamp: 6/19/2023 8:23:13 PM
                           type: 0
                           ValueInMgPerDl: 148
                           MeasurementColor: 1
@@ -527,8 +520,8 @@ paths:
                           Value: 8.2
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 6:28:13 PM'
-                          Timestamp: '6/19/2023 8:28:13 PM'
+                        - FactoryTimestamp: 6/19/2023 6:28:13 PM
+                          Timestamp: 6/19/2023 8:28:13 PM
                           type: 0
                           ValueInMgPerDl: 148
                           MeasurementColor: 1
@@ -536,8 +529,8 @@ paths:
                           Value: 8.2
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 6:33:13 PM'
-                          Timestamp: '6/19/2023 8:33:13 PM'
+                        - FactoryTimestamp: 6/19/2023 6:33:13 PM
+                          Timestamp: 6/19/2023 8:33:13 PM
                           type: 0
                           ValueInMgPerDl: 150
                           MeasurementColor: 1
@@ -545,8 +538,8 @@ paths:
                           Value: 8.3
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 6:38:37 PM'
-                          Timestamp: '6/19/2023 8:38:37 PM'
+                        - FactoryTimestamp: 6/19/2023 6:38:37 PM
+                          Timestamp: 6/19/2023 8:38:37 PM
                           type: 0
                           ValueInMgPerDl: 156
                           MeasurementColor: 1
@@ -554,8 +547,8 @@ paths:
                           Value: 8.7
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 6:43:37 PM'
-                          Timestamp: '6/19/2023 8:43:37 PM'
+                        - FactoryTimestamp: 6/19/2023 6:43:37 PM
+                          Timestamp: 6/19/2023 8:43:37 PM
                           type: 0
                           ValueInMgPerDl: 158
                           MeasurementColor: 1
@@ -563,8 +556,8 @@ paths:
                           Value: 8.8
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 6:48:37 PM'
-                          Timestamp: '6/19/2023 8:48:37 PM'
+                        - FactoryTimestamp: 6/19/2023 6:48:37 PM
+                          Timestamp: 6/19/2023 8:48:37 PM
                           type: 0
                           ValueInMgPerDl: 165
                           MeasurementColor: 1
@@ -572,8 +565,8 @@ paths:
                           Value: 9.2
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 6:53:25 PM'
-                          Timestamp: '6/19/2023 8:53:25 PM'
+                        - FactoryTimestamp: 6/19/2023 6:53:25 PM
+                          Timestamp: 6/19/2023 8:53:25 PM
                           type: 0
                           ValueInMgPerDl: 183
                           MeasurementColor: 2
@@ -581,8 +574,8 @@ paths:
                           Value: 10.2
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 6:58:13 PM'
-                          Timestamp: '6/19/2023 8:58:13 PM'
+                        - FactoryTimestamp: 6/19/2023 6:58:13 PM
+                          Timestamp: 6/19/2023 8:58:13 PM
                           type: 0
                           ValueInMgPerDl: 202
                           MeasurementColor: 2
@@ -590,8 +583,8 @@ paths:
                           Value: 11.2
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 7:03:12 PM'
-                          Timestamp: '6/19/2023 9:03:12 PM'
+                        - FactoryTimestamp: 6/19/2023 7:03:12 PM
+                          Timestamp: 6/19/2023 9:03:12 PM
                           type: 0
                           ValueInMgPerDl: 215
                           MeasurementColor: 2
@@ -599,8 +592,8 @@ paths:
                           Value: 11.9
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 7:08:13 PM'
-                          Timestamp: '6/19/2023 9:08:13 PM'
+                        - FactoryTimestamp: 6/19/2023 7:08:13 PM
+                          Timestamp: 6/19/2023 9:08:13 PM
                           type: 0
                           ValueInMgPerDl: 227
                           MeasurementColor: 2
@@ -608,8 +601,8 @@ paths:
                           Value: 12.6
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 7:13:13 PM'
-                          Timestamp: '6/19/2023 9:13:13 PM'
+                        - FactoryTimestamp: 6/19/2023 7:13:13 PM
+                          Timestamp: 6/19/2023 9:13:13 PM
                           type: 0
                           ValueInMgPerDl: 236
                           MeasurementColor: 2
@@ -617,8 +610,8 @@ paths:
                           Value: 13.1
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 7:18:29 PM'
-                          Timestamp: '6/19/2023 9:18:29 PM'
+                        - FactoryTimestamp: 6/19/2023 7:18:29 PM
+                          Timestamp: 6/19/2023 9:18:29 PM
                           type: 0
                           ValueInMgPerDl: 235
                           MeasurementColor: 2
@@ -626,8 +619,8 @@ paths:
                           Value: 13.1
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 7:23:14 PM'
-                          Timestamp: '6/19/2023 9:23:14 PM'
+                        - FactoryTimestamp: 6/19/2023 7:23:14 PM
+                          Timestamp: 6/19/2023 9:23:14 PM
                           type: 0
                           ValueInMgPerDl: 234
                           MeasurementColor: 2
@@ -635,8 +628,8 @@ paths:
                           Value: 13
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 7:28:13 PM'
-                          Timestamp: '6/19/2023 9:28:13 PM'
+                        - FactoryTimestamp: 6/19/2023 7:28:13 PM
+                          Timestamp: 6/19/2023 9:28:13 PM
                           type: 0
                           ValueInMgPerDl: 225
                           MeasurementColor: 2
@@ -644,8 +637,8 @@ paths:
                           Value: 12.5
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 7:33:13 PM'
-                          Timestamp: '6/19/2023 9:33:13 PM'
+                        - FactoryTimestamp: 6/19/2023 7:33:13 PM
+                          Timestamp: 6/19/2023 9:33:13 PM
                           type: 0
                           ValueInMgPerDl: 220
                           MeasurementColor: 2
@@ -653,8 +646,8 @@ paths:
                           Value: 12.2
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 7:38:13 PM'
-                          Timestamp: '6/19/2023 9:38:13 PM'
+                        - FactoryTimestamp: 6/19/2023 7:38:13 PM
+                          Timestamp: 6/19/2023 9:38:13 PM
                           type: 0
                           ValueInMgPerDl: 208
                           MeasurementColor: 2
@@ -662,8 +655,8 @@ paths:
                           Value: 11.6
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 7:43:13 PM'
-                          Timestamp: '6/19/2023 9:43:13 PM'
+                        - FactoryTimestamp: 6/19/2023 7:43:13 PM
+                          Timestamp: 6/19/2023 9:43:13 PM
                           type: 0
                           ValueInMgPerDl: 199
                           MeasurementColor: 2
@@ -671,8 +664,8 @@ paths:
                           Value: 11.1
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 7:48:14 PM'
-                          Timestamp: '6/19/2023 9:48:14 PM'
+                        - FactoryTimestamp: 6/19/2023 7:48:14 PM
+                          Timestamp: 6/19/2023 9:48:14 PM
                           type: 0
                           ValueInMgPerDl: 194
                           MeasurementColor: 2
@@ -680,8 +673,8 @@ paths:
                           Value: 10.8
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 7:53:14 PM'
-                          Timestamp: '6/19/2023 9:53:14 PM'
+                        - FactoryTimestamp: 6/19/2023 7:53:14 PM
+                          Timestamp: 6/19/2023 9:53:14 PM
                           type: 0
                           ValueInMgPerDl: 176
                           MeasurementColor: 1
@@ -689,8 +682,8 @@ paths:
                           Value: 9.8
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 7:58:13 PM'
-                          Timestamp: '6/19/2023 9:58:13 PM'
+                        - FactoryTimestamp: 6/19/2023 7:58:13 PM
+                          Timestamp: 6/19/2023 9:58:13 PM
                           type: 0
                           ValueInMgPerDl: 161
                           MeasurementColor: 1
@@ -698,8 +691,8 @@ paths:
                           Value: 8.9
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 8:03:13 PM'
-                          Timestamp: '6/19/2023 10:03:13 PM'
+                        - FactoryTimestamp: 6/19/2023 8:03:13 PM
+                          Timestamp: 6/19/2023 10:03:13 PM
                           type: 0
                           ValueInMgPerDl: 145
                           MeasurementColor: 1
@@ -707,8 +700,8 @@ paths:
                           Value: 8.1
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 8:08:14 PM'
-                          Timestamp: '6/19/2023 10:08:14 PM'
+                        - FactoryTimestamp: 6/19/2023 8:08:14 PM
+                          Timestamp: 6/19/2023 10:08:14 PM
                           type: 0
                           ValueInMgPerDl: 133
                           MeasurementColor: 1
@@ -716,8 +709,8 @@ paths:
                           Value: 7.4
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 8:13:12 PM'
-                          Timestamp: '6/19/2023 10:13:12 PM'
+                        - FactoryTimestamp: 6/19/2023 8:13:12 PM
+                          Timestamp: 6/19/2023 10:13:12 PM
                           type: 0
                           ValueInMgPerDl: 117
                           MeasurementColor: 1
@@ -725,8 +718,8 @@ paths:
                           Value: 6.5
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 8:18:12 PM'
-                          Timestamp: '6/19/2023 10:18:12 PM'
+                        - FactoryTimestamp: 6/19/2023 8:18:12 PM
+                          Timestamp: 6/19/2023 10:18:12 PM
                           type: 0
                           ValueInMgPerDl: 102
                           MeasurementColor: 1
@@ -734,8 +727,8 @@ paths:
                           Value: 5.7
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 8:23:14 PM'
-                          Timestamp: '6/19/2023 10:23:14 PM'
+                        - FactoryTimestamp: 6/19/2023 8:23:14 PM
+                          Timestamp: 6/19/2023 10:23:14 PM
                           type: 0
                           ValueInMgPerDl: 87
                           MeasurementColor: 1
@@ -743,8 +736,8 @@ paths:
                           Value: 4.8
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 8:28:12 PM'
-                          Timestamp: '6/19/2023 10:28:12 PM'
+                        - FactoryTimestamp: 6/19/2023 8:28:12 PM
+                          Timestamp: 6/19/2023 10:28:12 PM
                           type: 0
                           ValueInMgPerDl: 75
                           MeasurementColor: 1
@@ -752,8 +745,8 @@ paths:
                           Value: 4.2
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 8:33:12 PM'
-                          Timestamp: '6/19/2023 10:33:12 PM'
+                        - FactoryTimestamp: 6/19/2023 8:33:12 PM
+                          Timestamp: 6/19/2023 10:33:12 PM
                           type: 0
                           ValueInMgPerDl: 64
                           MeasurementColor: 4
@@ -761,8 +754,8 @@ paths:
                           Value: 3.6
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 8:38:13 PM'
-                          Timestamp: '6/19/2023 10:38:13 PM'
+                        - FactoryTimestamp: 6/19/2023 8:38:13 PM
+                          Timestamp: 6/19/2023 10:38:13 PM
                           type: 0
                           ValueInMgPerDl: 56
                           MeasurementColor: 4
@@ -770,8 +763,8 @@ paths:
                           Value: 3.1
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 8:43:13 PM'
-                          Timestamp: '6/19/2023 10:43:13 PM'
+                        - FactoryTimestamp: 6/19/2023 8:43:13 PM
+                          Timestamp: 6/19/2023 10:43:13 PM
                           type: 0
                           ValueInMgPerDl: 53
                           MeasurementColor: 4
@@ -779,8 +772,8 @@ paths:
                           Value: 2.9
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 8:48:13 PM'
-                          Timestamp: '6/19/2023 10:48:13 PM'
+                        - FactoryTimestamp: 6/19/2023 8:48:13 PM
+                          Timestamp: 6/19/2023 10:48:13 PM
                           type: 0
                           ValueInMgPerDl: 53
                           MeasurementColor: 4
@@ -788,8 +781,8 @@ paths:
                           Value: 2.9
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 8:53:13 PM'
-                          Timestamp: '6/19/2023 10:53:13 PM'
+                        - FactoryTimestamp: 6/19/2023 8:53:13 PM
+                          Timestamp: 6/19/2023 10:53:13 PM
                           type: 0
                           ValueInMgPerDl: 53
                           MeasurementColor: 4
@@ -797,8 +790,8 @@ paths:
                           Value: 2.9
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 8:58:12 PM'
-                          Timestamp: '6/19/2023 10:58:12 PM'
+                        - FactoryTimestamp: 6/19/2023 8:58:12 PM
+                          Timestamp: 6/19/2023 10:58:12 PM
                           type: 0
                           ValueInMgPerDl: 53
                           MeasurementColor: 4
@@ -806,8 +799,8 @@ paths:
                           Value: 2.9
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 9:03:13 PM'
-                          Timestamp: '6/19/2023 11:03:13 PM'
+                        - FactoryTimestamp: 6/19/2023 9:03:13 PM
+                          Timestamp: 6/19/2023 11:03:13 PM
                           type: 0
                           ValueInMgPerDl: 53
                           MeasurementColor: 4
@@ -815,8 +808,8 @@ paths:
                           Value: 2.9
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 9:08:13 PM'
-                          Timestamp: '6/19/2023 11:08:13 PM'
+                        - FactoryTimestamp: 6/19/2023 9:08:13 PM
+                          Timestamp: 6/19/2023 11:08:13 PM
                           type: 0
                           ValueInMgPerDl: 53
                           MeasurementColor: 4
@@ -824,8 +817,8 @@ paths:
                           Value: 2.9
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 9:13:12 PM'
-                          Timestamp: '6/19/2023 11:13:12 PM'
+                        - FactoryTimestamp: 6/19/2023 9:13:12 PM
+                          Timestamp: 6/19/2023 11:13:12 PM
                           type: 0
                           ValueInMgPerDl: 54
                           MeasurementColor: 4
@@ -833,8 +826,8 @@ paths:
                           Value: 3
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 9:18:13 PM'
-                          Timestamp: '6/19/2023 11:18:13 PM'
+                        - FactoryTimestamp: 6/19/2023 9:18:13 PM
+                          Timestamp: 6/19/2023 11:18:13 PM
                           type: 0
                           ValueInMgPerDl: 59
                           MeasurementColor: 4
@@ -842,8 +835,8 @@ paths:
                           Value: 3.3
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 9:23:12 PM'
-                          Timestamp: '6/19/2023 11:23:12 PM'
+                        - FactoryTimestamp: 6/19/2023 9:23:12 PM
+                          Timestamp: 6/19/2023 11:23:12 PM
                           type: 0
                           ValueInMgPerDl: 72
                           MeasurementColor: 1
@@ -851,8 +844,8 @@ paths:
                           Value: 4
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 9:28:25 PM'
-                          Timestamp: '6/19/2023 11:28:25 PM'
+                        - FactoryTimestamp: 6/19/2023 9:28:25 PM
+                          Timestamp: 6/19/2023 11:28:25 PM
                           type: 0
                           ValueInMgPerDl: 86
                           MeasurementColor: 1
@@ -860,8 +853,8 @@ paths:
                           Value: 4.8
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 9:33:14 PM'
-                          Timestamp: '6/19/2023 11:33:14 PM'
+                        - FactoryTimestamp: 6/19/2023 9:33:14 PM
+                          Timestamp: 6/19/2023 11:33:14 PM
                           type: 0
                           ValueInMgPerDl: 100
                           MeasurementColor: 1
@@ -869,8 +862,8 @@ paths:
                           Value: 5.6
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 9:38:12 PM'
-                          Timestamp: '6/19/2023 11:38:12 PM'
+                        - FactoryTimestamp: 6/19/2023 9:38:12 PM
+                          Timestamp: 6/19/2023 11:38:12 PM
                           type: 0
                           ValueInMgPerDl: 111
                           MeasurementColor: 1
@@ -878,8 +871,8 @@ paths:
                           Value: 6.2
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 9:43:14 PM'
-                          Timestamp: '6/19/2023 11:43:14 PM'
+                        - FactoryTimestamp: 6/19/2023 9:43:14 PM
+                          Timestamp: 6/19/2023 11:43:14 PM
                           type: 0
                           ValueInMgPerDl: 119
                           MeasurementColor: 1
@@ -887,8 +880,8 @@ paths:
                           Value: 6.6
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 9:48:13 PM'
-                          Timestamp: '6/19/2023 11:48:13 PM'
+                        - FactoryTimestamp: 6/19/2023 9:48:13 PM
+                          Timestamp: 6/19/2023 11:48:13 PM
                           type: 0
                           ValueInMgPerDl: 127
                           MeasurementColor: 1
@@ -896,8 +889,8 @@ paths:
                           Value: 7.1
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 9:53:13 PM'
-                          Timestamp: '6/19/2023 11:53:13 PM'
+                        - FactoryTimestamp: 6/19/2023 9:53:13 PM
+                          Timestamp: 6/19/2023 11:53:13 PM
                           type: 0
                           ValueInMgPerDl: 132
                           MeasurementColor: 1
@@ -905,8 +898,8 @@ paths:
                           Value: 7.3
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 9:58:12 PM'
-                          Timestamp: '6/19/2023 11:58:12 PM'
+                        - FactoryTimestamp: 6/19/2023 9:58:12 PM
+                          Timestamp: 6/19/2023 11:58:12 PM
                           type: 0
                           ValueInMgPerDl: 135
                           MeasurementColor: 1
@@ -914,8 +907,8 @@ paths:
                           Value: 7.5
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 10:03:12 PM'
-                          Timestamp: '6/20/2023 12:03:12 AM'
+                        - FactoryTimestamp: 6/19/2023 10:03:12 PM
+                          Timestamp: 6/20/2023 12:03:12 AM
                           type: 0
                           ValueInMgPerDl: 142
                           MeasurementColor: 1
@@ -923,8 +916,8 @@ paths:
                           Value: 7.9
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 10:08:14 PM'
-                          Timestamp: '6/20/2023 12:08:14 AM'
+                        - FactoryTimestamp: 6/19/2023 10:08:14 PM
+                          Timestamp: 6/20/2023 12:08:14 AM
                           type: 0
                           ValueInMgPerDl: 148
                           MeasurementColor: 1
@@ -932,8 +925,8 @@ paths:
                           Value: 8.2
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 10:13:13 PM'
-                          Timestamp: '6/20/2023 12:13:13 AM'
+                        - FactoryTimestamp: 6/19/2023 10:13:13 PM
+                          Timestamp: 6/20/2023 12:13:13 AM
                           type: 0
                           ValueInMgPerDl: 157
                           MeasurementColor: 1
@@ -941,8 +934,8 @@ paths:
                           Value: 8.7
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 10:18:13 PM'
-                          Timestamp: '6/20/2023 12:18:13 AM'
+                        - FactoryTimestamp: 6/19/2023 10:18:13 PM
+                          Timestamp: 6/20/2023 12:18:13 AM
                           type: 0
                           ValueInMgPerDl: 170
                           MeasurementColor: 1
@@ -950,8 +943,8 @@ paths:
                           Value: 9.4
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 10:23:14 PM'
-                          Timestamp: '6/20/2023 12:23:14 AM'
+                        - FactoryTimestamp: 6/19/2023 10:23:14 PM
+                          Timestamp: 6/20/2023 12:23:14 AM
                           type: 0
                           ValueInMgPerDl: 182
                           MeasurementColor: 2
@@ -959,8 +952,8 @@ paths:
                           Value: 10.1
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 10:28:13 PM'
-                          Timestamp: '6/20/2023 12:28:13 AM'
+                        - FactoryTimestamp: 6/19/2023 10:28:13 PM
+                          Timestamp: 6/20/2023 12:28:13 AM
                           type: 0
                           ValueInMgPerDl: 199
                           MeasurementColor: 2
@@ -968,8 +961,8 @@ paths:
                           Value: 11.1
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 10:33:13 PM'
-                          Timestamp: '6/20/2023 12:33:13 AM'
+                        - FactoryTimestamp: 6/19/2023 10:33:13 PM
+                          Timestamp: 6/20/2023 12:33:13 AM
                           type: 0
                           ValueInMgPerDl: 212
                           MeasurementColor: 2
@@ -977,8 +970,8 @@ paths:
                           Value: 11.8
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 10:38:14 PM'
-                          Timestamp: '6/20/2023 12:38:14 AM'
+                        - FactoryTimestamp: 6/19/2023 10:38:14 PM
+                          Timestamp: 6/20/2023 12:38:14 AM
                           type: 0
                           ValueInMgPerDl: 219
                           MeasurementColor: 2
@@ -986,8 +979,8 @@ paths:
                           Value: 12.2
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 10:43:13 PM'
-                          Timestamp: '6/20/2023 12:43:13 AM'
+                        - FactoryTimestamp: 6/19/2023 10:43:13 PM
+                          Timestamp: 6/20/2023 12:43:13 AM
                           type: 0
                           ValueInMgPerDl: 229
                           MeasurementColor: 2
@@ -995,8 +988,8 @@ paths:
                           Value: 12.7
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 10:48:12 PM'
-                          Timestamp: '6/20/2023 12:48:12 AM'
+                        - FactoryTimestamp: 6/19/2023 10:48:12 PM
+                          Timestamp: 6/20/2023 12:48:12 AM
                           type: 0
                           ValueInMgPerDl: 234
                           MeasurementColor: 2
@@ -1004,8 +997,8 @@ paths:
                           Value: 13
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 10:53:13 PM'
-                          Timestamp: '6/20/2023 12:53:13 AM'
+                        - FactoryTimestamp: 6/19/2023 10:53:13 PM
+                          Timestamp: 6/20/2023 12:53:13 AM
                           type: 0
                           ValueInMgPerDl: 235
                           MeasurementColor: 2
@@ -1013,8 +1006,8 @@ paths:
                           Value: 13.1
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 10:58:12 PM'
-                          Timestamp: '6/20/2023 12:58:12 AM'
+                        - FactoryTimestamp: 6/19/2023 10:58:12 PM
+                          Timestamp: 6/20/2023 12:58:12 AM
                           type: 0
                           ValueInMgPerDl: 240
                           MeasurementColor: 2
@@ -1022,8 +1015,8 @@ paths:
                           Value: 13.3
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 11:03:14 PM'
-                          Timestamp: '6/20/2023 1:03:14 AM'
+                        - FactoryTimestamp: 6/19/2023 11:03:14 PM
+                          Timestamp: 6/20/2023 1:03:14 AM
                           type: 0
                           ValueInMgPerDl: 234
                           MeasurementColor: 2
@@ -1031,8 +1024,8 @@ paths:
                           Value: 13
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 11:08:14 PM'
-                          Timestamp: '6/20/2023 1:08:14 AM'
+                        - FactoryTimestamp: 6/19/2023 11:08:14 PM
+                          Timestamp: 6/20/2023 1:08:14 AM
                           type: 0
                           ValueInMgPerDl: 227
                           MeasurementColor: 2
@@ -1040,8 +1033,8 @@ paths:
                           Value: 12.6
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 11:13:14 PM'
-                          Timestamp: '6/20/2023 1:13:14 AM'
+                        - FactoryTimestamp: 6/19/2023 11:13:14 PM
+                          Timestamp: 6/20/2023 1:13:14 AM
                           type: 0
                           ValueInMgPerDl: 220
                           MeasurementColor: 2
@@ -1049,8 +1042,8 @@ paths:
                           Value: 12.2
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 11:18:13 PM'
-                          Timestamp: '6/20/2023 1:18:13 AM'
+                        - FactoryTimestamp: 6/19/2023 11:18:13 PM
+                          Timestamp: 6/20/2023 1:18:13 AM
                           type: 0
                           ValueInMgPerDl: 213
                           MeasurementColor: 2
@@ -1058,8 +1051,8 @@ paths:
                           Value: 11.8
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 11:23:14 PM'
-                          Timestamp: '6/20/2023 1:23:14 AM'
+                        - FactoryTimestamp: 6/19/2023 11:23:14 PM
+                          Timestamp: 6/20/2023 1:23:14 AM
                           type: 0
                           ValueInMgPerDl: 207
                           MeasurementColor: 2
@@ -1067,8 +1060,8 @@ paths:
                           Value: 11.5
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 11:28:13 PM'
-                          Timestamp: '6/20/2023 1:28:13 AM'
+                        - FactoryTimestamp: 6/19/2023 11:28:13 PM
+                          Timestamp: 6/20/2023 1:28:13 AM
                           type: 0
                           ValueInMgPerDl: 201
                           MeasurementColor: 2
@@ -1076,8 +1069,8 @@ paths:
                           Value: 11.2
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 11:33:12 PM'
-                          Timestamp: '6/20/2023 1:33:12 AM'
+                        - FactoryTimestamp: 6/19/2023 11:33:12 PM
+                          Timestamp: 6/20/2023 1:33:12 AM
                           type: 0
                           ValueInMgPerDl: 198
                           MeasurementColor: 2
@@ -1085,8 +1078,8 @@ paths:
                           Value: 11
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 11:38:12 PM'
-                          Timestamp: '6/20/2023 1:38:12 AM'
+                        - FactoryTimestamp: 6/19/2023 11:38:12 PM
+                          Timestamp: 6/20/2023 1:38:12 AM
                           type: 0
                           ValueInMgPerDl: 196
                           MeasurementColor: 2
@@ -1094,8 +1087,8 @@ paths:
                           Value: 10.9
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 11:43:14 PM'
-                          Timestamp: '6/20/2023 1:43:14 AM'
+                        - FactoryTimestamp: 6/19/2023 11:43:14 PM
+                          Timestamp: 6/20/2023 1:43:14 AM
                           type: 0
                           ValueInMgPerDl: 196
                           MeasurementColor: 2
@@ -1103,8 +1096,8 @@ paths:
                           Value: 10.9
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 11:48:12 PM'
-                          Timestamp: '6/20/2023 1:48:12 AM'
+                        - FactoryTimestamp: 6/19/2023 11:48:12 PM
+                          Timestamp: 6/20/2023 1:48:12 AM
                           type: 0
                           ValueInMgPerDl: 196
                           MeasurementColor: 2
@@ -1112,8 +1105,8 @@ paths:
                           Value: 10.9
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 11:53:12 PM'
-                          Timestamp: '6/20/2023 1:53:12 AM'
+                        - FactoryTimestamp: 6/19/2023 11:53:12 PM
+                          Timestamp: 6/20/2023 1:53:12 AM
                           type: 0
                           ValueInMgPerDl: 191
                           MeasurementColor: 2
@@ -1121,8 +1114,8 @@ paths:
                           Value: 10.6
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/19/2023 11:58:12 PM'
-                          Timestamp: '6/20/2023 1:58:12 AM'
+                        - FactoryTimestamp: 6/19/2023 11:58:12 PM
+                          Timestamp: 6/20/2023 1:58:12 AM
                           type: 0
                           ValueInMgPerDl: 188
                           MeasurementColor: 2
@@ -1130,8 +1123,8 @@ paths:
                           Value: 10.4
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 12:03:12 AM'
-                          Timestamp: '6/20/2023 2:03:12 AM'
+                        - FactoryTimestamp: 6/20/2023 12:03:12 AM
+                          Timestamp: 6/20/2023 2:03:12 AM
                           type: 0
                           ValueInMgPerDl: 194
                           MeasurementColor: 2
@@ -1139,8 +1132,8 @@ paths:
                           Value: 10.8
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 12:08:12 AM'
-                          Timestamp: '6/20/2023 2:08:12 AM'
+                        - FactoryTimestamp: 6/20/2023 12:08:12 AM
+                          Timestamp: 6/20/2023 2:08:12 AM
                           type: 0
                           ValueInMgPerDl: 188
                           MeasurementColor: 2
@@ -1148,8 +1141,8 @@ paths:
                           Value: 10.4
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 12:13:12 AM'
-                          Timestamp: '6/20/2023 2:13:12 AM'
+                        - FactoryTimestamp: 6/20/2023 12:13:12 AM
+                          Timestamp: 6/20/2023 2:13:12 AM
                           type: 0
                           ValueInMgPerDl: 183
                           MeasurementColor: 2
@@ -1157,8 +1150,8 @@ paths:
                           Value: 10.2
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 12:18:13 AM'
-                          Timestamp: '6/20/2023 2:18:13 AM'
+                        - FactoryTimestamp: 6/20/2023 12:18:13 AM
+                          Timestamp: 6/20/2023 2:18:13 AM
                           type: 0
                           ValueInMgPerDl: 188
                           MeasurementColor: 2
@@ -1166,8 +1159,8 @@ paths:
                           Value: 10.4
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 12:23:13 AM'
-                          Timestamp: '6/20/2023 2:23:13 AM'
+                        - FactoryTimestamp: 6/20/2023 12:23:13 AM
+                          Timestamp: 6/20/2023 2:23:13 AM
                           type: 0
                           ValueInMgPerDl: 181
                           MeasurementColor: 2
@@ -1175,8 +1168,8 @@ paths:
                           Value: 10.1
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 12:28:13 AM'
-                          Timestamp: '6/20/2023 2:28:13 AM'
+                        - FactoryTimestamp: 6/20/2023 12:28:13 AM
+                          Timestamp: 6/20/2023 2:28:13 AM
                           type: 0
                           ValueInMgPerDl: 176
                           MeasurementColor: 1
@@ -1184,8 +1177,8 @@ paths:
                           Value: 9.8
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 12:33:12 AM'
-                          Timestamp: '6/20/2023 2:33:12 AM'
+                        - FactoryTimestamp: 6/20/2023 12:33:12 AM
+                          Timestamp: 6/20/2023 2:33:12 AM
                           type: 0
                           ValueInMgPerDl: 175
                           MeasurementColor: 1
@@ -1193,8 +1186,8 @@ paths:
                           Value: 9.7
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 12:38:13 AM'
-                          Timestamp: '6/20/2023 2:38:13 AM'
+                        - FactoryTimestamp: 6/20/2023 12:38:13 AM
+                          Timestamp: 6/20/2023 2:38:13 AM
                           type: 0
                           ValueInMgPerDl: 174
                           MeasurementColor: 1
@@ -1202,8 +1195,8 @@ paths:
                           Value: 9.7
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 12:43:13 AM'
-                          Timestamp: '6/20/2023 2:43:13 AM'
+                        - FactoryTimestamp: 6/20/2023 12:43:13 AM
+                          Timestamp: 6/20/2023 2:43:13 AM
                           type: 0
                           ValueInMgPerDl: 170
                           MeasurementColor: 1
@@ -1211,8 +1204,8 @@ paths:
                           Value: 9.4
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 12:48:12 AM'
-                          Timestamp: '6/20/2023 2:48:12 AM'
+                        - FactoryTimestamp: 6/20/2023 12:48:12 AM
+                          Timestamp: 6/20/2023 2:48:12 AM
                           type: 0
                           ValueInMgPerDl: 164
                           MeasurementColor: 1
@@ -1220,8 +1213,8 @@ paths:
                           Value: 9.1
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 12:53:13 AM'
-                          Timestamp: '6/20/2023 2:53:13 AM'
+                        - FactoryTimestamp: 6/20/2023 12:53:13 AM
+                          Timestamp: 6/20/2023 2:53:13 AM
                           type: 0
                           ValueInMgPerDl: 163
                           MeasurementColor: 1
@@ -1229,8 +1222,8 @@ paths:
                           Value: 9.1
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 12:58:13 AM'
-                          Timestamp: '6/20/2023 2:58:13 AM'
+                        - FactoryTimestamp: 6/20/2023 12:58:13 AM
+                          Timestamp: 6/20/2023 2:58:13 AM
                           type: 0
                           ValueInMgPerDl: 160
                           MeasurementColor: 1
@@ -1238,8 +1231,8 @@ paths:
                           Value: 8.9
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 1:03:12 AM'
-                          Timestamp: '6/20/2023 3:03:12 AM'
+                        - FactoryTimestamp: 6/20/2023 1:03:12 AM
+                          Timestamp: 6/20/2023 3:03:12 AM
                           type: 0
                           ValueInMgPerDl: 154
                           MeasurementColor: 1
@@ -1247,8 +1240,8 @@ paths:
                           Value: 8.6
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 1:08:12 AM'
-                          Timestamp: '6/20/2023 3:08:12 AM'
+                        - FactoryTimestamp: 6/20/2023 1:08:12 AM
+                          Timestamp: 6/20/2023 3:08:12 AM
                           type: 0
                           ValueInMgPerDl: 149
                           MeasurementColor: 1
@@ -1256,8 +1249,8 @@ paths:
                           Value: 8.3
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 1:13:13 AM'
-                          Timestamp: '6/20/2023 3:13:13 AM'
+                        - FactoryTimestamp: 6/20/2023 1:13:13 AM
+                          Timestamp: 6/20/2023 3:13:13 AM
                           type: 0
                           ValueInMgPerDl: 144
                           MeasurementColor: 1
@@ -1265,8 +1258,8 @@ paths:
                           Value: 8
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 1:18:13 AM'
-                          Timestamp: '6/20/2023 3:18:13 AM'
+                        - FactoryTimestamp: 6/20/2023 1:18:13 AM
+                          Timestamp: 6/20/2023 3:18:13 AM
                           type: 0
                           ValueInMgPerDl: 145
                           MeasurementColor: 1
@@ -1274,8 +1267,8 @@ paths:
                           Value: 8.1
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 1:23:13 AM'
-                          Timestamp: '6/20/2023 3:23:13 AM'
+                        - FactoryTimestamp: 6/20/2023 1:23:13 AM
+                          Timestamp: 6/20/2023 3:23:13 AM
                           type: 0
                           ValueInMgPerDl: 140
                           MeasurementColor: 1
@@ -1283,8 +1276,8 @@ paths:
                           Value: 7.8
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 1:28:13 AM'
-                          Timestamp: '6/20/2023 3:28:13 AM'
+                        - FactoryTimestamp: 6/20/2023 1:28:13 AM
+                          Timestamp: 6/20/2023 3:28:13 AM
                           type: 0
                           ValueInMgPerDl: 135
                           MeasurementColor: 1
@@ -1292,8 +1285,8 @@ paths:
                           Value: 7.5
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 1:33:13 AM'
-                          Timestamp: '6/20/2023 3:33:13 AM'
+                        - FactoryTimestamp: 6/20/2023 1:33:13 AM
+                          Timestamp: 6/20/2023 3:33:13 AM
                           type: 0
                           ValueInMgPerDl: 135
                           MeasurementColor: 1
@@ -1301,8 +1294,8 @@ paths:
                           Value: 7.5
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 1:38:13 AM'
-                          Timestamp: '6/20/2023 3:38:13 AM'
+                        - FactoryTimestamp: 6/20/2023 1:38:13 AM
+                          Timestamp: 6/20/2023 3:38:13 AM
                           type: 0
                           ValueInMgPerDl: 138
                           MeasurementColor: 1
@@ -1310,8 +1303,8 @@ paths:
                           Value: 7.7
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 1:43:12 AM'
-                          Timestamp: '6/20/2023 3:43:12 AM'
+                        - FactoryTimestamp: 6/20/2023 1:43:12 AM
+                          Timestamp: 6/20/2023 3:43:12 AM
                           type: 0
                           ValueInMgPerDl: 138
                           MeasurementColor: 1
@@ -1319,8 +1312,8 @@ paths:
                           Value: 7.7
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 1:48:12 AM'
-                          Timestamp: '6/20/2023 3:48:12 AM'
+                        - FactoryTimestamp: 6/20/2023 1:48:12 AM
+                          Timestamp: 6/20/2023 3:48:12 AM
                           type: 0
                           ValueInMgPerDl: 138
                           MeasurementColor: 1
@@ -1328,8 +1321,8 @@ paths:
                           Value: 7.7
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 1:53:13 AM'
-                          Timestamp: '6/20/2023 3:53:13 AM'
+                        - FactoryTimestamp: 6/20/2023 1:53:13 AM
+                          Timestamp: 6/20/2023 3:53:13 AM
                           type: 0
                           ValueInMgPerDl: 140
                           MeasurementColor: 1
@@ -1337,8 +1330,8 @@ paths:
                           Value: 7.8
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 1:58:14 AM'
-                          Timestamp: '6/20/2023 3:58:14 AM'
+                        - FactoryTimestamp: 6/20/2023 1:58:14 AM
+                          Timestamp: 6/20/2023 3:58:14 AM
                           type: 0
                           ValueInMgPerDl: 138
                           MeasurementColor: 1
@@ -1346,8 +1339,8 @@ paths:
                           Value: 7.7
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 2:03:12 AM'
-                          Timestamp: '6/20/2023 4:03:12 AM'
+                        - FactoryTimestamp: 6/20/2023 2:03:12 AM
+                          Timestamp: 6/20/2023 4:03:12 AM
                           type: 0
                           ValueInMgPerDl: 136
                           MeasurementColor: 1
@@ -1355,8 +1348,8 @@ paths:
                           Value: 7.6
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 2:08:13 AM'
-                          Timestamp: '6/20/2023 4:08:13 AM'
+                        - FactoryTimestamp: 6/20/2023 2:08:13 AM
+                          Timestamp: 6/20/2023 4:08:13 AM
                           type: 0
                           ValueInMgPerDl: 134
                           MeasurementColor: 1
@@ -1364,8 +1357,8 @@ paths:
                           Value: 7.4
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 2:13:12 AM'
-                          Timestamp: '6/20/2023 4:13:12 AM'
+                        - FactoryTimestamp: 6/20/2023 2:13:12 AM
+                          Timestamp: 6/20/2023 4:13:12 AM
                           type: 0
                           ValueInMgPerDl: 132
                           MeasurementColor: 1
@@ -1373,8 +1366,8 @@ paths:
                           Value: 7.3
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 2:18:13 AM'
-                          Timestamp: '6/20/2023 4:18:13 AM'
+                        - FactoryTimestamp: 6/20/2023 2:18:13 AM
+                          Timestamp: 6/20/2023 4:18:13 AM
                           type: 0
                           ValueInMgPerDl: 129
                           MeasurementColor: 1
@@ -1382,8 +1375,8 @@ paths:
                           Value: 7.2
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 2:23:13 AM'
-                          Timestamp: '6/20/2023 4:23:13 AM'
+                        - FactoryTimestamp: 6/20/2023 2:23:13 AM
+                          Timestamp: 6/20/2023 4:23:13 AM
                           type: 0
                           ValueInMgPerDl: 127
                           MeasurementColor: 1
@@ -1391,8 +1384,8 @@ paths:
                           Value: 7.1
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 2:28:12 AM'
-                          Timestamp: '6/20/2023 4:28:12 AM'
+                        - FactoryTimestamp: 6/20/2023 2:28:12 AM
+                          Timestamp: 6/20/2023 4:28:12 AM
                           type: 0
                           ValueInMgPerDl: 127
                           MeasurementColor: 1
@@ -1400,8 +1393,8 @@ paths:
                           Value: 7.1
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 2:33:13 AM'
-                          Timestamp: '6/20/2023 4:33:13 AM'
+                        - FactoryTimestamp: 6/20/2023 2:33:13 AM
+                          Timestamp: 6/20/2023 4:33:13 AM
                           type: 0
                           ValueInMgPerDl: 124
                           MeasurementColor: 1
@@ -1409,8 +1402,8 @@ paths:
                           Value: 6.9
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 2:38:12 AM'
-                          Timestamp: '6/20/2023 4:38:12 AM'
+                        - FactoryTimestamp: 6/20/2023 2:38:12 AM
+                          Timestamp: 6/20/2023 4:38:12 AM
                           type: 0
                           ValueInMgPerDl: 126
                           MeasurementColor: 1
@@ -1418,8 +1411,8 @@ paths:
                           Value: 7
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 2:43:13 AM'
-                          Timestamp: '6/20/2023 4:43:13 AM'
+                        - FactoryTimestamp: 6/20/2023 2:43:13 AM
+                          Timestamp: 6/20/2023 4:43:13 AM
                           type: 0
                           ValueInMgPerDl: 124
                           MeasurementColor: 1
@@ -1427,8 +1420,8 @@ paths:
                           Value: 6.9
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 2:48:12 AM'
-                          Timestamp: '6/20/2023 4:48:12 AM'
+                        - FactoryTimestamp: 6/20/2023 2:48:12 AM
+                          Timestamp: 6/20/2023 4:48:12 AM
                           type: 0
                           ValueInMgPerDl: 121
                           MeasurementColor: 1
@@ -1436,8 +1429,8 @@ paths:
                           Value: 6.7
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 2:53:12 AM'
-                          Timestamp: '6/20/2023 4:53:12 AM'
+                        - FactoryTimestamp: 6/20/2023 2:53:12 AM
+                          Timestamp: 6/20/2023 4:53:12 AM
                           type: 0
                           ValueInMgPerDl: 121
                           MeasurementColor: 1
@@ -1445,8 +1438,8 @@ paths:
                           Value: 6.7
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 2:58:12 AM'
-                          Timestamp: '6/20/2023 4:58:12 AM'
+                        - FactoryTimestamp: 6/20/2023 2:58:12 AM
+                          Timestamp: 6/20/2023 4:58:12 AM
                           type: 0
                           ValueInMgPerDl: 116
                           MeasurementColor: 1
@@ -1454,8 +1447,8 @@ paths:
                           Value: 6.4
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 3:03:13 AM'
-                          Timestamp: '6/20/2023 5:03:13 AM'
+                        - FactoryTimestamp: 6/20/2023 3:03:13 AM
+                          Timestamp: 6/20/2023 5:03:13 AM
                           type: 0
                           ValueInMgPerDl: 115
                           MeasurementColor: 1
@@ -1463,8 +1456,8 @@ paths:
                           Value: 6.4
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 3:08:12 AM'
-                          Timestamp: '6/20/2023 5:08:12 AM'
+                        - FactoryTimestamp: 6/20/2023 3:08:12 AM
+                          Timestamp: 6/20/2023 5:08:12 AM
                           type: 0
                           ValueInMgPerDl: 114
                           MeasurementColor: 1
@@ -1472,8 +1465,8 @@ paths:
                           Value: 6.3
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 3:13:13 AM'
-                          Timestamp: '6/20/2023 5:13:13 AM'
+                        - FactoryTimestamp: 6/20/2023 3:13:13 AM
+                          Timestamp: 6/20/2023 5:13:13 AM
                           type: 0
                           ValueInMgPerDl: 109
                           MeasurementColor: 1
@@ -1481,8 +1474,8 @@ paths:
                           Value: 6.1
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 3:18:11 AM'
-                          Timestamp: '6/20/2023 5:18:11 AM'
+                        - FactoryTimestamp: 6/20/2023 3:18:11 AM
+                          Timestamp: 6/20/2023 5:18:11 AM
                           type: 0
                           ValueInMgPerDl: 106
                           MeasurementColor: 1
@@ -1490,8 +1483,8 @@ paths:
                           Value: 5.9
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 3:23:13 AM'
-                          Timestamp: '6/20/2023 5:23:13 AM'
+                        - FactoryTimestamp: 6/20/2023 3:23:13 AM
+                          Timestamp: 6/20/2023 5:23:13 AM
                           type: 0
                           ValueInMgPerDl: 106
                           MeasurementColor: 1
@@ -1499,8 +1492,8 @@ paths:
                           Value: 5.9
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 3:28:12 AM'
-                          Timestamp: '6/20/2023 5:28:12 AM'
+                        - FactoryTimestamp: 6/20/2023 3:28:12 AM
+                          Timestamp: 6/20/2023 5:28:12 AM
                           type: 0
                           ValueInMgPerDl: 108
                           MeasurementColor: 1
@@ -1508,8 +1501,8 @@ paths:
                           Value: 6
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 3:33:13 AM'
-                          Timestamp: '6/20/2023 5:33:13 AM'
+                        - FactoryTimestamp: 6/20/2023 3:33:13 AM
+                          Timestamp: 6/20/2023 5:33:13 AM
                           type: 0
                           ValueInMgPerDl: 108
                           MeasurementColor: 1
@@ -1517,8 +1510,8 @@ paths:
                           Value: 6
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 3:38:12 AM'
-                          Timestamp: '6/20/2023 5:38:12 AM'
+                        - FactoryTimestamp: 6/20/2023 3:38:12 AM
+                          Timestamp: 6/20/2023 5:38:12 AM
                           type: 0
                           ValueInMgPerDl: 110
                           MeasurementColor: 1
@@ -1526,8 +1519,8 @@ paths:
                           Value: 6.1
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 3:43:13 AM'
-                          Timestamp: '6/20/2023 5:43:13 AM'
+                        - FactoryTimestamp: 6/20/2023 3:43:13 AM
+                          Timestamp: 6/20/2023 5:43:13 AM
                           type: 0
                           ValueInMgPerDl: 114
                           MeasurementColor: 1
@@ -1535,8 +1528,8 @@ paths:
                           Value: 6.3
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 3:48:13 AM'
-                          Timestamp: '6/20/2023 5:48:13 AM'
+                        - FactoryTimestamp: 6/20/2023 3:48:13 AM
+                          Timestamp: 6/20/2023 5:48:13 AM
                           type: 0
                           ValueInMgPerDl: 116
                           MeasurementColor: 1
@@ -1544,8 +1537,8 @@ paths:
                           Value: 6.4
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 3:53:13 AM'
-                          Timestamp: '6/20/2023 5:53:13 AM'
+                        - FactoryTimestamp: 6/20/2023 3:53:13 AM
+                          Timestamp: 6/20/2023 5:53:13 AM
                           type: 0
                           ValueInMgPerDl: 118
                           MeasurementColor: 1
@@ -1553,8 +1546,8 @@ paths:
                           Value: 6.6
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 3:58:12 AM'
-                          Timestamp: '6/20/2023 5:58:12 AM'
+                        - FactoryTimestamp: 6/20/2023 3:58:12 AM
+                          Timestamp: 6/20/2023 5:58:12 AM
                           type: 0
                           ValueInMgPerDl: 121
                           MeasurementColor: 1
@@ -1562,8 +1555,8 @@ paths:
                           Value: 6.7
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 4:03:13 AM'
-                          Timestamp: '6/20/2023 6:03:13 AM'
+                        - FactoryTimestamp: 6/20/2023 4:03:13 AM
+                          Timestamp: 6/20/2023 6:03:13 AM
                           type: 0
                           ValueInMgPerDl: 123
                           MeasurementColor: 1
@@ -1571,8 +1564,8 @@ paths:
                           Value: 6.8
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 4:08:13 AM'
-                          Timestamp: '6/20/2023 6:08:13 AM'
+                        - FactoryTimestamp: 6/20/2023 4:08:13 AM
+                          Timestamp: 6/20/2023 6:08:13 AM
                           type: 0
                           ValueInMgPerDl: 127
                           MeasurementColor: 1
@@ -1580,8 +1573,8 @@ paths:
                           Value: 7.1
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 4:13:13 AM'
-                          Timestamp: '6/20/2023 6:13:13 AM'
+                        - FactoryTimestamp: 6/20/2023 4:13:13 AM
+                          Timestamp: 6/20/2023 6:13:13 AM
                           type: 0
                           ValueInMgPerDl: 128
                           MeasurementColor: 1
@@ -1589,8 +1582,8 @@ paths:
                           Value: 7.1
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 4:18:13 AM'
-                          Timestamp: '6/20/2023 6:18:13 AM'
+                        - FactoryTimestamp: 6/20/2023 4:18:13 AM
+                          Timestamp: 6/20/2023 6:18:13 AM
                           type: 0
                           ValueInMgPerDl: 128
                           MeasurementColor: 1
@@ -1598,8 +1591,8 @@ paths:
                           Value: 7.1
                           isHigh: false
                           isLow: false
-                        - FactoryTimestamp: '6/20/2023 4:23:12 AM'
-                          Timestamp: '6/20/2023 6:23:12 AM'
+                        - FactoryTimestamp: 6/20/2023 4:23:12 AM
+                          Timestamp: 6/20/2023 6:23:12 AM
                           type: 0
                           ValueInMgPerDl: 129
                           MeasurementColor: 1
@@ -1634,7 +1627,7 @@ paths:
                           $ref: ../models/GraphData.yaml
                   ticket:
                     $ref: ../models/Ticket.yaml
-      operationId: 'get-llu-connections-:id-graph'
+      operationId: get-llu-connections-:id-graph
       description: Get Graph data.
       parameters:
         - $ref: '#/components/parameters/Product'
@@ -1646,7 +1639,7 @@ paths:
         in: path
         required: true
         description: Patient ID
-  '/llu/connections/{patientId}/logbook':
+  /llu/connections/{patientId}/logbook:
     get:
       summary: Get Logbook
       responses:
@@ -1660,8 +1653,8 @@ paths:
                   Example 1:
                     status: 0
                     data:
-                      - FactoryTimestamp: '6/19/2023 10:49:13 PM'
-                        Timestamp: '6/20/2023 12:49:13 AM'
+                      - FactoryTimestamp: 6/19/2023 10:49:13 PM
+                        Timestamp: 6/20/2023 12:49:13 AM
                         type: 3
                         ValueInMgPerDl: 252
                         TrendArrow: 5
@@ -1672,8 +1665,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/19/2023 8:40:12 PM'
-                        Timestamp: '6/19/2023 10:40:12 PM'
+                      - FactoryTimestamp: 6/19/2023 8:40:12 PM
+                        Timestamp: 6/19/2023 10:40:12 PM
                         type: 3
                         ValueInMgPerDl: 53
                         TrendArrow: 1
@@ -1684,8 +1677,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 1
-                      - FactoryTimestamp: '6/19/2023 8:35:13 PM'
-                        Timestamp: '6/19/2023 10:35:13 PM'
+                      - FactoryTimestamp: 6/19/2023 8:35:13 PM
+                        Timestamp: 6/19/2023 10:35:13 PM
                         type: 3
                         ValueInMgPerDl: 55
                         TrendArrow: 1
@@ -1696,8 +1689,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 1
-                      - FactoryTimestamp: '6/19/2023 8:30:12 PM'
-                        Timestamp: '6/19/2023 10:30:12 PM'
+                      - FactoryTimestamp: 6/19/2023 8:30:12 PM
+                        Timestamp: 6/19/2023 10:30:12 PM
                         type: 3
                         ValueInMgPerDl: 67
                         TrendArrow: 1
@@ -1708,8 +1701,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 1
-                      - FactoryTimestamp: '6/19/2023 8:29:14 PM'
-                        Timestamp: '6/19/2023 10:29:14 PM'
+                      - FactoryTimestamp: 6/19/2023 8:29:14 PM
+                        Timestamp: 6/19/2023 10:29:14 PM
                         type: 3
                         ValueInMgPerDl: 69
                         TrendArrow: 1
@@ -1720,8 +1713,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 1
-                      - FactoryTimestamp: '6/19/2023 7:19:12 PM'
-                        Timestamp: '6/19/2023 9:19:12 PM'
+                      - FactoryTimestamp: 6/19/2023 7:19:12 PM
+                        Timestamp: 6/19/2023 9:19:12 PM
                         type: 3
                         ValueInMgPerDl: 253
                         TrendArrow: 4
@@ -1732,8 +1725,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/19/2023 3:22:14 PM'
-                        Timestamp: '6/19/2023 5:22:14 PM'
+                      - FactoryTimestamp: 6/19/2023 3:22:14 PM
+                        Timestamp: 6/19/2023 5:22:14 PM
                         type: 3
                         ValueInMgPerDl: 69
                         TrendArrow: 2
@@ -1744,8 +1737,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 1
-                      - FactoryTimestamp: '6/19/2023 12:25:14 PM'
-                        Timestamp: '6/19/2023 2:25:14 PM'
+                      - FactoryTimestamp: 6/19/2023 12:25:14 PM
+                        Timestamp: 6/19/2023 2:25:14 PM
                         type: 3
                         ValueInMgPerDl: 258
                         TrendArrow: 5
@@ -1756,8 +1749,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/19/2023 12:24:25 PM'
-                        Timestamp: '6/19/2023 2:24:25 PM'
+                      - FactoryTimestamp: 6/19/2023 12:24:25 PM
+                        Timestamp: 6/19/2023 2:24:25 PM
                         type: 3
                         ValueInMgPerDl: 258
                         TrendArrow: 5
@@ -1768,8 +1761,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/19/2023 9:52:13 AM'
-                        Timestamp: '6/19/2023 11:52:13 AM'
+                      - FactoryTimestamp: 6/19/2023 9:52:13 AM
+                        Timestamp: 6/19/2023 11:52:13 AM
                         type: 3
                         ValueInMgPerDl: 252
                         TrendArrow: 3
@@ -1780,8 +1773,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/19/2023 7:05:13 AM'
-                        Timestamp: '6/19/2023 9:05:13 AM'
+                      - FactoryTimestamp: 6/19/2023 7:05:13 AM
+                        Timestamp: 6/19/2023 9:05:13 AM
                         type: 3
                         ValueInMgPerDl: 254
                         TrendArrow: 5
@@ -1792,8 +1785,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/19/2023 7:03:14 AM'
-                        Timestamp: '6/19/2023 9:03:14 AM'
+                      - FactoryTimestamp: 6/19/2023 7:03:14 AM
+                        Timestamp: 6/19/2023 9:03:14 AM
                         type: 3
                         ValueInMgPerDl: 259
                         TrendArrow: 5
@@ -1804,8 +1797,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/18/2023 8:30:13 PM'
-                        Timestamp: '6/18/2023 10:30:13 PM'
+                      - FactoryTimestamp: 6/18/2023 8:30:13 PM
+                        Timestamp: 6/18/2023 10:30:13 PM
                         type: 3
                         ValueInMgPerDl: 257
                         TrendArrow: 4
@@ -1816,8 +1809,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/18/2023 8:26:14 PM'
-                        Timestamp: '6/18/2023 10:26:14 PM'
+                      - FactoryTimestamp: 6/18/2023 8:26:14 PM
+                        Timestamp: 6/18/2023 10:26:14 PM
                         type: 3
                         ValueInMgPerDl: 254
                         TrendArrow: 5
@@ -1828,8 +1821,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/18/2023 4:08:16 PM'
-                        Timestamp: '6/18/2023 6:08:16 PM'
+                      - FactoryTimestamp: 6/18/2023 4:08:16 PM
+                        Timestamp: 6/18/2023 6:08:16 PM
                         type: 3
                         ValueInMgPerDl: 271
                         TrendArrow: 3
@@ -1840,8 +1833,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/18/2023 7:30:16 AM'
-                        Timestamp: '6/18/2023 9:30:16 AM'
+                      - FactoryTimestamp: 6/18/2023 7:30:16 AM
+                        Timestamp: 6/18/2023 9:30:16 AM
                         type: 3
                         ValueInMgPerDl: 271
                         TrendArrow: 5
@@ -1852,8 +1845,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/18/2023 7:25:16 AM'
-                        Timestamp: '6/18/2023 9:25:16 AM'
+                      - FactoryTimestamp: 6/18/2023 7:25:16 AM
+                        Timestamp: 6/18/2023 9:25:16 AM
                         type: 3
                         ValueInMgPerDl: 260
                         TrendArrow: 5
@@ -1864,8 +1857,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/18/2023 7:22:14 AM'
-                        Timestamp: '6/18/2023 9:22:14 AM'
+                      - FactoryTimestamp: 6/18/2023 7:22:14 AM
+                        Timestamp: 6/18/2023 9:22:14 AM
                         type: 3
                         ValueInMgPerDl: 254
                         TrendArrow: 5
@@ -1876,8 +1869,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/17/2023 10:20:16 PM'
-                        Timestamp: '6/18/2023 12:20:16 AM'
+                      - FactoryTimestamp: 6/17/2023 10:20:16 PM
+                        Timestamp: 6/18/2023 12:20:16 AM
                         type: 3
                         ValueInMgPerDl: 253
                         TrendArrow: 3
@@ -1888,8 +1881,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/17/2023 7:40:15 PM'
-                        Timestamp: '6/17/2023 9:40:15 PM'
+                      - FactoryTimestamp: 6/17/2023 7:40:15 PM
+                        Timestamp: 6/17/2023 9:40:15 PM
                         type: 3
                         ValueInMgPerDl: 256
                         TrendArrow: 4
@@ -1900,8 +1893,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/17/2023 11:46:16 AM'
-                        Timestamp: '6/17/2023 1:46:16 PM'
+                      - FactoryTimestamp: 6/17/2023 11:46:16 AM
+                        Timestamp: 6/17/2023 1:46:16 PM
                         type: 3
                         ValueInMgPerDl: 252
                         TrendArrow: 4
@@ -1912,8 +1905,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/16/2023 6:55:18 PM'
-                        Timestamp: '6/16/2023 8:55:18 PM'
+                      - FactoryTimestamp: 6/16/2023 6:55:18 PM
+                        Timestamp: 6/16/2023 8:55:18 PM
                         type: 3
                         ValueInMgPerDl: 253
                         TrendArrow: 4
@@ -1924,8 +1917,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/16/2023 6:53:18 PM'
-                        Timestamp: '6/16/2023 8:53:18 PM'
+                      - FactoryTimestamp: 6/16/2023 6:53:18 PM
+                        Timestamp: 6/16/2023 8:53:18 PM
                         type: 3
                         ValueInMgPerDl: 252
                         TrendArrow: 4
@@ -1936,8 +1929,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/16/2023 2:25:19 PM'
-                        Timestamp: '6/16/2023 4:25:19 PM'
+                      - FactoryTimestamp: 6/16/2023 2:25:19 PM
+                        Timestamp: 6/16/2023 4:25:19 PM
                         type: 3
                         ValueInMgPerDl: 264
                         TrendArrow: 4
@@ -1948,8 +1941,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/16/2023 2:22:28 PM'
-                        Timestamp: '6/16/2023 4:22:28 PM'
+                      - FactoryTimestamp: 6/16/2023 2:22:28 PM
+                        Timestamp: 6/16/2023 4:22:28 PM
                         type: 3
                         ValueInMgPerDl: 270
                         TrendArrow: 5
@@ -1960,8 +1953,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/16/2023 7:30:34 AM'
-                        Timestamp: '6/16/2023 9:30:34 AM'
+                      - FactoryTimestamp: 6/16/2023 7:30:34 AM
+                        Timestamp: 6/16/2023 9:30:34 AM
                         type: 3
                         ValueInMgPerDl: 256
                         TrendArrow: 4
@@ -1972,8 +1965,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/15/2023 6:25:20 PM'
-                        Timestamp: '6/15/2023 8:25:20 PM'
+                      - FactoryTimestamp: 6/15/2023 6:25:20 PM
+                        Timestamp: 6/15/2023 8:25:20 PM
                         type: 3
                         ValueInMgPerDl: 261
                         TrendArrow: 4
@@ -1984,8 +1977,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/15/2023 6:20:20 PM'
-                        Timestamp: '6/15/2023 8:20:20 PM'
+                      - FactoryTimestamp: 6/15/2023 6:20:20 PM
+                        Timestamp: 6/15/2023 8:20:20 PM
                         type: 3
                         ValueInMgPerDl: 255
                         TrendArrow: 4
@@ -1996,8 +1989,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/15/2023 4:50:20 PM'
-                        Timestamp: '6/15/2023 6:50:20 PM'
+                      - FactoryTimestamp: 6/15/2023 4:50:20 PM
+                        Timestamp: 6/15/2023 6:50:20 PM
                         type: 3
                         ValueInMgPerDl: 310
                         TrendArrow: 3
@@ -2008,8 +2001,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/15/2023 3:51:31 PM'
-                        Timestamp: '6/15/2023 5:51:31 PM'
+                      - FactoryTimestamp: 6/15/2023 3:51:31 PM
+                        Timestamp: 6/15/2023 5:51:31 PM
                         type: 3
                         ValueInMgPerDl: 68
                         TrendArrow: 3
@@ -2020,8 +2013,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 1
-                      - FactoryTimestamp: '6/15/2023 3:49:29 PM'
-                        Timestamp: '6/15/2023 5:49:29 PM'
+                      - FactoryTimestamp: 6/15/2023 3:49:29 PM
+                        Timestamp: 6/15/2023 5:49:29 PM
                         type: 3
                         ValueInMgPerDl: 67
                         TrendArrow: 3
@@ -2032,8 +2025,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 1
-                      - FactoryTimestamp: '6/15/2023 3:48:20 PM'
-                        Timestamp: '6/15/2023 5:48:20 PM'
+                      - FactoryTimestamp: 6/15/2023 3:48:20 PM
+                        Timestamp: 6/15/2023 5:48:20 PM
                         type: 3
                         ValueInMgPerDl: 68
                         TrendArrow: 3
@@ -2044,8 +2037,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 1
-                      - FactoryTimestamp: '6/15/2023 11:01:32 AM'
-                        Timestamp: '6/15/2023 1:01:32 PM'
+                      - FactoryTimestamp: 6/15/2023 11:01:32 AM
+                        Timestamp: 6/15/2023 1:01:32 PM
                         type: 3
                         ValueInMgPerDl: 254
                         TrendArrow: 4
@@ -2056,8 +2049,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/15/2023 10:57:31 AM'
-                        Timestamp: '6/15/2023 12:57:31 PM'
+                      - FactoryTimestamp: 6/15/2023 10:57:31 AM
+                        Timestamp: 6/15/2023 12:57:31 PM
                         type: 3
                         ValueInMgPerDl: 256
                         TrendArrow: 4
@@ -2068,8 +2061,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/15/2023 7:19:22 AM'
-                        Timestamp: '6/15/2023 9:19:22 AM'
+                      - FactoryTimestamp: 6/15/2023 7:19:22 AM
+                        Timestamp: 6/15/2023 9:19:22 AM
                         type: 3
                         ValueInMgPerDl: 256
                         TrendArrow: 4
@@ -2080,8 +2073,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/14/2023 8:40:24 AM'
-                        Timestamp: '6/14/2023 10:40:24 AM'
+                      - FactoryTimestamp: 6/14/2023 8:40:24 AM
+                        Timestamp: 6/14/2023 10:40:24 AM
                         type: 3
                         ValueInMgPerDl: 265
                         TrendArrow: 5
@@ -2092,8 +2085,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/14/2023 8:35:24 AM'
-                        Timestamp: '6/14/2023 10:35:24 AM'
+                      - FactoryTimestamp: 6/14/2023 8:35:24 AM
+                        Timestamp: 6/14/2023 10:35:24 AM
                         type: 3
                         ValueInMgPerDl: 254
                         TrendArrow: 4
@@ -2104,8 +2097,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/13/2023 5:59:25 PM'
-                        Timestamp: '6/13/2023 7:59:25 PM'
+                      - FactoryTimestamp: 6/13/2023 5:59:25 PM
+                        Timestamp: 6/13/2023 7:59:25 PM
                         type: 3
                         ValueInMgPerDl: 252
                         TrendArrow: 4
@@ -2116,8 +2109,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/13/2023 4:03:25 PM'
-                        Timestamp: '6/13/2023 6:03:25 PM'
+                      - FactoryTimestamp: 6/13/2023 4:03:25 PM
+                        Timestamp: 6/13/2023 6:03:25 PM
                         type: 3
                         ValueInMgPerDl: 291
                         TrendArrow: 5
@@ -2128,8 +2121,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/13/2023 12:24:28 PM'
-                        Timestamp: '6/13/2023 2:24:28 PM'
+                      - FactoryTimestamp: 6/13/2023 12:24:28 PM
+                        Timestamp: 6/13/2023 2:24:28 PM
                         type: 3
                         ValueInMgPerDl: 252
                         TrendArrow: 5
@@ -2140,8 +2133,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/13/2023 9:59:28 AM'
-                        Timestamp: '6/13/2023 11:59:28 AM'
+                      - FactoryTimestamp: 6/13/2023 9:59:28 AM
+                        Timestamp: 6/13/2023 11:59:28 AM
                         type: 3
                         ValueInMgPerDl: 69
                         TrendArrow: 3
@@ -2152,8 +2145,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 1
-                      - FactoryTimestamp: '6/13/2023 2:38:29 AM'
-                        Timestamp: '6/13/2023 4:38:29 AM'
+                      - FactoryTimestamp: 6/13/2023 2:38:29 AM
+                        Timestamp: 6/13/2023 4:38:29 AM
                         type: 3
                         ValueInMgPerDl: 68
                         TrendArrow: 3
@@ -2164,8 +2157,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 1
-                      - FactoryTimestamp: '6/12/2023 4:48:29 PM'
-                        Timestamp: '6/12/2023 6:48:29 PM'
+                      - FactoryTimestamp: 6/12/2023 4:48:29 PM
+                        Timestamp: 6/12/2023 6:48:29 PM
                         type: 3
                         ValueInMgPerDl: 255
                         TrendArrow: 5
@@ -2176,8 +2169,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/12/2023 2:53:39 PM'
-                        Timestamp: '6/12/2023 4:53:39 PM'
+                      - FactoryTimestamp: 6/12/2023 2:53:39 PM
+                        Timestamp: 6/12/2023 4:53:39 PM
                         type: 3
                         ValueInMgPerDl: 67
                         TrendArrow: 2
@@ -2188,8 +2181,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 1
-                      - FactoryTimestamp: '6/12/2023 6:46:32 AM'
-                        Timestamp: '6/12/2023 8:46:32 AM'
+                      - FactoryTimestamp: 6/12/2023 6:46:32 AM
+                        Timestamp: 6/12/2023 8:46:32 AM
                         type: 3
                         ValueInMgPerDl: 252
                         TrendArrow: 5
@@ -2200,8 +2193,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/11/2023 7:37:34 PM'
-                        Timestamp: '6/11/2023 9:37:34 PM'
+                      - FactoryTimestamp: 6/11/2023 7:37:34 PM
+                        Timestamp: 6/11/2023 9:37:34 PM
                         type: 3
                         ValueInMgPerDl: 68
                         TrendArrow: 1
@@ -2212,8 +2205,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 1
-                      - FactoryTimestamp: '6/11/2023 6:20:58 PM'
-                        Timestamp: '6/11/2023 8:20:58 PM'
+                      - FactoryTimestamp: 6/11/2023 6:20:58 PM
+                        Timestamp: 6/11/2023 8:20:58 PM
                         type: 3
                         ValueInMgPerDl: 57
                         TrendArrow: 2
@@ -2224,8 +2217,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 1
-                      - FactoryTimestamp: '6/11/2023 3:54:45 PM'
-                        Timestamp: '6/11/2023 5:54:45 PM'
+                      - FactoryTimestamp: 6/11/2023 3:54:45 PM
+                        Timestamp: 6/11/2023 5:54:45 PM
                         type: 3
                         ValueInMgPerDl: 260
                         TrendArrow: 3
@@ -2236,8 +2229,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/11/2023 8:33:35 AM'
-                        Timestamp: '6/11/2023 10:33:35 AM'
+                      - FactoryTimestamp: 6/11/2023 8:33:35 AM
+                        Timestamp: 6/11/2023 10:33:35 AM
                         type: 3
                         ValueInMgPerDl: 65
                         TrendArrow: 3
@@ -2248,8 +2241,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 1
-                      - FactoryTimestamp: '6/10/2023 10:08:35 PM'
-                        Timestamp: '6/11/2023 12:08:35 AM'
+                      - FactoryTimestamp: 6/10/2023 10:08:35 PM
+                        Timestamp: 6/11/2023 12:08:35 AM
                         type: 3
                         ValueInMgPerDl: 252
                         TrendArrow: 3
@@ -2260,8 +2253,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/10/2023 11:59:48 AM'
-                        Timestamp: '6/10/2023 1:59:48 PM'
+                      - FactoryTimestamp: 6/10/2023 11:59:48 AM
+                        Timestamp: 6/10/2023 1:59:48 PM
                         type: 3
                         ValueInMgPerDl: 61
                         TrendArrow: 2
@@ -2272,8 +2265,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 1
-                      - FactoryTimestamp: '6/9/2023 8:08:38 PM'
-                        Timestamp: '6/9/2023 10:08:38 PM'
+                      - FactoryTimestamp: 6/9/2023 8:08:38 PM
+                        Timestamp: 6/9/2023 10:08:38 PM
                         type: 3
                         ValueInMgPerDl: 69
                         TrendArrow: 2
@@ -2284,8 +2277,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 1
-                      - FactoryTimestamp: '6/9/2023 2:28:47 PM'
-                        Timestamp: '6/9/2023 4:28:47 PM'
+                      - FactoryTimestamp: 6/9/2023 2:28:47 PM
+                        Timestamp: 6/9/2023 4:28:47 PM
                         type: 3
                         ValueInMgPerDl: 65
                         TrendArrow: 1
@@ -2296,8 +2289,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 1
-                      - FactoryTimestamp: '6/9/2023 10:35:37 AM'
-                        Timestamp: '6/9/2023 12:35:37 PM'
+                      - FactoryTimestamp: 6/9/2023 10:35:37 AM
+                        Timestamp: 6/9/2023 12:35:37 PM
                         type: 3
                         ValueInMgPerDl: 254
                         TrendArrow: 5
@@ -2308,8 +2301,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/9/2023 7:18:38 AM'
-                        Timestamp: '6/9/2023 9:18:38 AM'
+                      - FactoryTimestamp: 6/9/2023 7:18:38 AM
+                        Timestamp: 6/9/2023 9:18:38 AM
                         type: 3
                         ValueInMgPerDl: 252
                         TrendArrow: 5
@@ -2320,8 +2313,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/9/2023 3:10:37 AM'
-                        Timestamp: '6/9/2023 5:10:37 AM'
+                      - FactoryTimestamp: 6/9/2023 3:10:37 AM
+                        Timestamp: 6/9/2023 5:10:37 AM
                         type: 3
                         ValueInMgPerDl: 68
                         TrendArrow: 3
@@ -2332,8 +2325,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 1
-                      - FactoryTimestamp: '6/8/2023 8:33:38 PM'
-                        Timestamp: '6/8/2023 10:33:38 PM'
+                      - FactoryTimestamp: 6/8/2023 8:33:38 PM
+                        Timestamp: 6/8/2023 10:33:38 PM
                         type: 3
                         ValueInMgPerDl: 69
                         TrendArrow: 1
@@ -2344,8 +2337,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 1
-                      - FactoryTimestamp: '6/8/2023 6:21:38 PM'
-                        Timestamp: '6/8/2023 8:21:38 PM'
+                      - FactoryTimestamp: 6/8/2023 6:21:38 PM
+                        Timestamp: 6/8/2023 8:21:38 PM
                         type: 3
                         ValueInMgPerDl: 254
                         TrendArrow: 5
@@ -2356,8 +2349,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/8/2023 6:47:39 AM'
-                        Timestamp: '6/8/2023 8:47:39 AM'
+                      - FactoryTimestamp: 6/8/2023 6:47:39 AM
+                        Timestamp: 6/8/2023 8:47:39 AM
                         type: 3
                         ValueInMgPerDl: 252
                         TrendArrow: 5
@@ -2368,8 +2361,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/8/2023 12:27:41 AM'
-                        Timestamp: '6/8/2023 2:27:41 AM'
+                      - FactoryTimestamp: 6/8/2023 12:27:41 AM
+                        Timestamp: 6/8/2023 2:27:41 AM
                         type: 3
                         ValueInMgPerDl: 69
                         TrendArrow: 2
@@ -2380,8 +2373,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 1
-                      - FactoryTimestamp: '6/7/2023 4:18:17 PM'
-                        Timestamp: '6/7/2023 6:18:17 PM'
+                      - FactoryTimestamp: 6/7/2023 4:18:17 PM
+                        Timestamp: 6/7/2023 6:18:17 PM
                         type: 3
                         ValueInMgPerDl: 69
                         TrendArrow: 1
@@ -2392,8 +2385,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 1
-                      - FactoryTimestamp: '6/7/2023 1:04:17 PM'
-                        Timestamp: '6/7/2023 3:04:17 PM'
+                      - FactoryTimestamp: 6/7/2023 1:04:17 PM
+                        Timestamp: 6/7/2023 3:04:17 PM
                         type: 3
                         ValueInMgPerDl: 57
                         TrendArrow: 1
@@ -2404,8 +2397,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 1
-                      - FactoryTimestamp: '6/7/2023 11:29:26 AM'
-                        Timestamp: '6/7/2023 1:29:26 PM'
+                      - FactoryTimestamp: 6/7/2023 11:29:26 AM
+                        Timestamp: 6/7/2023 1:29:26 PM
                         type: 3
                         ValueInMgPerDl: 303
                         TrendArrow: 1
@@ -2416,8 +2409,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/7/2023 4:19:18 AM'
-                        Timestamp: '6/7/2023 6:19:18 AM'
+                      - FactoryTimestamp: 6/7/2023 4:19:18 AM
+                        Timestamp: 6/7/2023 6:19:18 AM
                         type: 3
                         ValueInMgPerDl: 67
                         TrendArrow: 3
@@ -2428,8 +2421,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 1
-                      - FactoryTimestamp: '6/6/2023 10:44:17 PM'
-                        Timestamp: '6/7/2023 12:44:17 AM'
+                      - FactoryTimestamp: 6/6/2023 10:44:17 PM
+                        Timestamp: 6/7/2023 12:44:17 AM
                         type: 3
                         ValueInMgPerDl: 254
                         TrendArrow: 3
@@ -2440,8 +2433,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/6/2023 6:20:18 PM'
-                        Timestamp: '6/6/2023 8:20:18 PM'
+                      - FactoryTimestamp: 6/6/2023 6:20:18 PM
+                        Timestamp: 6/6/2023 8:20:18 PM
                         type: 3
                         ValueInMgPerDl: 256
                         TrendArrow: 5
@@ -2452,8 +2445,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/6/2023 1:32:18 PM'
-                        Timestamp: '6/6/2023 3:32:18 PM'
+                      - FactoryTimestamp: 6/6/2023 1:32:18 PM
+                        Timestamp: 6/6/2023 3:32:18 PM
                         type: 3
                         ValueInMgPerDl: 254
                         TrendArrow: 5
@@ -2464,8 +2457,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/6/2023 12:02:17 PM'
-                        Timestamp: '6/6/2023 2:02:17 PM'
+                      - FactoryTimestamp: 6/6/2023 12:02:17 PM
+                        Timestamp: 6/6/2023 2:02:17 PM
                         type: 3
                         ValueInMgPerDl: 69
                         TrendArrow: 3
@@ -2476,8 +2469,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 1
-                      - FactoryTimestamp: '6/6/2023 10:11:28 AM'
-                        Timestamp: '6/6/2023 12:11:28 PM'
+                      - FactoryTimestamp: 6/6/2023 10:11:28 AM
+                        Timestamp: 6/6/2023 12:11:28 PM
                         type: 3
                         ValueInMgPerDl: 254
                         TrendArrow: 4
@@ -2488,8 +2481,8 @@ paths:
                         isHigh: false
                         isLow: false
                         alarmType: 2
-                      - FactoryTimestamp: '6/6/2023 8:20:18 AM'
-                        Timestamp: '6/6/2023 10:20:18 AM'
+                      - FactoryTimestamp: 6/6/2023 8:20:18 AM
+                        Timestamp: 6/6/2023 10:20:18 AM
                         type: 3
                         ValueInMgPerDl: 253
                         TrendArrow: 4
@@ -2513,7 +2506,7 @@ paths:
                       $ref: ../models/LogbookData.yaml
                   ticket:
                     $ref: ../models/Ticket.yaml
-      operationId: 'get-llu-connections-:id-logbook'
+      operationId: get-llu-connections-:id-logbook
       description: Get Logbook.
       parameters:
         - $ref: '#/components/parameters/Product'
@@ -2525,7 +2518,7 @@ paths:
         in: path
         required: true
         description: Patient ID
-  '/llu/notifications/settings/{connectionId}':
+  /llu/notifications/settings/{connectionId}:
     get:
       summary: Get Notificiation Settings for Connection
       responses:
@@ -2604,7 +2597,7 @@ paths:
                         $ref: ../models/PatientDevice.yaml
                   ticket:
                     $ref: ../models/Ticket.yaml
-      operationId: 'get-llu-connections-settings-:connectionId'
+      operationId: get-llu-connections-settings-:connectionId
       description: Get Logbook.
       parameters:
         - $ref: '#/components/parameters/Product'
@@ -3239,7 +3232,7 @@ paths:
                             ValueMember: GB
                           - DisplayMember: usa
                             ValueMember: US
-                      LSL-ServiceURL: 'https://api-eu.libreview.io/lsl/api/'
+                      LSL-ServiceURL: https://api-eu.libreview.io/lsl/api/
                       LibreLinkResourceKey: freestyle_librelink
                       MinVersion: 4.7.0
                       PartnerApplicationKeys:
@@ -3360,127 +3353,127 @@ paths:
                         streamingUnavailableBanner: true
                       heartbeatAlarmVersion: 4.0.0
                       heartbeatMilliseconds: 2100000
-                      lluAppAndroid: 'https://play.google.com/store/apps/details?id=org.nativescript.LibreLinkUp'
-                      lluAppIOS: 'https://itunes.apple.com/us/app/librelinkup/id1234323923?ls=1&mt=8'
+                      lluAppAndroid: https://play.google.com/store/apps/details?id=org.nativescript.LibreLinkUp
+                      lluAppIOS: https://itunes.apple.com/us/app/librelinkup/id1234323923?ls=1&mt=8
                       lluPrivacyPolicyHtml:
-                        ar: 'https://files.libreview.io/files/documents/ar-SA/pat-PP_2022-12-08.html'
-                        ar-sa: 'https://files.libreview.io/files/documents/ar-SA/pat-PP_2022-12-08.html'
-                        cs: 'https://files.libreview.io/files/documents/cs-CZ/pat-PP_2022-12-08.html'
-                        cs-cz: 'https://files.libreview.io/files/documents/cs-CZ/pat-PP_2022-12-08.html'
-                        da: 'https://files.libreview.io/files/documents/da-DK/pat-PP_2022-12-08.html'
-                        da-dk: 'https://files.libreview.io/files/documents/da-DK/pat-PP_2022-12-08.html'
-                        de: 'https://files.libreview.io/files/documents/de-DE/pat-PP_2022-12-08.html'
-                        de-de: 'https://files.libreview.io/files/documents/de-DE/pat-PP_2022-12-08.html'
-                        default: 'https://files.libreview.io/files/documents/en-US/pat-PP_2022-12-08.html'
-                        el: 'https://files.libreview.io/files/documents/el-GR/pat-PP_2022-12-08.html'
-                        el-gr: 'https://files.libreview.io/files/documents/el-GR/pat-PP_2022-12-08.html'
-                        en: 'https://files.libreview.io/files/documents/en-US/pat-PP_2022-12-08.html'
-                        en-gb: 'https://files.libreview.io/files/documents/en-GB/pat-PP_2022-12-08.html'
-                        en-us: 'https://files.libreview.io/files/documents/en-US/pat-PP_2022-12-08.html'
-                        es: 'https://files.libreview.io/files/documents/es-ES/pat-PP_2022-12-08.html'
-                        es-cl: 'https://files.libreview.io/files/documents/es-MX/pat-PP_2022-12-08.html'
-                        es-co: 'https://files.libreview.io/files/documents/es-MX/pat-PP_2022-12-08.html'
-                        es-es: 'https://files.libreview.io/files/documents/es-ES/pat-PP_2022-12-08.html'
-                        es-mx: 'https://files.libreview.io/files/documents/es-MX/pat-PP_2022-12-08.html'
-                        fi: 'https://files.libreview.io/files/documents/fi-FI/pat-PP_2022-12-08.html'
-                        fi-fi: 'https://files.libreview.io/files/documents/fi-FI/pat-PP_2022-12-08.html'
-                        fr: 'https://files.libreview.io/files/documents/fr-FR/pat-PP_2022-12-08.html'
-                        fr-ca: 'https://files.libreview.io/files/documents/fr-CA/pat-PP_2022-12-08.html'
-                        fr-fr: 'https://files.libreview.io/files/documents/fr-FR/pat-PP_2022-12-08.html'
-                        he: 'https://files.libreview.io/files/documents/he-IL/pat-PP_2022-12-08.html'
-                        he-il: 'https://files.libreview.io/files/documents/he-IL/pat-PP_2022-12-08.html'
-                        hr: 'https://files.libreview.io/files/documents/hr-HR/pat-PP_2022-12-08.html'
-                        hr-hr: 'https://files.libreview.io/files/documents/hr-HR/pat-PP_2022-12-08.html'
-                        it: 'https://files.libreview.io/files/documents/it-IT/pat-PP_2022-12-08.html'
-                        it-it: 'https://files.libreview.io/files/documents/it-IT/pat-PP_2022-12-08.html'
-                        ja: 'https://files.libreview.io/files/documents/ja-JP/pat-PP_2022-12-08.html'
-                        ja-jp: 'https://files.libreview.io/files/documents/ja-JP/pat-PP_2022-12-08.html'
-                        nb: 'https://files.libreview.io/files/documents/nb-NO/pat-PP_2022-12-08.html'
-                        nb-no: 'https://files.libreview.io/files/documents/nb-NO/pat-PP_2022-12-08.html'
-                        nl: 'https://files.libreview.io/files/documents/nl-NL/pat-PP_2022-12-08.html'
-                        nl-nl: 'https://files.libreview.io/files/documents/nl-NL/pat-PP_2022-12-08.html'
-                        pl: 'https://files.libreview.io/files/documents/pl-PL/pat-PP_2022-12-08.html'
-                        pl-pl: 'https://files.libreview.io/files/documents/pl-PL/pat-PP_2022-12-08.html'
-                        pt: 'https://files.libreview.io/files/documents/pt-PT/pat-PP_2022-12-08.html'
-                        pt-br: 'https://files.libreview.io/files/documents/pt-BR/pat-PP_2022-12-08.html'
-                        pt-pt: 'https://files.libreview.io/files/documents/pt-PT/pat-PP_2022-12-08.html'
-                        ru: 'https://files.libreview.io/files/documents/ru-RU/pat-PP_2022-12-08.html'
-                        ru-ru: 'https://files.libreview.io/files/documents/ru-RU/pat-PP_2022-12-08.html'
-                        sk: 'https://files.libreview.io/files/documents/sk-SK/pat-PP_2022-12-08.html'
-                        sk-sk: 'https://files.libreview.io/files/documents/sk-SK/pat-PP_2022-12-08.html'
-                        sl: 'https://files.libreview.io/files/documents/sl-SI/pat-PP_2022-12-08.html'
-                        sl-si: 'https://files.libreview.io/files/documents/sl-SI/pat-PP_2022-12-08.html'
-                        sv: 'https://files.libreview.io/files/documents/sv-SE/pat-PP_2022-12-08.html'
-                        sv-se: 'https://files.libreview.io/files/documents/sv-SE/pat-PP_2022-12-08.html'
-                        tr: 'https://files.libreview.io/files/documents/tr-TR/pat-PP_2022-12-08.html'
-                        tr-tr: 'https://files.libreview.io/files/documents/tr-TR/pat-PP_2022-12-08.html'
-                        zh: 'https://files.libreview.io/files/documents/zh-TW/pat-PP_2022-12-08.html'
-                        zh-cn: 'https://files.libreview.io/files/documents/zh-CN/pat-PP_2022-12-08.html'
-                        zh-tw: 'https://files.libreview.io/files/documents/zh-TW/pat-PP_2022-12-08.html'
+                        ar: https://files.libreview.io/files/documents/ar-SA/pat-PP_2022-12-08.html
+                        ar-sa: https://files.libreview.io/files/documents/ar-SA/pat-PP_2022-12-08.html
+                        cs: https://files.libreview.io/files/documents/cs-CZ/pat-PP_2022-12-08.html
+                        cs-cz: https://files.libreview.io/files/documents/cs-CZ/pat-PP_2022-12-08.html
+                        da: https://files.libreview.io/files/documents/da-DK/pat-PP_2022-12-08.html
+                        da-dk: https://files.libreview.io/files/documents/da-DK/pat-PP_2022-12-08.html
+                        de: https://files.libreview.io/files/documents/de-DE/pat-PP_2022-12-08.html
+                        de-de: https://files.libreview.io/files/documents/de-DE/pat-PP_2022-12-08.html
+                        default: https://files.libreview.io/files/documents/en-US/pat-PP_2022-12-08.html
+                        el: https://files.libreview.io/files/documents/el-GR/pat-PP_2022-12-08.html
+                        el-gr: https://files.libreview.io/files/documents/el-GR/pat-PP_2022-12-08.html
+                        en: https://files.libreview.io/files/documents/en-US/pat-PP_2022-12-08.html
+                        en-gb: https://files.libreview.io/files/documents/en-GB/pat-PP_2022-12-08.html
+                        en-us: https://files.libreview.io/files/documents/en-US/pat-PP_2022-12-08.html
+                        es: https://files.libreview.io/files/documents/es-ES/pat-PP_2022-12-08.html
+                        es-cl: https://files.libreview.io/files/documents/es-MX/pat-PP_2022-12-08.html
+                        es-co: https://files.libreview.io/files/documents/es-MX/pat-PP_2022-12-08.html
+                        es-es: https://files.libreview.io/files/documents/es-ES/pat-PP_2022-12-08.html
+                        es-mx: https://files.libreview.io/files/documents/es-MX/pat-PP_2022-12-08.html
+                        fi: https://files.libreview.io/files/documents/fi-FI/pat-PP_2022-12-08.html
+                        fi-fi: https://files.libreview.io/files/documents/fi-FI/pat-PP_2022-12-08.html
+                        fr: https://files.libreview.io/files/documents/fr-FR/pat-PP_2022-12-08.html
+                        fr-ca: https://files.libreview.io/files/documents/fr-CA/pat-PP_2022-12-08.html
+                        fr-fr: https://files.libreview.io/files/documents/fr-FR/pat-PP_2022-12-08.html
+                        he: https://files.libreview.io/files/documents/he-IL/pat-PP_2022-12-08.html
+                        he-il: https://files.libreview.io/files/documents/he-IL/pat-PP_2022-12-08.html
+                        hr: https://files.libreview.io/files/documents/hr-HR/pat-PP_2022-12-08.html
+                        hr-hr: https://files.libreview.io/files/documents/hr-HR/pat-PP_2022-12-08.html
+                        it: https://files.libreview.io/files/documents/it-IT/pat-PP_2022-12-08.html
+                        it-it: https://files.libreview.io/files/documents/it-IT/pat-PP_2022-12-08.html
+                        ja: https://files.libreview.io/files/documents/ja-JP/pat-PP_2022-12-08.html
+                        ja-jp: https://files.libreview.io/files/documents/ja-JP/pat-PP_2022-12-08.html
+                        nb: https://files.libreview.io/files/documents/nb-NO/pat-PP_2022-12-08.html
+                        nb-no: https://files.libreview.io/files/documents/nb-NO/pat-PP_2022-12-08.html
+                        nl: https://files.libreview.io/files/documents/nl-NL/pat-PP_2022-12-08.html
+                        nl-nl: https://files.libreview.io/files/documents/nl-NL/pat-PP_2022-12-08.html
+                        pl: https://files.libreview.io/files/documents/pl-PL/pat-PP_2022-12-08.html
+                        pl-pl: https://files.libreview.io/files/documents/pl-PL/pat-PP_2022-12-08.html
+                        pt: https://files.libreview.io/files/documents/pt-PT/pat-PP_2022-12-08.html
+                        pt-br: https://files.libreview.io/files/documents/pt-BR/pat-PP_2022-12-08.html
+                        pt-pt: https://files.libreview.io/files/documents/pt-PT/pat-PP_2022-12-08.html
+                        ru: https://files.libreview.io/files/documents/ru-RU/pat-PP_2022-12-08.html
+                        ru-ru: https://files.libreview.io/files/documents/ru-RU/pat-PP_2022-12-08.html
+                        sk: https://files.libreview.io/files/documents/sk-SK/pat-PP_2022-12-08.html
+                        sk-sk: https://files.libreview.io/files/documents/sk-SK/pat-PP_2022-12-08.html
+                        sl: https://files.libreview.io/files/documents/sl-SI/pat-PP_2022-12-08.html
+                        sl-si: https://files.libreview.io/files/documents/sl-SI/pat-PP_2022-12-08.html
+                        sv: https://files.libreview.io/files/documents/sv-SE/pat-PP_2022-12-08.html
+                        sv-se: https://files.libreview.io/files/documents/sv-SE/pat-PP_2022-12-08.html
+                        tr: https://files.libreview.io/files/documents/tr-TR/pat-PP_2022-12-08.html
+                        tr-tr: https://files.libreview.io/files/documents/tr-TR/pat-PP_2022-12-08.html
+                        zh: https://files.libreview.io/files/documents/zh-TW/pat-PP_2022-12-08.html
+                        zh-cn: https://files.libreview.io/files/documents/zh-CN/pat-PP_2022-12-08.html
+                        zh-tw: https://files.libreview.io/files/documents/zh-TW/pat-PP_2022-12-08.html
                       lluPrivacyPolicyVersions:
                         default: '2022-12-13T08:00:00-08:00'
-                      lluSAM: 'https://librelinkup.com/'
-                      lluSupport: 'https://librelinkup.com/contact-support'
-                      lluSupportMain: 'https://librelinkup.com/Support'
+                      lluSAM: https://librelinkup.com/
+                      lluSupport: https://librelinkup.com/contact-support
+                      lluSupportMain: https://librelinkup.com/Support
                       lluToUHtml:
-                        ar: 'https://files.libreview.io/files/documents/ar-SA/LLU_EULA_2023-04-03.html'
-                        ar-sa: 'https://files.libreview.io/files/documents/ar-SA/LLU_EULA_2023-04-03.html'
-                        cs: 'https://files.libreview.io/files/documents/cs-CZ/LLU_EULA_2023-04-03.html'
-                        cs-cz: 'https://files.libreview.io/files/documents/cs-CZ/LLU_EULA_2023-04-03.html'
-                        da: 'https://files.libreview.io/files/documents/da-DK/LLU_EULA_2023-04-03.html'
-                        da-dk: 'https://files.libreview.io/files/documents/da-DK/LLU_EULA_2023-04-03.html'
-                        de: 'https://files.libreview.io/files/documents/de-DE/LLU_EULA_2023-04-03.html'
-                        de-de: 'https://files.libreview.io/files/documents/de-DE/LLU_EULA_2023-04-03.html'
-                        default: 'https://files.libreview.io/files/documents/en-US/LLU_EULA_2023-04-03.html'
-                        el: 'https://files.libreview.io/files/documents/el-GR/LLU_EULA_2023-04-03.html'
-                        el-gr: 'https://files.libreview.io/files/documents/el-GR/LLU_EULA_2023-04-03.html'
-                        en: 'https://files.libreview.io/files/documents/en-US/LLU_EULA_2023-04-03.html'
-                        en-gb: 'https://files.libreview.io/files/documents/en-GB/LLU_EULA_2023-04-03.html'
-                        en-us: 'https://files.libreview.io/files/documents/en-US/LLU_EULA_2023-04-03.html'
-                        es: 'https://files.libreview.io/files/documents/es-ES/LLU_EULA_2023-04-03.html'
-                        es-cl: 'https://files.libreview.io/files/documents/es-MX/LLU_EULA_2023-04-03.html'
-                        es-co: 'https://files.libreview.io/files/documents/es-MX/LLU_EULA_2023-04-03.html'
-                        es-es: 'https://files.libreview.io/files/documents/es-ES/LLU_EULA_2023-04-03.html'
-                        es-mx: 'https://files.libreview.io/files/documents/es-MX/LLU_EULA_2023-04-03.html'
-                        fi: 'https://files.libreview.io/files/documents/fi-FI/LLU_EULA_2023-04-03.html'
-                        fi-fi: 'https://files.libreview.io/files/documents/fi-FI/LLU_EULA_2023-04-03.html'
-                        fr: 'https://files.libreview.io/files/documents/fr-FR/LLU_EULA_2023-04-03.html'
-                        fr-ca: 'https://files.libreview.io/files/documents/fr-CA/LLU_EULA_2023-04-03.html'
-                        fr-fr: 'https://files.libreview.io/files/documents/fr-FR/LLU_EULA_2023-04-03.html'
-                        he: 'https://files.libreview.io/files/documents/he-IL/LLU_EULA_2023-04-03.html'
-                        he-il: 'https://files.libreview.io/files/documents/he-IL/LLU_EULA_2023-04-03.html'
-                        hr: 'https://files.libreview.io/files/documents/hr-HR/LLU_EULA_2023-04-03.html'
-                        hr-hr: 'https://files.libreview.io/files/documents/hr-HR/LLU_EULA_2023-04-03.html'
-                        it: 'https://files.libreview.io/files/documents/it-IT/LLU_EULA_2023-04-03.html'
-                        it-it: 'https://files.libreview.io/files/documents/it-IT/LLU_EULA_2023-04-03.html'
-                        ja: 'https://files.libreview.io/files/documents/ja-JP/LLU_EULA_2023-04-03.html'
-                        ja-jp: 'https://files.libreview.io/files/documents/ja-JP/LLU_EULA_2023-04-03.html'
-                        nb: 'https://files.libreview.io/files/documents/nb-NO/LLU_EULA_2023-04-03.html'
-                        nb-no: 'https://files.libreview.io/files/documents/nb-NO/LLU_EULA_2023-04-03.html'
-                        nl: 'https://files.libreview.io/files/documents/nl-NL/LLU_EULA_2023-04-03.html'
-                        nl-nl: 'https://files.libreview.io/files/documents/nl-NL/LLU_EULA_2023-04-03.html'
-                        pl: 'https://files.libreview.io/files/documents/pl-PL/LLU_EULA_2023-04-03.html'
-                        pl-pl: 'https://files.libreview.io/files/documents/pl-PL/LLU_EULA_2023-04-03.html'
-                        pt: 'https://files.libreview.io/files/documents/pt-PT/LLU_EULA_2023-04-03.html'
-                        pt-br: 'https://files.libreview.io/files/documents/pt-BR/LLU_EULA_2023-04-03.html'
-                        pt-pt: 'https://files.libreview.io/files/documents/pt-PT/LLU_EULA_2023-04-03.html'
-                        ru: 'https://files.libreview.io/files/documents/ru-RU/LLU_EULA_2023-04-03.html'
-                        ru-ru: 'https://files.libreview.io/files/documents/ru-RU/LLU_EULA_2023-04-03.html'
-                        sk: 'https://files.libreview.io/files/documents/sk-SK/LLU_EULA_2023-04-03.html'
-                        sk-sk: 'https://files.libreview.io/files/documents/sk-SK/LLU_EULA_2023-04-03.html'
-                        sl: 'https://files.libreview.io/files/documents/sl-SI/LLU_EULA_2023-04-03.html'
-                        sl-si: 'https://files.libreview.io/files/documents/sl-SI/LLU_EULA_2023-04-03.html'
-                        sv: 'https://files.libreview.io/files/documents/sv-SE/LLU_EULA_2023-04-03.html'
-                        sv-se: 'https://files.libreview.io/files/documents/sv-SE/LLU_EULA_2023-04-03.html'
-                        tr: 'https://files.libreview.io/files/documents/tr-TR/LLU_EULA_2023-04-03.html'
-                        tr-tr: 'https://files.libreview.io/files/documents/tr-TR/LLU_EULA_2023-04-03.html'
-                        zh: 'https://files.libreview.io/files/documents/zh-TW/LLU_EULA_2023-04-03.html'
-                        zh-cn: 'https://files.libreview.io/files/documents/zh-CN/LLU_EULA_2023-04-03.html'
-                        zh-tw: 'https://files.libreview.io/files/documents/zh-TW/LLU_EULA_2023-04-03.html'
+                        ar: https://files.libreview.io/files/documents/ar-SA/LLU_EULA_2023-04-03.html
+                        ar-sa: https://files.libreview.io/files/documents/ar-SA/LLU_EULA_2023-04-03.html
+                        cs: https://files.libreview.io/files/documents/cs-CZ/LLU_EULA_2023-04-03.html
+                        cs-cz: https://files.libreview.io/files/documents/cs-CZ/LLU_EULA_2023-04-03.html
+                        da: https://files.libreview.io/files/documents/da-DK/LLU_EULA_2023-04-03.html
+                        da-dk: https://files.libreview.io/files/documents/da-DK/LLU_EULA_2023-04-03.html
+                        de: https://files.libreview.io/files/documents/de-DE/LLU_EULA_2023-04-03.html
+                        de-de: https://files.libreview.io/files/documents/de-DE/LLU_EULA_2023-04-03.html
+                        default: https://files.libreview.io/files/documents/en-US/LLU_EULA_2023-04-03.html
+                        el: https://files.libreview.io/files/documents/el-GR/LLU_EULA_2023-04-03.html
+                        el-gr: https://files.libreview.io/files/documents/el-GR/LLU_EULA_2023-04-03.html
+                        en: https://files.libreview.io/files/documents/en-US/LLU_EULA_2023-04-03.html
+                        en-gb: https://files.libreview.io/files/documents/en-GB/LLU_EULA_2023-04-03.html
+                        en-us: https://files.libreview.io/files/documents/en-US/LLU_EULA_2023-04-03.html
+                        es: https://files.libreview.io/files/documents/es-ES/LLU_EULA_2023-04-03.html
+                        es-cl: https://files.libreview.io/files/documents/es-MX/LLU_EULA_2023-04-03.html
+                        es-co: https://files.libreview.io/files/documents/es-MX/LLU_EULA_2023-04-03.html
+                        es-es: https://files.libreview.io/files/documents/es-ES/LLU_EULA_2023-04-03.html
+                        es-mx: https://files.libreview.io/files/documents/es-MX/LLU_EULA_2023-04-03.html
+                        fi: https://files.libreview.io/files/documents/fi-FI/LLU_EULA_2023-04-03.html
+                        fi-fi: https://files.libreview.io/files/documents/fi-FI/LLU_EULA_2023-04-03.html
+                        fr: https://files.libreview.io/files/documents/fr-FR/LLU_EULA_2023-04-03.html
+                        fr-ca: https://files.libreview.io/files/documents/fr-CA/LLU_EULA_2023-04-03.html
+                        fr-fr: https://files.libreview.io/files/documents/fr-FR/LLU_EULA_2023-04-03.html
+                        he: https://files.libreview.io/files/documents/he-IL/LLU_EULA_2023-04-03.html
+                        he-il: https://files.libreview.io/files/documents/he-IL/LLU_EULA_2023-04-03.html
+                        hr: https://files.libreview.io/files/documents/hr-HR/LLU_EULA_2023-04-03.html
+                        hr-hr: https://files.libreview.io/files/documents/hr-HR/LLU_EULA_2023-04-03.html
+                        it: https://files.libreview.io/files/documents/it-IT/LLU_EULA_2023-04-03.html
+                        it-it: https://files.libreview.io/files/documents/it-IT/LLU_EULA_2023-04-03.html
+                        ja: https://files.libreview.io/files/documents/ja-JP/LLU_EULA_2023-04-03.html
+                        ja-jp: https://files.libreview.io/files/documents/ja-JP/LLU_EULA_2023-04-03.html
+                        nb: https://files.libreview.io/files/documents/nb-NO/LLU_EULA_2023-04-03.html
+                        nb-no: https://files.libreview.io/files/documents/nb-NO/LLU_EULA_2023-04-03.html
+                        nl: https://files.libreview.io/files/documents/nl-NL/LLU_EULA_2023-04-03.html
+                        nl-nl: https://files.libreview.io/files/documents/nl-NL/LLU_EULA_2023-04-03.html
+                        pl: https://files.libreview.io/files/documents/pl-PL/LLU_EULA_2023-04-03.html
+                        pl-pl: https://files.libreview.io/files/documents/pl-PL/LLU_EULA_2023-04-03.html
+                        pt: https://files.libreview.io/files/documents/pt-PT/LLU_EULA_2023-04-03.html
+                        pt-br: https://files.libreview.io/files/documents/pt-BR/LLU_EULA_2023-04-03.html
+                        pt-pt: https://files.libreview.io/files/documents/pt-PT/LLU_EULA_2023-04-03.html
+                        ru: https://files.libreview.io/files/documents/ru-RU/LLU_EULA_2023-04-03.html
+                        ru-ru: https://files.libreview.io/files/documents/ru-RU/LLU_EULA_2023-04-03.html
+                        sk: https://files.libreview.io/files/documents/sk-SK/LLU_EULA_2023-04-03.html
+                        sk-sk: https://files.libreview.io/files/documents/sk-SK/LLU_EULA_2023-04-03.html
+                        sl: https://files.libreview.io/files/documents/sl-SI/LLU_EULA_2023-04-03.html
+                        sl-si: https://files.libreview.io/files/documents/sl-SI/LLU_EULA_2023-04-03.html
+                        sv: https://files.libreview.io/files/documents/sv-SE/LLU_EULA_2023-04-03.html
+                        sv-se: https://files.libreview.io/files/documents/sv-SE/LLU_EULA_2023-04-03.html
+                        tr: https://files.libreview.io/files/documents/tr-TR/LLU_EULA_2023-04-03.html
+                        tr-tr: https://files.libreview.io/files/documents/tr-TR/LLU_EULA_2023-04-03.html
+                        zh: https://files.libreview.io/files/documents/zh-TW/LLU_EULA_2023-04-03.html
+                        zh-cn: https://files.libreview.io/files/documents/zh-CN/LLU_EULA_2023-04-03.html
+                        zh-tw: https://files.libreview.io/files/documents/zh-TW/LLU_EULA_2023-04-03.html
                       lluToUVersions:
                         default: '2023-06-13T10:44:00-07:00'
-                      lslApi: 'https://api-eu.libreview.io/'
-                      lv: 'https://www.libreview.com'
+                      lslApi: https://api-eu.libreview.io/
+                      lv: https://www.libreview.com
                       minorityAge: 18
                       nameOrder:
                         - firstName
@@ -3510,39 +3503,39 @@ paths:
                             errorMsgKey: Form.passwordSpecial
                             value: '[!@#$%^&*)(+=._-]'
                       pnDocId: pnllu
-                      pushyApiEndpoint: 'https://abbott-ap-southeast-1.pushy.me'
-                      pushyMqttEndpoint: 'ssl://abbott-ap-southeast-1.pushy.me'
+                      pushyApiEndpoint: https://abbott-ap-southeast-1.pushy.me
+                      pushyMqttEndpoint: ssl://abbott-ap-southeast-1.pushy.me
                       regionalMap:
                         ae:
-                          lslApi: 'https://api-ae.libreview.io/'
-                          socketHub: 'https://hub-ae.libreview.io/'
+                          lslApi: https://api-ae.libreview.io/
+                          socketHub: https://hub-ae.libreview.io/
                         ap:
-                          lslApi: 'https://api-ap.libreview.io/'
-                          socketHub: 'https://hub-ap.libreview.io/'
+                          lslApi: https://api-ap.libreview.io/
+                          socketHub: https://hub-ap.libreview.io/
                         au:
-                          lslApi: 'https://api-au.libreview.io/'
-                          socketHub: 'https://api-au.libreview.io/poll/'
+                          lslApi: https://api-au.libreview.io/
+                          socketHub: https://api-au.libreview.io/poll/
                         ca:
-                          lslApi: 'https://api-ca.libreview.io/'
-                          socketHub: 'https://hub-ca.libreview.io/'
+                          lslApi: https://api-ca.libreview.io/
+                          socketHub: https://hub-ca.libreview.io/
                         de:
-                          lslApi: 'https://api-de.libreview.io/'
-                          socketHub: 'https://hub-de.libreview.io/'
+                          lslApi: https://api-de.libreview.io/
+                          socketHub: https://hub-de.libreview.io/
                         eu:
-                          lslApi: 'https://api-eu.libreview.io/'
-                          socketHub: 'https://hub-eu.libreview.io/'
+                          lslApi: https://api-eu.libreview.io/
+                          socketHub: https://hub-eu.libreview.io/
                         eu2:
-                          lslApi: 'https://api-eu2.libreview.io/'
-                          socketHub: 'https://api-eu2.libreview.io/poll/'
+                          lslApi: https://api-eu2.libreview.io/
+                          socketHub: https://api-eu2.libreview.io/poll/
                         fr:
-                          lslApi: 'https://api-fr.libreview.io/'
-                          socketHub: 'https://hub-fr.libreview.io/'
+                          lslApi: https://api-fr.libreview.io/
+                          socketHub: https://hub-fr.libreview.io/
                         jp:
-                          lslApi: 'https://api-jp.libreview.io/'
-                          socketHub: 'https://hub-jp.libreview.io/'
+                          lslApi: https://api-jp.libreview.io/
+                          socketHub: https://hub-jp.libreview.io/
                         us:
-                          lslApi: 'https://api-us.libreview.io/'
-                          socketHub: 'https://hub-us.libreview.io/'
+                          lslApi: https://api-us.libreview.io/
+                          socketHub: https://hub-us.libreview.io/
                       reviewConfig:
                         daysBeforeReminding: 0
                         daysUntilPrompt: 0
@@ -3556,21 +3549,18 @@ paths:
         - schema:
             type: string
             example: '4.7'
-            pattern: '^[0-9]+(\.[0-9]+){0,2}$'
+            pattern: ^[0-9]+(\.[0-9]+){0,2}$
           in: query
           name: version
           description: LibreLinkUp version to get config for.
         - schema:
             type: string
             example: NL
-            pattern: '^[A-Z]{2}$'
+            pattern: ^[A-Z]{2}$
           in: query
           name: country
           required: true
           description: Country identifier to get config for.
-      requestBody:
-        content: {}
-        description: Config
       security: []
 components:
   parameters:
@@ -3731,7 +3721,7 @@ components:
             type: object
             properties: {}
     LoginTerms:
-      description: 'Log in is successful, but terms need to be accepted first. The body does contains the token to use for accepting terms and subsequent requests. The endpoint for accepting terms will return the user data.'
+      description: Log in is successful, but terms need to be accepted first. The body does contains the token to use for accepting terms and subsequent requests. The endpoint for accepting terms will return the user data.
       content:
         application/json:
           schema:
@@ -3816,7 +3806,7 @@ components:
             type: object
             properties: {}
     Login:
-      description: 'Response to login can either be a request to use a different regional host, just successful, or a request to first accept terms. In the last case, a token does get provided, and the endpoint to accept terms will return the same body as when login was just successful.'
+      description: Response to login can either be a request to use a different regional host, just successful, or a request to first accept terms. In the last case, a token does get provided, and the endpoint to accept terms will return the same body as when login was just successful.
       content:
         application/json:
           schema:
